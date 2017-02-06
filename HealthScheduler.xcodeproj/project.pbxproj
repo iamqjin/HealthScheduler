@@ -7,21 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D849BEDE6B6D233B85C37E9 /* Pods_HealthScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC21023B473A60BC3DD26902 /* Pods_HealthScheduler.framework */; };
 		F31CC3171E4860CB00E24873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC3161E4860CB00E24873 /* AppDelegate.swift */; };
-		F31CC3191E4860CB00E24873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC3181E4860CB00E24873 /* ViewController.swift */; };
+		F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC3181E4860CB00E24873 /* LoginViewController.swift */; };
 		F31CC31C1E4860CB00E24873 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31CC31A1E4860CB00E24873 /* Main.storyboard */; };
 		F31CC31E1E4860CB00E24873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31CC31D1E4860CB00E24873 /* Assets.xcassets */; };
 		F31CC3211E4860CB00E24873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31CC31F1E4860CB00E24873 /* LaunchScreen.storyboard */; };
+		F31CC3291E4863F600E24873 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F31CC3281E4863F600E24873 /* GoogleService-Info.plist */; };
+		F31CC32B1E486A1F00E24873 /* HP01_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC32A1E486A1F00E24873 /* HP01_TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E71A3F6A3AB6FFF31E37F4BD /* Pods-HealthScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthScheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthScheduler/Pods-HealthScheduler.release.xcconfig"; sourceTree = "<group>"; };
+		F3032E751E48739D0021A0DD /* HealthScheduler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HealthScheduler-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F31CC3131E4860CA00E24873 /* HealthScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31CC3161E4860CB00E24873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F31CC3181E4860CB00E24873 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F31CC3181E4860CB00E24873 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F31CC31B1E4860CB00E24873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F31CC31D1E4860CB00E24873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F31CC3201E4860CB00E24873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F31CC3221E4860CB00E24873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F31CC3281E4863F600E24873 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F31CC32A1E486A1F00E24873 /* HP01_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HP01_TableViewController.swift; sourceTree = "<group>"; };
+		F56D6F87E602162BE0506DE5 /* Pods-HealthScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthScheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthScheduler/Pods-HealthScheduler.debug.xcconfig"; sourceTree = "<group>"; };
+		FC21023B473A60BC3DD26902 /* Pods_HealthScheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthScheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +38,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D849BEDE6B6D233B85C37E9 /* Pods_HealthScheduler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C694693CB5C94A248A16EF1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F56D6F87E602162BE0506DE5 /* Pods-HealthScheduler.debug.xcconfig */,
+				E71A3F6A3AB6FFF31E37F4BD /* Pods-HealthScheduler.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A1431C9EECB2A3F208FF4D54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC21023B473A60BC3DD26902 /* Pods_HealthScheduler.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F31CC30A1E4860CA00E24873 = {
 			isa = PBXGroup;
 			children = (
 				F31CC3151E4860CA00E24873 /* HealthScheduler */,
 				F31CC3141E4860CA00E24873 /* Products */,
+				0C694693CB5C94A248A16EF1 /* Pods */,
+				A1431C9EECB2A3F208FF4D54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +84,14 @@
 			isa = PBXGroup;
 			children = (
 				F31CC3161E4860CB00E24873 /* AppDelegate.swift */,
-				F31CC3181E4860CB00E24873 /* ViewController.swift */,
+				F31CC3181E4860CB00E24873 /* LoginViewController.swift */,
 				F31CC31A1E4860CB00E24873 /* Main.storyboard */,
 				F31CC31D1E4860CB00E24873 /* Assets.xcassets */,
 				F31CC31F1E4860CB00E24873 /* LaunchScreen.storyboard */,
 				F31CC3221E4860CB00E24873 /* Info.plist */,
+				F31CC3281E4863F600E24873 /* GoogleService-Info.plist */,
+				F31CC32A1E486A1F00E24873 /* HP01_TableViewController.swift */,
+				F3032E751E48739D0021A0DD /* HealthScheduler-Bridging-Header.h */,
 			);
 			path = HealthScheduler;
 			sourceTree = "<group>";
@@ -71,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F31CC3251E4860CB00E24873 /* Build configuration list for PBXNativeTarget "HealthScheduler" */;
 			buildPhases = (
+				7CC6C20DCE7E6EDB1DB04019 /* [CP] Check Pods Manifest.lock */,
 				F31CC30F1E4860CA00E24873 /* Sources */,
 				F31CC3101E4860CA00E24873 /* Frameworks */,
 				F31CC3111E4860CA00E24873 /* Resources */,
+				638B93D06FFCC6A6C9697DF9 /* [CP] Embed Pods Frameworks */,
+				E7441D6DDC8A833478C05DA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +132,7 @@
 					F31CC3121E4860CA00E24873 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = E6MP3VPWC7;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -125,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F31CC3211E4860CB00E24873 /* LaunchScreen.storyboard in Resources */,
+				F31CC3291E4863F600E24873 /* GoogleService-Info.plist in Resources */,
 				F31CC31E1E4860CB00E24873 /* Assets.xcassets in Resources */,
 				F31CC31C1E4860CB00E24873 /* Main.storyboard in Resources */,
 			);
@@ -132,12 +169,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		638B93D06FFCC6A6C9697DF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthScheduler/Pods-HealthScheduler-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CC6C20DCE7E6EDB1DB04019 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E7441D6DDC8A833478C05DA8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthScheduler/Pods-HealthScheduler-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F31CC30F1E4860CA00E24873 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F31CC3191E4860CB00E24873 /* ViewController.swift in Sources */,
+				F31CC32B1E486A1F00E24873 /* HP01_TableViewController.swift in Sources */,
+				F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */,
 				F31CC3171E4860CB00E24873 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,26 +343,35 @@
 		};
 		F31CC3261E4860CB00E24873 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F56D6F87E602162BE0506DE5 /* Pods-HealthScheduler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = E6MP3VPWC7;
 				INFOPLIST_FILE = HealthScheduler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iamqjin.HealthScheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HealthScheduler-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		F31CC3271E4860CB00E24873 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E71A3F6A3AB6FFF31E37F4BD /* Pods-HealthScheduler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = E6MP3VPWC7;
 				INFOPLIST_FILE = HealthScheduler/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iamqjin.HealthScheduler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HealthScheduler-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -300,6 +395,7 @@
 				F31CC3271E4860CB00E24873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

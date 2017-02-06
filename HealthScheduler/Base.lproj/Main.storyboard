@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="HealthScheduler" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,94 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="biC-AX-sTC">
+                                <rect key="frame" x="57" y="138" width="260" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0DV-JD-rYc"/>
+                                    <constraint firstAttribute="width" constant="260" id="V8Y-1s-jZS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EoS-U6-t7w">
+                                <rect key="frame" x="57" y="203" width="260" height="50"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jem-SP-2MB" customClass="GIDSignInButton">
+                                <rect key="frame" x="57" y="376" width="260" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUx-0Q-Tii">
+                                <rect key="frame" x="57" y="291" width="260" height="50"/>
+                                <color key="backgroundColor" red="0.011923936195671558" green="0.47466540336608887" blue="0.98470920324325562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="로그인">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yQE-nO-WIB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.28229108450000001" green="0.67687052489999999" blue="0.71574753520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EoS-U6-t7w" firstAttribute="width" secondItem="biC-AX-sTC" secondAttribute="width" id="6Lf-IT-whZ"/>
+                            <constraint firstItem="hUx-0Q-Tii" firstAttribute="height" secondItem="biC-AX-sTC" secondAttribute="height" id="7m8-u5-Aeq"/>
+                            <constraint firstItem="hUx-0Q-Tii" firstAttribute="leading" secondItem="biC-AX-sTC" secondAttribute="leading" id="BUb-fI-og2"/>
+                            <constraint firstItem="biC-AX-sTC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CqK-mF-TQj"/>
+                            <constraint firstItem="jem-SP-2MB" firstAttribute="height" secondItem="biC-AX-sTC" secondAttribute="height" id="IhK-xH-voX"/>
+                            <constraint firstItem="hUx-0Q-Tii" firstAttribute="width" secondItem="biC-AX-sTC" secondAttribute="width" id="TeP-68-DAp"/>
+                            <constraint firstItem="jem-SP-2MB" firstAttribute="top" secondItem="hUx-0Q-Tii" secondAttribute="bottom" constant="35" id="V0x-nz-vvR"/>
+                            <constraint firstItem="EoS-U6-t7w" firstAttribute="top" secondItem="biC-AX-sTC" secondAttribute="bottom" constant="15" id="aB1-Lk-36T"/>
+                            <constraint firstItem="biC-AX-sTC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="118" id="mE0-oo-Ppr"/>
+                            <constraint firstItem="jem-SP-2MB" firstAttribute="width" secondItem="biC-AX-sTC" secondAttribute="width" id="ntW-dD-MVY"/>
+                            <constraint firstItem="EoS-U6-t7w" firstAttribute="height" secondItem="biC-AX-sTC" secondAttribute="height" id="uR1-hN-gFl"/>
+                            <constraint firstItem="EoS-U6-t7w" firstAttribute="leading" secondItem="biC-AX-sTC" secondAttribute="leading" id="wav-o4-xmX"/>
+                            <constraint firstItem="jem-SP-2MB" firstAttribute="leading" secondItem="biC-AX-sTC" secondAttribute="leading" id="xIR-5B-mMi"/>
+                            <constraint firstItem="hUx-0Q-Tii" firstAttribute="top" secondItem="EoS-U6-t7w" secondAttribute="bottom" constant="38" id="xOq-dO-uQz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="biC-AX-sTC" id="egj-58-zz2"/>
+                        <outlet property="loginButton" destination="hUx-0Q-Tii" id="cg3-Bc-LhV"/>
+                        <outlet property="pwdTextField" destination="EoS-U6-t7w" id="RCn-xm-LTL"/>
+                        <outlet property="signInButton" destination="jem-SP-2MB" id="Lgz-93-sIj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-175.19999999999999" y="27.436281859070466"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="0iZ-Ex-m5k">
+            <objects>
+                <tableViewController id="qkP-CQ-WbD" customClass="HP01_TableViewController" customModule="HealthScheduler" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="70g-YG-opH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="quickStart" id="raV-4d-Os9">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="raV-4d-Os9" id="Hzh-8R-QMs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qkP-CQ-WbD" id="oyP-JB-FY8"/>
+                            <outlet property="delegate" destination="qkP-CQ-WbD" id="dOz-rV-g3i"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QOB-EX-Z0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="607" y="29"/>
         </scene>
     </scenes>
 </document>
