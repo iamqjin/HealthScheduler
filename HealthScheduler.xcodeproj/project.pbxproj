@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F31CC3171E4860CB00E24873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC3161E4860CB00E24873 /* AppDelegate.swift */; };
+		F31CC3191E4860CB00E24873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC3181E4860CB00E24873 /* ViewController.swift */; };
+		F31CC31C1E4860CB00E24873 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31CC31A1E4860CB00E24873 /* Main.storyboard */; };
+		F31CC31E1E4860CB00E24873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31CC31D1E4860CB00E24873 /* Assets.xcassets */; };
+		F31CC3211E4860CB00E24873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31CC31F1E4860CB00E24873 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F31CC3131E4860CA00E24873 /* HealthScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F31CC3161E4860CB00E24873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F31CC3181E4860CB00E24873 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F31CC31B1E4860CB00E24873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F31CC31D1E4860CB00E24873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F31CC3201E4860CB00E24873 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F31CC3221E4860CB00E24873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F31CC3101E4860CA00E24873 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F31CC30A1E4860CA00E24873 = {
+			isa = PBXGroup;
+			children = (
+				F31CC3151E4860CA00E24873 /* HealthScheduler */,
+				F31CC3141E4860CA00E24873 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F31CC3141E4860CA00E24873 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F31CC3131E4860CA00E24873 /* HealthScheduler.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F31CC3151E4860CA00E24873 /* HealthScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				F31CC3161E4860CB00E24873 /* AppDelegate.swift */,
+				F31CC3181E4860CB00E24873 /* ViewController.swift */,
+				F31CC31A1E4860CB00E24873 /* Main.storyboard */,
+				F31CC31D1E4860CB00E24873 /* Assets.xcassets */,
+				F31CC31F1E4860CB00E24873 /* LaunchScreen.storyboard */,
+				F31CC3221E4860CB00E24873 /* Info.plist */,
+			);
+			path = HealthScheduler;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F31CC3121E4860CA00E24873 /* HealthScheduler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F31CC3251E4860CB00E24873 /* Build configuration list for PBXNativeTarget "HealthScheduler" */;
+			buildPhases = (
+				F31CC30F1E4860CA00E24873 /* Sources */,
+				F31CC3101E4860CA00E24873 /* Frameworks */,
+				F31CC3111E4860CA00E24873 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HealthScheduler;
+			productName = HealthScheduler;
+			productReference = F31CC3131E4860CA00E24873 /* HealthScheduler.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F31CC30B1E4860CA00E24873 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = iamqjin;
+				TargetAttributes = {
+					F31CC3121E4860CA00E24873 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = E6MP3VPWC7;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F31CC30E1E4860CA00E24873 /* Build configuration list for PBXProject "HealthScheduler" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F31CC30A1E4860CA00E24873;
+			productRefGroup = F31CC3141E4860CA00E24873 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F31CC3121E4860CA00E24873 /* HealthScheduler */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F31CC3111E4860CA00E24873 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F31CC3211E4860CB00E24873 /* LaunchScreen.storyboard in Resources */,
+				F31CC31E1E4860CB00E24873 /* Assets.xcassets in Resources */,
+				F31CC31C1E4860CB00E24873 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F31CC30F1E4860CA00E24873 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F31CC3191E4860CB00E24873 /* ViewController.swift in Sources */,
+				F31CC3171E4860CB00E24873 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F31CC31A1E4860CB00E24873 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F31CC31B1E4860CB00E24873 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F31CC31F1E4860CB00E24873 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F31CC3201E4860CB00E24873 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F31CC3231E4860CB00E24873 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F31CC3241E4860CB00E24873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F31CC3261E4860CB00E24873 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E6MP3VPWC7;
+				INFOPLIST_FILE = HealthScheduler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamqjin.HealthScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F31CC3271E4860CB00E24873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E6MP3VPWC7;
+				INFOPLIST_FILE = HealthScheduler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iamqjin.HealthScheduler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F31CC30E1E4860CA00E24873 /* Build configuration list for PBXProject "HealthScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F31CC3231E4860CB00E24873 /* Debug */,
+				F31CC3241E4860CB00E24873 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F31CC3251E4860CB00E24873 /* Build configuration list for PBXNativeTarget "HealthScheduler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F31CC3261E4860CB00E24873 /* Debug */,
+				F31CC3271E4860CB00E24873 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F31CC30B1E4860CA00E24873 /* Project object */;
+}
