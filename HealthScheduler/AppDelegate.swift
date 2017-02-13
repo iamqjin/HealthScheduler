@@ -14,13 +14,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
 
     var window: UIWindow?
     
-    var dummy = [ScheduleModel]()
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String!, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+    }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             print(error.localizedDescription)
             return
         }
+        
+        let authentication = user.authentication
+        let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
+        
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            // ...
+            if let user = user {
+                print("firebase인증", user)
+            }
+            
+            if let error = error {
+                print("firebase오류", error)
+            }
+            
+            
+        }
+        
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
@@ -35,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
         return true
     }
     

@@ -1,5 +1,5 @@
 //
-//  ScheduleTableViewController.swift
+//  ScheduleVC.swift
 //  HealthScheduler
 //
 //  Created by iamqjin on 2017. 2. 8..
@@ -8,11 +8,21 @@
 
 import UIKit
 
-class ScheduleTableViewController: UITableViewController {
+class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    @IBOutlet weak var profileNameLabel: UILabel!
+    
+    @IBOutlet weak var profileDetailLabel: UILabel!
+    
+    @IBAction func SignUpAction(_ sender: Any) {
+        print("회원가입 버튼 눌림")
+    }
     
     //데이터 테스트
-    var mySchedule = [ScheduleModel]()
-    var trainerSchedule = [ScheduleModel]()
+//    var mySchedule = [ScheduleModel]()
+//    var trainerSchedule = [ScheduleModel]()
     
     
     //내가 짠 스케줄 더미
@@ -25,16 +35,16 @@ class ScheduleTableViewController: UITableViewController {
     @IBOutlet var scheduleTable: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     
-    @IBAction func scheduleEditAble(_ sender: Any) {
- 
+    
+    @IBAction func editAbleAction(_ sender: Any) {
         if scheduleTable.isEditing {
             self.editButton.title = "편집"
             //edit 모드에서 눌렸을때 취소로
-            scheduleTable.setEditing(false, animated: true)
+            scheduleTable.setEditing(false, animated: false)
         } else {
             self.editButton.title = "완료"
             //edit모드로
-            scheduleTable.setEditing(true, animated: true)
+            scheduleTable.setEditing(true, animated: false)
         }
         //edit이후 데이터 리로드
         scheduleTable.reloadData()
@@ -44,12 +54,10 @@ class ScheduleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profileImageView.image = UIImage(named: "Add")
+        profileNameLabel.text = "사규진"
+        profileDetailLabel.text = "아마 곧 돼지"
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//         self.navigationItem.rightBarButtonItem = self.editButton
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,19 +75,17 @@ class ScheduleTableViewController: UITableViewController {
 
     
     
-    
-    
-    
     // MARK: - Table view data source
     
+    //섹션 수
+    func numberOfSections(in tableView: UITableView) -> Int {
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 2
+        
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+    
+    //섹션 별 테이블 수
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var numberOfRows : Int?
         
@@ -98,11 +104,14 @@ class ScheduleTableViewController: UITableViewController {
 
     
     //테이블 셀 설정
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
-
+        
+        
         //직접 짠 스케줄 데이터 셀
         switch indexPath.section {
+            
         case 0:
             
             cell.textLabel?.text = self.dummy[indexPath.row].0
@@ -120,14 +129,14 @@ class ScheduleTableViewController: UITableViewController {
     }
  
     //테이블 헤더 높이 설정
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let headerHeight : CGFloat = 63.0
         
         return headerHeight
     }
     
     //테이블 헤더 타이틀 설정
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         let headerTitle : String?
         
@@ -144,48 +153,31 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     
-    // Override to support conditional editing of the table view.
-//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-//        // Return false if you do not want the specified item to be editable.
-//        return true
-//    }
     
-
-    
-    // Override to support editing the table view.
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            // Delete the row from the data source
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }    
-//    }
- 
-
-    
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    
-
-    
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
         return true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // Override to support rearranging the table view.
+//    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+//        
+//        
+//        if fromIndexPath.section == 1 && to.section == 0 {
+//            print("막아야한다")
+//        }
+////        print("여기가",fromIndexPath)
+////        print("저기로",to)
+//        
+//    }
+    
+    
+    
+//    // Override to support conditional rearranging of the table view.
+//    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+//        // Return false if you do not want the item to be re-orderable.
+//        
+//        return true
+//    }
 
 }

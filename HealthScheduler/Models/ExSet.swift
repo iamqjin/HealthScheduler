@@ -1,5 +1,5 @@
 //
-//  ExTable.swift
+//  ExSet.swift
 //  HealthScheduler
 //
 //  Created by iamqjin on 2017. 2. 8..
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExTable {
+struct ExSet {
     
     var setNumber : Int? //세트 넘버
     

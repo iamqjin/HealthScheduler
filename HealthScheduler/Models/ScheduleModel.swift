@@ -22,4 +22,12 @@ struct ScheduleModel {
     
     var routine = [Exercise()] //루틴 안 운동들
     
+    init(title : String =  "",progressImage : String = "", startTime : String = "", endTime : String = "" , date : String = "") {
+        self.title = title
+        self.progressImage = progressImage
+        self.startTime = startTime
+        self.endTime = endTime
+        self.date = date
+    }
+    
 }

@@ -17,14 +17,18 @@
 		F31CC3291E4863F600E24873 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F31CC3281E4863F600E24873 /* GoogleService-Info.plist */; };
 		F31CC32B1E486A1F00E24873 /* HP01_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC32A1E486A1F00E24873 /* HP01_TableViewController.swift */; };
 		F324C2561E4C5BD3003D0AA7 /* ExerciseSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C2551E4C5BD3003D0AA7 /* ExerciseSections.swift */; };
-		F324C2591E4C5CCB003D0AA7 /* AddEx01HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C2581E4C5CCB003D0AA7 /* AddEx01HeaderView.swift */; };
+		F324C25B1E4C7A27003D0AA7 /* AddEx01Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C25A1E4C7A27003D0AA7 /* AddEx01Header.swift */; };
+		F324C25E1E4C7A4B003D0AA7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C25D1E4C7A4B003D0AA7 /* Extensions.swift */; };
+		F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */; };
 		F3295FCB1E49F4770039F278 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3295FCA1E49F4770039F278 /* HeaderTableViewCell.swift */; };
+		F374BF5B1E514CD4007A8154 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374BF5A1E514CD4007A8154 /* SettingVC.swift */; };
 		F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */; };
+		F3C3515E1E4E060100A1B189 /* AddEx02Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3515D1E4E060100A1B189 /* AddEx02Cell.swift */; };
 		F3DD32B11E4B029500FD4A70 /* TrainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32B01E4B029500FD4A70 /* TrainerModel.swift */; };
-		F3DD32B71E4B0F9C00FD4A70 /* ScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32B61E4B0F9C00FD4A70 /* ScheduleTableViewController.swift */; };
+		F3DD32B71E4B0F9C00FD4A70 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32B61E4B0F9C00FD4A70 /* ScheduleVC.swift */; };
 		F3DD32B91E4B107600FD4A70 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32B81E4B107600FD4A70 /* ScheduleModel.swift */; };
 		F3DD32BB1E4B154C00FD4A70 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BA1E4B154C00FD4A70 /* Exercise.swift */; };
-		F3DD32BD1E4B161F00FD4A70 /* ExTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BC1E4B161F00FD4A70 /* ExTable.swift */; };
+		F3DD32BD1E4B161F00FD4A70 /* ExSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BC1E4B161F00FD4A70 /* ExSet.swift */; };
 		F3DD32C01E4B44F300FD4A70 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BF1E4B44F300FD4A70 /* HistoryTableViewCell.swift */; };
 		F3DD32C21E4B48BF00FD4A70 /* AddExerciseVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32C11E4B48BF00FD4A70 /* AddExerciseVC1.swift */; };
 /* End PBXBuildFile section */
@@ -43,14 +47,18 @@
 		F31CC3281E4863F600E24873 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F31CC32A1E486A1F00E24873 /* HP01_TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HP01_TableViewController.swift; sourceTree = "<group>"; };
 		F324C2551E4C5BD3003D0AA7 /* ExerciseSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseSections.swift; sourceTree = "<group>"; };
-		F324C2581E4C5CCB003D0AA7 /* AddEx01HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEx01HeaderView.swift; sourceTree = "<group>"; };
+		F324C25A1E4C7A27003D0AA7 /* AddEx01Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEx01Header.swift; sourceTree = "<group>"; };
+		F324C25D1E4C7A4B003D0AA7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
 		F3295FCA1E49F4770039F278 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderTableViewCell.swift; path = ../HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		F374BF5A1E514CD4007A8154 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseVC2.swift; sourceTree = "<group>"; };
+		F3C3515D1E4E060100A1B189 /* AddEx02Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEx02Cell.swift; sourceTree = "<group>"; };
 		F3DD32B01E4B029500FD4A70 /* TrainerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainerModel.swift; sourceTree = "<group>"; };
-		F3DD32B61E4B0F9C00FD4A70 /* ScheduleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewController.swift; sourceTree = "<group>"; };
+		F3DD32B61E4B0F9C00FD4A70 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		F3DD32B81E4B107600FD4A70 /* ScheduleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		F3DD32BA1E4B154C00FD4A70 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		F3DD32BC1E4B161F00FD4A70 /* ExTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExTable.swift; sourceTree = "<group>"; };
+		F3DD32BC1E4B161F00FD4A70 /* ExSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExSet.swift; sourceTree = "<group>"; };
 		F3DD32BF1E4B44F300FD4A70 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		F3DD32C11E4B48BF00FD4A70 /* AddExerciseVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseVC1.swift; sourceTree = "<group>"; };
 		F56D6F87E602162BE0506DE5 /* Pods-HealthScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthScheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthScheduler/Pods-HealthScheduler.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,12 +115,16 @@
 		F31CC3151E4860CA00E24873 /* HealthScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				F374BF571E5147DC007A8154 /* SettingVC */,
+				F374BF561E5147D2007A8154 /* HistoryVC */,
+				F374BF551E5147BB007A8154 /* LoginVC */,
+				F374BF541E51478D007A8154 /* ScheduleVC */,
+				F324C25C1E4C7A30003D0AA7 /* Extension */,
 				F324C2571E4C5C83003D0AA7 /* Header */,
 				F3DD32BE1E4B44B200FD4A70 /* Cell */,
 				F3DD32AD1E4B025700FD4A70 /* Models */,
 				F31CC31F1E4860CB00E24873 /* LaunchScreen.storyboard */,
 				F31CC3161E4860CB00E24873 /* AppDelegate.swift */,
-				F31CC3181E4860CB00E24873 /* LoginViewController.swift */,
 				F31CC31A1E4860CB00E24873 /* Main.storyboard */,
 				F31CC31D1E4860CB00E24873 /* Assets.xcassets */,
 				F31CC3221E4860CB00E24873 /* Info.plist */,
@@ -120,9 +132,6 @@
 				F3032E751E48739D0021A0DD /* HealthScheduler-Bridging-Header.h */,
 				F31CC32A1E486A1F00E24873 /* HP01_TableViewController.swift */,
 				F31B91EC1E498B01005A4D7C /* HP03_ViewController.swift */,
-				F3DD32B61E4B0F9C00FD4A70 /* ScheduleTableViewController.swift */,
-				F3DD32C11E4B48BF00FD4A70 /* AddExerciseVC1.swift */,
-				F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */,
 			);
 			path = HealthScheduler;
 			sourceTree = "<group>";
@@ -130,9 +139,58 @@
 		F324C2571E4C5C83003D0AA7 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				F324C2581E4C5CCB003D0AA7 /* AddEx01HeaderView.swift */,
+				F324C25A1E4C7A27003D0AA7 /* AddEx01Header.swift */,
 			);
 			name = Header;
+			sourceTree = "<group>";
+		};
+		F324C25C1E4C7A30003D0AA7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F324C25D1E4C7A4B003D0AA7 /* Extensions.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		F324C25F1E4D864E003D0AA7 /* AddExerciseVC */ = {
+			isa = PBXGroup;
+			children = (
+				F3DD32C11E4B48BF00FD4A70 /* AddExerciseVC1.swift */,
+				F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */,
+			);
+			name = AddExerciseVC;
+			sourceTree = "<group>";
+		};
+		F374BF541E51478D007A8154 /* ScheduleVC */ = {
+			isa = PBXGroup;
+			children = (
+				F3DD32B61E4B0F9C00FD4A70 /* ScheduleVC.swift */,
+				F324C25F1E4D864E003D0AA7 /* AddExerciseVC */,
+			);
+			name = ScheduleVC;
+			sourceTree = "<group>";
+		};
+		F374BF551E5147BB007A8154 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				F31CC3181E4860CB00E24873 /* LoginViewController.swift */,
+			);
+			name = LoginVC;
+			sourceTree = "<group>";
+		};
+		F374BF561E5147D2007A8154 /* HistoryVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HistoryVC;
+			sourceTree = "<group>";
+		};
+		F374BF571E5147DC007A8154 /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+				F374BF5A1E514CD4007A8154 /* SettingVC.swift */,
+			);
+			name = SettingVC;
 			sourceTree = "<group>";
 		};
 		F3DD32AD1E4B025700FD4A70 /* Models */ = {
@@ -140,9 +198,9 @@
 			children = (
 				F3DD32B01E4B029500FD4A70 /* TrainerModel.swift */,
 				F3DD32B81E4B107600FD4A70 /* ScheduleModel.swift */,
-				F3DD32BA1E4B154C00FD4A70 /* Exercise.swift */,
-				F3DD32BC1E4B161F00FD4A70 /* ExTable.swift */,
 				F324C2551E4C5BD3003D0AA7 /* ExerciseSections.swift */,
+				F3DD32BA1E4B154C00FD4A70 /* Exercise.swift */,
+				F3DD32BC1E4B161F00FD4A70 /* ExSet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,6 +210,8 @@
 			children = (
 				F3DD32BF1E4B44F300FD4A70 /* HistoryTableViewCell.swift */,
 				F3295FCA1E49F4770039F278 /* HeaderTableViewCell.swift */,
+				F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */,
+				F3C3515D1E4E060100A1B189 /* AddEx02Cell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -282,20 +342,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3DD32B71E4B0F9C00FD4A70 /* ScheduleTableViewController.swift in Sources */,
+				F3DD32B71E4B0F9C00FD4A70 /* ScheduleVC.swift in Sources */,
 				F31CC32B1E486A1F00E24873 /* HP01_TableViewController.swift in Sources */,
-				F3DD32BD1E4B161F00FD4A70 /* ExTable.swift in Sources */,
+				F3DD32BD1E4B161F00FD4A70 /* ExSet.swift in Sources */,
 				F3DD32C21E4B48BF00FD4A70 /* AddExerciseVC1.swift in Sources */,
 				F3295FCB1E49F4770039F278 /* HeaderTableViewCell.swift in Sources */,
 				F31B91ED1E498B01005A4D7C /* HP03_ViewController.swift in Sources */,
 				F3DD32BB1E4B154C00FD4A70 /* Exercise.swift in Sources */,
+				F3C3515E1E4E060100A1B189 /* AddEx02Cell.swift in Sources */,
+				F324C25E1E4C7A4B003D0AA7 /* Extensions.swift in Sources */,
 				F324C2561E4C5BD3003D0AA7 /* ExerciseSections.swift in Sources */,
 				F3DD32B11E4B029500FD4A70 /* TrainerModel.swift in Sources */,
 				F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */,
 				F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */,
+				F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */,
 				F3DD32C01E4B44F300FD4A70 /* HistoryTableViewCell.swift in Sources */,
+				F324C25B1E4C7A27003D0AA7 /* AddEx01Header.swift in Sources */,
+				F374BF5B1E514CD4007A8154 /* SettingVC.swift in Sources */,
 				F3DD32B91E4B107600FD4A70 /* ScheduleModel.swift in Sources */,
-				F324C2591E4C5CCB003D0AA7 /* AddEx01HeaderView.swift in Sources */,
 				F31CC3171E4860CB00E24873 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
