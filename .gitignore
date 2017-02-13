@@ -19,7 +19,7 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-HealthScheduler/HealthScheduler/Assets.xcassets
+HealthScheduler/Assets.xcassets
 
 ## Other
 *.moved-aside
