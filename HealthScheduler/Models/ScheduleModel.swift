@@ -8,26 +8,14 @@
 
 import Foundation
 
-struct ScheduleModel {
+struct Schedule {
+    
+    var scheduleId : Int? //스케줄 id값
+    
+    var exSummary : String? //운동 세트 요약
     
     var title : String? //스케줄 타이틀
     
-    var progressImage : String? //진행 사진
-    
-    var startTime : String? //시작 시간
-    
-    var endTime : String? //끝 시간
-    
-    var date : String?//운동 날짜
-    
-    var routine = [Exercise()] //루틴 안 운동들
-    
-    init(title : String =  "",progressImage : String = "", startTime : String = "", endTime : String = "" , date : String = "") {
-        self.title = title
-        self.progressImage = progressImage
-        self.startTime = startTime
-        self.endTime = endTime
-        self.date = date
-    }
+    var exerciseList = [Exercise()] //루틴 안 운동들
     
 }

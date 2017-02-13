@@ -20,19 +20,14 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         print("회원가입 버튼 눌림")
     }
     
-    //데이터 테스트
-//    var mySchedule = [ScheduleModel]()
-//    var trainerSchedule = [ScheduleModel]()
     
+    //데이터 test
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var schedule : [Schedule]!
     
-    //내가 짠 스케줄 더미
-    var dummy = [("슈퍼짱스케줄1", "오후 3:00", "오후 4:00", "2017-03-28",[("벤치프레스",[(1, 15, 10, true)]),("인클라인벤치프레스",[(1, 15, 10, true),(2,20,10, false)])]),("슈퍼짱스케줄2", "오후 3:00", "오후 4:00", "2017-03-28",[("벤치프레스",[(1, 15, 10, true)]),("인클라인벤치프레스",[(1, 15, 10, true),(2,20,10, false)])])]
-    
-    //트레이너가 짠 스케줄 더미
-    var dummyTrainer = [("트레이너가짜면다르다스케줄1", "오후 3:00", "오후 4:00", "2017-03-28",[("벤치프레스",[(1, 15, 10, true)]),("인클라인벤치프레스",[(1, 15, 10, true),(2,20,10, false)])])]
-    
-    
+    //스케줄 테이블 객체
     @IBOutlet var scheduleTable: UITableView!
+    //에디트 모드 버튼
     @IBOutlet weak var editButton: UIBarButtonItem!
     
     
@@ -54,6 +49,8 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         profileImageView.image = UIImage(named: "Add")
         profileNameLabel.text = "사규진"
         profileDetailLabel.text = "아마 곧 돼지"
@@ -63,8 +60,13 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //데이터 test
+        self.schedule = appDelegate.scheduleList
+        
         //탭바 N 뱃지 설정
         self.navigationController?.tabBarItem.badgeValue = "N"
+        
+        self.scheduleTable.reloadData()
         
     }
 
@@ -92,9 +94,9 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         //내가 짠 스케줄 | 트레이너가 짜준 스케줄 따로
         switch section {
         case 0:
-            numberOfRows = dummy.count
+            numberOfRows = schedule.count
         case 1:
-            numberOfRows = dummyTrainer.count
+            numberOfRows = schedule.count
         default:
             numberOfRows = 1
         }
@@ -113,17 +115,16 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         switch indexPath.section {
             
         case 0:
-            
-            cell.textLabel?.text = self.dummy[indexPath.row].0
-
+            //데이터 test
+            cell.textLabel?.text = self.schedule[indexPath.row].title
+            cell.detailTextLabel?.text = self.schedule[indexPath.row].exSummary!
         case 1:
-            
-            cell.textLabel?.text = self.dummyTrainer[indexPath.row].0
+            //데이터 test
+            cell.textLabel?.text = "하이"
             
         default:
             print("잘못된 접근입니다")
         }
-        
 
         return cell
     }
@@ -153,31 +154,9 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     }
 
     
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         
         return true
     }
     
-    // Override to support rearranging the table view.
-//    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-//        
-//        
-//        if fromIndexPath.section == 1 && to.section == 0 {
-//            print("막아야한다")
-//        }
-////        print("여기가",fromIndexPath)
-////        print("저기로",to)
-//        
-//    }
-    
-    
-    
-//    // Override to support conditional rearranging of the table view.
-//    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-//        // Return false if you do not want the item to be re-orderable.
-//        
-//        return true
-//    }
-
 }

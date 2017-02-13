@@ -11,6 +11,7 @@ import UIKit
 
 protocol zeroExceptionDelegate {
     func zeroAlertAction()
+    func checkSetCount(setCount : Int, tagNum : Int)
 }
 
 class AddEx02Cell: UITableViewCell {
@@ -20,6 +21,7 @@ class AddEx02Cell: UITableViewCell {
     @IBOutlet weak var addEx02Button: UIButton!
     @IBOutlet weak var minusEx02Button: UIButton!
     
+
     var tagNum : Int?
     var defaultSetNum = 3
     var delegate : zeroExceptionDelegate?
@@ -34,11 +36,13 @@ class AddEx02Cell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    //선택된 버튼의 tag 전송
+    
     @IBAction func addSetAction() {
         
         defaultSetNum += 1
         setCountLabel.text = "세트 수(\(defaultSetNum))"
+        //세트수 체크
+        delegate?.checkSetCount(setCount: defaultSetNum, tagNum : self.tagNum!)
     }
     
     @IBAction func minusSetAction() {
@@ -47,11 +51,12 @@ class AddEx02Cell: UITableViewCell {
 
         //0으로 내려갔을시 다시 올리고 델리게이트 맡김
         if defaultSetNum == 0 {
-            print("이프문안")
             delegate?.zeroAlertAction()
             defaultSetNum += 1
         }
         
         setCountLabel.text = "세트 수(\(defaultSetNum))"
+        //세트수 체크
+        delegate?.checkSetCount(setCount: defaultSetNum, tagNum : self.tagNum!)
     }
 }

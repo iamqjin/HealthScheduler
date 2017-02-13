@@ -31,13 +31,8 @@ class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var addExTV1: UITableView!
     
     //부위별 섹션
-    var exTable = [ExSection]()
-    
-    
-    
-    //부위별 섹션수 
     //가슴, 등, 다리, 팔, 어깨, 코어, 기타
-    var bodyPartNumber = 7
+    var exTable = [ExSection]()
     
     //선택된 운동 리스트
 
@@ -52,6 +47,10 @@ class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelega
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func saveAndReturnWind(_ sender: UIStoryboardSegue) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -150,21 +150,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E57-p3-WtU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="phf-lC-s67">
-                                                    <rect key="frame" x="0.0" y="39.5" width="375" height="39.5"/>
+                                                    <rect key="frame" x="0.0" y="40" width="375" height="39"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rD8-P7-CkX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="39.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="188" height="39"/>
                                                             <state key="normal" title="운동추가"/>
                                                             <connections>
                                                                 <action selector="addExercise:" destination="jRO-ek-spy" eventType="touchUpInside" id="zng-SB-0LD"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLY-BT-Srn">
-                                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="39.5"/>
+                                                            <rect key="frame" x="188" y="0.0" width="187" height="39"/>
                                                             <state key="normal" title="스케줄취소">
                                                                 <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -293,7 +293,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dRO-hy-ZpN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RZ1-f8-Dpt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RZ1-f8-Dpt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -476,7 +476,7 @@
             <objects>
                 <navigationController id="63h-ys-IYr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="history" id="u32-jZ-5Ay"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FaT-dy-skw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FaT-dy-skw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -549,7 +549,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ONC-na-XBJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="스케줄" id="DRq-ii-8Md"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wK4-aC-hcv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wK4-aC-hcv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -656,7 +656,7 @@
             </objects>
             <point key="canvasLocation" x="2351.1999999999998" y="1374.9625187406298"/>
         </scene>
-        <!--Add ExerciseVC2-->
+        <!--세트 수 설정-->
         <scene sceneID="GSQ-kF-IKn">
             <objects>
                 <viewController id="W7Y-wx-izm" customClass="AddExerciseVC2" customModule="HealthScheduler" customModuleProvider="target" sceneMemberID="viewController">
@@ -675,22 +675,41 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="111"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v1l-cd-IY9">
-                                            <rect key="frame" x="8" y="57" width="350" height="45.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="v1l-cd-IY9">
+                                            <rect key="frame" x="8" y="57" width="350" height="46"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="스케줄명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIx-9M-3qF">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스케줄명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIx-9M-3qF">
                                             <rect key="frame" x="8" y="8" width="251" height="36"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="251" id="d8c-SV-E4I"/>
+                                                <constraint firstAttribute="height" constant="36" id="sqG-vL-2j3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V25-lv-IFX">
+                                            <rect key="frame" x="267" y="16" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="v1l-cd-IY9" firstAttribute="top" secondItem="eIx-9M-3qF" secondAttribute="bottom" constant="13" id="05p-0h-xRL"/>
+                                        <constraint firstAttribute="bottom" secondItem="v1l-cd-IY9" secondAttribute="bottom" constant="8.5" id="Bh9-PH-tz7"/>
+                                        <constraint firstItem="v1l-cd-IY9" firstAttribute="top" secondItem="V25-lv-IFX" secondAttribute="bottom" constant="20" id="Ca5-rn-AVs"/>
+                                        <constraint firstItem="V25-lv-IFX" firstAttribute="leading" secondItem="eIx-9M-3qF" secondAttribute="trailing" constant="8" id="NYe-Ej-5R9"/>
+                                        <constraint firstItem="eIx-9M-3qF" firstAttribute="top" secondItem="7QW-K7-xRS" secondAttribute="top" constant="8" id="eMu-yH-XQZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="v1l-cd-IY9" secondAttribute="trailing" constant="17" id="fsp-yl-DKj"/>
+                                        <constraint firstItem="V25-lv-IFX" firstAttribute="top" secondItem="7QW-K7-xRS" secondAttribute="top" constant="16" id="io4-UJ-Yvb"/>
+                                        <constraint firstItem="eIx-9M-3qF" firstAttribute="leading" secondItem="7QW-K7-xRS" secondAttribute="leading" constant="8" id="v5g-rh-7bf"/>
+                                        <constraint firstItem="v1l-cd-IY9" firstAttribute="leading" secondItem="7QW-K7-xRS" secondAttribute="leading" constant="8" id="yn9-9J-V39"/>
+                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddEx02Cell" rowHeight="127" id="d3m-n3-awH" customClass="AddEx02Cell" customModule="HealthScheduler" customModuleProvider="target">
@@ -703,7 +722,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oO0-un-8gR">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7di-eQ-fyT">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7di-eQ-fyT">
                                                             <rect key="frame" x="4" y="20" width="172" height="36"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="172" id="Bxo-Tb-cWG"/>
@@ -789,6 +808,10 @@
                                 <state key="normal" title="운동 추가(2/2)">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addEx02SaveAction:" destination="W7Y-wx-izm" eventType="touchUpInside" id="yDe-6M-Vxh"/>
+                                    <segue destination="sw8-8N-qpg" kind="unwind" unwindAction="saveAndReturnWind:" id="kRq-9J-aGf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -802,13 +825,16 @@
                             <constraint firstItem="Rle-oi-jCs" firstAttribute="leading" secondItem="wR4-Rh-goR" secondAttribute="leading" id="q6s-Uv-Vi2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="세트 수 설정" id="g0C-Zj-xWT"/>
                     <connections>
                         <outlet property="addEx02Button" destination="Rle-oi-jCs" id="Yr7-SV-2Ae"/>
                         <outlet property="addEx02TableView" destination="aNA-Ce-GB2" id="S7g-Dc-SNM"/>
                         <outlet property="scheduleTitleTextField" destination="v1l-cd-IY9" id="YAW-cZ-dq6"/>
+                        <outlet property="textCount" destination="V25-lv-IFX" id="JJL-hn-AlA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCU-C3-QeY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sw8-8N-qpg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3239.1999999999998" y="1374.0629685157423"/>
         </scene>
@@ -818,7 +844,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JBD-Yi-yHn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="트레이너" id="ivE-y1-DjX"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lta-Uh-fwl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lta-Uh-fwl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -836,7 +862,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QTi-1G-MSS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="nGH-kU-ENW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nGH-kU-ENW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -855,7 +881,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fbY-lo-Ya6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="soW-aq-RTD"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e5E-9B-LAc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e5E-9B-LAc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

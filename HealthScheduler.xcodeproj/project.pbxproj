@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D849BEDE6B6D233B85C37E9 /* Pods_HealthScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC21023B473A60BC3DD26902 /* Pods_HealthScheduler.framework */; };
+		F3149EE01E51DC8300F2ECA0 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3149EDF1E51DC8300F2ECA0 /* HistoryModel.swift */; };
 		F31B91ED1E498B01005A4D7C /* HP03_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31B91EC1E498B01005A4D7C /* HP03_ViewController.swift */; };
 		F31CC3171E4860CB00E24873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC3161E4860CB00E24873 /* AppDelegate.swift */; };
 		F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC3181E4860CB00E24873 /* LoginViewController.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		E71A3F6A3AB6FFF31E37F4BD /* Pods-HealthScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthScheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthScheduler/Pods-HealthScheduler.release.xcconfig"; sourceTree = "<group>"; };
 		F3032E751E48739D0021A0DD /* HealthScheduler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HealthScheduler-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		F3149EDF1E51DC8300F2ECA0 /* HistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		F31B91EC1E498B01005A4D7C /* HP03_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HP03_ViewController.swift; sourceTree = "<group>"; };
 		F31CC3131E4860CA00E24873 /* HealthScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31CC3161E4860CB00E24873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				F324C2551E4C5BD3003D0AA7 /* ExerciseSections.swift */,
 				F3DD32BA1E4B154C00FD4A70 /* Exercise.swift */,
 				F3DD32BC1E4B161F00FD4A70 /* ExSet.swift */,
+				F3149EDF1E51DC8300F2ECA0 /* HistoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */,
 				F3DD32C01E4B44F300FD4A70 /* HistoryTableViewCell.swift in Sources */,
 				F324C25B1E4C7A27003D0AA7 /* AddEx01Header.swift in Sources */,
+				F3149EE01E51DC8300F2ECA0 /* HistoryModel.swift in Sources */,
 				F374BF5B1E514CD4007A8154 /* SettingVC.swift in Sources */,
 				F3DD32B91E4B107600FD4A70 /* ScheduleModel.swift in Sources */,
 				F31CC3171E4860CB00E24873 /* AppDelegate.swift in Sources */,

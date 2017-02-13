@@ -10,7 +10,7 @@ import Foundation
 
 struct ExSet {
     
-    var setNumber : Int? //세트 넘버
+    var setId : Int? //세트 id
     
     var weight : Int? //무게
     
