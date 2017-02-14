@@ -21,6 +21,7 @@
 		F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */; };
 		F374BF5B1E514CD4007A8154 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374BF5A1E514CD4007A8154 /* SettingVC.swift */; };
 		F3ADB1521E52A122001130FB /* StartExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ADB1511E52A122001130FB /* StartExerciseVC.swift */; };
+		F3ADB1541E52F074001130FB /* EndExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ADB1531E52F074001130FB /* EndExerciseVC.swift */; };
 		F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */; };
 		F3C3515E1E4E060100A1B189 /* AddEx02Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3515D1E4E060100A1B189 /* AddEx02Cell.swift */; };
 		F3DD32B11E4B029500FD4A70 /* TrainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32B01E4B029500FD4A70 /* TrainerModel.swift */; };
@@ -50,6 +51,7 @@
 		F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
 		F374BF5A1E514CD4007A8154 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		F3ADB1511E52A122001130FB /* StartExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartExerciseVC.swift; sourceTree = "<group>"; };
+		F3ADB1531E52F074001130FB /* EndExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndExerciseVC.swift; sourceTree = "<group>"; };
 		F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseVC2.swift; sourceTree = "<group>"; };
 		F3C3515D1E4E060100A1B189 /* AddEx02Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEx02Cell.swift; sourceTree = "<group>"; };
 		F3DD32B01E4B029500FD4A70 /* TrainerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainerModel.swift; sourceTree = "<group>"; };
@@ -160,8 +162,8 @@
 		F374BF541E51478D007A8154 /* ScheduleVC */ = {
 			isa = PBXGroup;
 			children = (
-				F3ADB1501E52A0BE001130FB /* Start&EndExerciseVC */,
 				F3DD32B61E4B0F9C00FD4A70 /* ScheduleVC.swift */,
+				F3ADB1501E52A0BE001130FB /* Start&EndExerciseVC */,
 				F324C25F1E4D864E003D0AA7 /* AddExerciseVC */,
 			);
 			name = ScheduleVC;
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				F3ADB1511E52A122001130FB /* StartExerciseVC.swift */,
+				F3ADB1531E52F074001130FB /* EndExerciseVC.swift */,
 			);
 			name = "Start&EndExerciseVC";
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				F3ADB1521E52A122001130FB /* StartExerciseVC.swift in Sources */,
 				F324C2561E4C5BD3003D0AA7 /* ExerciseSections.swift in Sources */,
 				F3DD32B11E4B029500FD4A70 /* TrainerModel.swift in Sources */,
+				F3ADB1541E52F074001130FB /* EndExerciseVC.swift in Sources */,
 				F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */,
 				F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */,
 				F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */,

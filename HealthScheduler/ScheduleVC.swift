@@ -159,4 +159,8 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         return true
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
 }

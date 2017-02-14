@@ -60,20 +60,19 @@ class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelega
         addExerciseButton.setTitle("운동을 선택해주세요", for: .disabled)
         
         //더미 데이터
-//        exTable = [
-//            ExSection(name: "가슴", exercises: [Exercise.init(id : 0, name: "벤치프레스"),Exercise.init(id : 1 ,name: "디클라인 벤치프레스"),Exercise.init(id : 2 ,name: "인클라인 벤치프레스")]),
-//            ExSection(name: "등", exercises: [Exercise.init(id : 3 ,name: "1_1"),Exercise.init(id : 4 ,name: "1_2"),Exercise.init(id : 5 ,name: "1_3")]),
-//            ExSection(name: "다리", exercises: [Exercise.init(id : 6 ,name: "2_1"),Exercise.init(id : 7 ,name: "2_2"),Exercise.init(id : 8 ,name: "2_3")])
-//        ]
         exTable = [
             ExSection(name: "가슴", exercises: [Exercise.init(name: "벤치프레스"),Exercise.init(name: "디클라인 벤치프레스"),Exercise.init(name: "인클라인 벤치프레스")]),
             ExSection(name: "등", exercises: [Exercise.init(name: "1_1"),Exercise.init(name: "1_2"),Exercise.init(name: "1_3")]),
             ExSection(name: "다리", exercises: [Exercise.init(name: "2_1"),Exercise.init(name: "2_2"),Exercise.init(name: "2_3")])
         ]
+        
+
     }
     
 
     // MARK: - Table view data source
+    
+    
     
     //체크마크 설정
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
