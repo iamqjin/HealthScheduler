@@ -10,17 +10,17 @@ import UIKit
 
 
 //운동 섹션 구조
-struct ExSection {
-    var sectionTitle: String!
-    var exercises: [Exercise]!
-    var collapsed: Bool!
-    
-    init(name: String, exercises: [Exercise], collapsed: Bool = false) {
-        self.sectionTitle = name
-        self.exercises = exercises
-        self.collapsed = collapsed
-    }
-}
+//struct ExSection {
+//    var sectionTitle: String!
+//    var exercises: [Exercise]!
+//    var collapsed: Bool!
+//    
+//    init(name: String, exercises: [Exercise], collapsed: Bool = false) {
+//        self.sectionTitle = name
+//        self.exercises = exercises
+//        self.collapsed = collapsed
+//    }
+//}
 
 
 class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -35,8 +35,8 @@ class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelega
     var exTable = [ExSection]()
     
     //선택된 운동 리스트
-
     var selectedEx = [Exercise]()
+    //선택된 운동 수
     var selectingCount = 0
     
     

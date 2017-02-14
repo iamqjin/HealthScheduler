@@ -8,14 +8,17 @@
 
 import Foundation
 
-struct Section {
-    var name: String!
-    var items: [String]!
+//운동 섹션 구조
+struct ExSection {
+    var sectionTitle: String!
+    var exercises: [Exercise]!
     var collapsed: Bool!
     
-    init(name: String, items: [String], collapsed: Bool = false) {
-        self.name = name
-        self.items = items
+    init(name: String, exercises: [Exercise], collapsed: Bool = false) {
+        self.sectionTitle = name
+        self.exercises = exercises
         self.collapsed = collapsed
     }
 }
+
+

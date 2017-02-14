@@ -59,3 +59,13 @@ extension Array where Element: Equatable {
         return indexNum! + 1
     }
 }
+
+//날짜 포맷 변경해서 받아오기
+//Date().toString() // convert date to string with userdefined format.
+extension Date {
+    func toString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd yyyy"
+        return dateFormatter.string(from: self)
+    }
+}
