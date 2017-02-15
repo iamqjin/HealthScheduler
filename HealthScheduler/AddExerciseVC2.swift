@@ -21,8 +21,21 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
     //넘겨온 운동 리스트
     var selectedExList : [Exercise]!
 
+//    @IBAction func addEx02SaveAction(_ sender: Any) {
+//        
+//        if makeExSummary() == true {
+//            //스케줄 저장
+//            saveSchedule()
+//        } else {
+//            print("무슨일 있는겨")
+//        }
+//        
+//        
+//        print("버튼호출됨")
+//        print("델리게이트 속을보자",appDelegate.scheduleList)
+//    }
+    
     @IBAction func addEx02SaveAction(_ sender: Any) {
-        
         if makeExSummary() == true {
             //스케줄 저장
             saveSchedule()
@@ -33,8 +46,10 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         print("버튼호출됨")
         print("델리게이트 속을보자",appDelegate.scheduleList)
+        
     }
-    @IBOutlet weak var addEx02Button: UIButton!
+    
+    @IBOutlet weak var addEx02Button: UIBarButtonItem!
     
     //운동추가 2번 화면 테이블 객체
     @IBOutlet weak var addEx02TableView: UITableView!
@@ -73,15 +88,13 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.textCount.text = String(newText.length)
         if newText.length != 0 {
             //제목을 입력했으면 저장가능
-            print("버튼활성화여부",addEx02Button.isEnabled)
+//            print("버튼활성화여부",addEx02Button.isEnabled)
             saveOk = true
             //버튼 활성화
-            addEx02Button.setTitle("스케줄 저장", for: .normal)
             addEx02Button.isEnabled = saveOk
         } else {
             saveOk = false
             //버튼 비활성화
-            addEx02Button.setTitle("스케줄 타이틀을 작성해주세요", for: .normal)
             addEx02Button.isEnabled = saveOk
 
         }

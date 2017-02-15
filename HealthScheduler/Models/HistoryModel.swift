@@ -10,6 +10,8 @@ import Foundation
 
 struct History {
 
+    var historyId : Int?//히스토리 id
+    
     var scheduleTitle : String? //진행했던 스케줄 제목
     
     var progressImage : String? //진행 사진
@@ -19,5 +21,7 @@ struct History {
     var endTime : String? //끝 시간
     
     var date : String?//운동 날짜
+    
+    var preogressTable : String?//운동 진행 상황
 
 }

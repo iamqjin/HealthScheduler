@@ -9,20 +9,6 @@
 import UIKit
 
 
-//운동 섹션 구조
-//struct ExSection {
-//    var sectionTitle: String!
-//    var exercises: [Exercise]!
-//    var collapsed: Bool!
-//    
-//    init(name: String, exercises: [Exercise], collapsed: Bool = false) {
-//        self.sectionTitle = name
-//        self.exercises = exercises
-//        self.collapsed = collapsed
-//    }
-//}
-
-
 class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate  //공유되는 정보 델리게이트
@@ -46,10 +32,6 @@ class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func addExerciseCancel(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
-
-    @IBAction func saveAndReturnWind(_ sender: UIStoryboardSegue) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
     
     
     override func viewDidLoad() {
@@ -57,7 +39,6 @@ class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //버튼 활성화 설정
         addExerciseButton.isEnabled = false
-        addExerciseButton.setTitle("운동을 선택해주세요", for: .disabled)
         
         //더미 데이터
         exTable = [

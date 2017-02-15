@@ -1,5 +1,5 @@
 //
-//  HistoryTableViewCell.swift
+//  HistoryCell.swift
 //  HealthScheduler
 //
 //  Created by iamqjin on 2017. 2. 8..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryTableViewCell: UITableViewCell {
+class HistoryCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

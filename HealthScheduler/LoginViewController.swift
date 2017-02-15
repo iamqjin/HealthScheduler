@@ -31,6 +31,14 @@ class LoginViewController: UIViewController , UITextFieldDelegate, GIDSignInUIDe
         print("------------로그인버튼------------")
     }
     
+    //로그인 취소 액션
+    @IBAction func loginCancel(_ sender: Any) {
+        //로그인 뷰 취소
+        
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         print("시작되었다")
     }

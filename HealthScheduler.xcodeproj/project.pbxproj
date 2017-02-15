@@ -27,10 +27,12 @@
 		F3DD32B11E4B029500FD4A70 /* TrainerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32B01E4B029500FD4A70 /* TrainerModel.swift */; };
 		F3DD32B71E4B0F9C00FD4A70 /* ScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32B61E4B0F9C00FD4A70 /* ScheduleVC.swift */; };
 		F3DD32B91E4B107600FD4A70 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32B81E4B107600FD4A70 /* ScheduleModel.swift */; };
-		F3DD32BB1E4B154C00FD4A70 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BA1E4B154C00FD4A70 /* Exercise.swift */; };
-		F3DD32BD1E4B161F00FD4A70 /* ExSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BC1E4B161F00FD4A70 /* ExSet.swift */; };
-		F3DD32C01E4B44F300FD4A70 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BF1E4B44F300FD4A70 /* HistoryTableViewCell.swift */; };
+		F3DD32BB1E4B154C00FD4A70 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BA1E4B154C00FD4A70 /* ExerciseModel.swift */; };
+		F3DD32BD1E4B161F00FD4A70 /* ExSetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BC1E4B161F00FD4A70 /* ExSetModel.swift */; };
+		F3DD32C01E4B44F300FD4A70 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32BF1E4B44F300FD4A70 /* HistoryCell.swift */; };
 		F3DD32C21E4B48BF00FD4A70 /* AddExerciseVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DD32C11E4B48BF00FD4A70 /* AddExerciseVC1.swift */; };
+		F3FD46851E53E6E100C22A3A /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD46841E53E6E100C22A3A /* HistoryVC.swift */; };
+		F3FD46871E53F01400C22A3A /* HistoryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FD46861E53F01400C22A3A /* HistoryImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,10 +59,12 @@
 		F3DD32B01E4B029500FD4A70 /* TrainerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainerModel.swift; sourceTree = "<group>"; };
 		F3DD32B61E4B0F9C00FD4A70 /* ScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleVC.swift; sourceTree = "<group>"; };
 		F3DD32B81E4B107600FD4A70 /* ScheduleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
-		F3DD32BA1E4B154C00FD4A70 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
-		F3DD32BC1E4B161F00FD4A70 /* ExSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExSet.swift; sourceTree = "<group>"; };
-		F3DD32BF1E4B44F300FD4A70 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		F3DD32BA1E4B154C00FD4A70 /* ExerciseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		F3DD32BC1E4B161F00FD4A70 /* ExSetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExSetModel.swift; sourceTree = "<group>"; };
+		F3DD32BF1E4B44F300FD4A70 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		F3DD32C11E4B48BF00FD4A70 /* AddExerciseVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseVC1.swift; sourceTree = "<group>"; };
+		F3FD46841E53E6E100C22A3A /* HistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
+		F3FD46861E53F01400C22A3A /* HistoryImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryImageCell.swift; sourceTree = "<group>"; };
 		F56D6F87E602162BE0506DE5 /* Pods-HealthScheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthScheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthScheduler/Pods-HealthScheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		FC21023B473A60BC3DD26902 /* Pods_HealthScheduler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthScheduler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -180,6 +184,7 @@
 		F374BF561E5147D2007A8154 /* HistoryVC */ = {
 			isa = PBXGroup;
 			children = (
+				F3FD46841E53E6E100C22A3A /* HistoryVC.swift */,
 			);
 			name = HistoryVC;
 			sourceTree = "<group>";
@@ -207,8 +212,8 @@
 				F3DD32B01E4B029500FD4A70 /* TrainerModel.swift */,
 				F3DD32B81E4B107600FD4A70 /* ScheduleModel.swift */,
 				F324C2551E4C5BD3003D0AA7 /* ExerciseSections.swift */,
-				F3DD32BA1E4B154C00FD4A70 /* Exercise.swift */,
-				F3DD32BC1E4B161F00FD4A70 /* ExSet.swift */,
+				F3DD32BA1E4B154C00FD4A70 /* ExerciseModel.swift */,
+				F3DD32BC1E4B161F00FD4A70 /* ExSetModel.swift */,
 				F3149EDF1E51DC8300F2ECA0 /* HistoryModel.swift */,
 			);
 			path = Models;
@@ -217,7 +222,8 @@
 		F3DD32BE1E4B44B200FD4A70 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				F3DD32BF1E4B44F300FD4A70 /* HistoryTableViewCell.swift */,
+				F3DD32BF1E4B44F300FD4A70 /* HistoryCell.swift */,
+				F3FD46861E53F01400C22A3A /* HistoryImageCell.swift */,
 				F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */,
 				F3C3515D1E4E060100A1B189 /* AddEx02Cell.swift */,
 			);
@@ -351,11 +357,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3DD32B71E4B0F9C00FD4A70 /* ScheduleVC.swift in Sources */,
-				F3DD32BD1E4B161F00FD4A70 /* ExSet.swift in Sources */,
+				F3FD46851E53E6E100C22A3A /* HistoryVC.swift in Sources */,
+				F3DD32BD1E4B161F00FD4A70 /* ExSetModel.swift in Sources */,
 				F3DD32C21E4B48BF00FD4A70 /* AddExerciseVC1.swift in Sources */,
-				F3DD32BB1E4B154C00FD4A70 /* Exercise.swift in Sources */,
+				F3DD32BB1E4B154C00FD4A70 /* ExerciseModel.swift in Sources */,
 				F3C3515E1E4E060100A1B189 /* AddEx02Cell.swift in Sources */,
 				F324C25E1E4C7A4B003D0AA7 /* Extensions.swift in Sources */,
+				F3FD46871E53F01400C22A3A /* HistoryImageCell.swift in Sources */,
 				F3ADB1521E52A122001130FB /* StartExerciseVC.swift in Sources */,
 				F324C2561E4C5BD3003D0AA7 /* ExerciseSections.swift in Sources */,
 				F3DD32B11E4B029500FD4A70 /* TrainerModel.swift in Sources */,
@@ -363,7 +371,7 @@
 				F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */,
 				F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */,
 				F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */,
-				F3DD32C01E4B44F300FD4A70 /* HistoryTableViewCell.swift in Sources */,
+				F3DD32C01E4B44F300FD4A70 /* HistoryCell.swift in Sources */,
 				F324C25B1E4C7A27003D0AA7 /* AddEx01Header.swift in Sources */,
 				F3149EE01E51DC8300F2ECA0 /* HistoryModel.swift in Sources */,
 				F374BF5B1E514CD4007A8154 /* SettingVC.swift in Sources */,

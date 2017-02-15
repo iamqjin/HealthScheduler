@@ -10,6 +10,10 @@ import UIKit
 
 class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource {
     
+    //데이터 test
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//    var schedule : [Schedule]!
+    
     @IBOutlet weak var profileImageView: UIImageView!
     
     @IBOutlet weak var profileNameLabel: UILabel!
@@ -20,37 +24,48 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         print("회원가입 버튼 눌림")
     }
     
-    
-    //데이터 test
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var schedule : [Schedule]!
-    
     //스케줄 테이블 객체
     @IBOutlet var scheduleTable: UITableView!
     //에디트 모드 버튼
     @IBOutlet weak var editButton: UIBarButtonItem!
     
+    //히스토리 저장버튼 클릭시 삭제 후 스케줄화면으로 돌아감
+    @IBAction func exerciseEndSaveSegue(_ sender: UIStoryboardSegue) {
+        
+        print("여긴 운동끝 세그리턴",sender)
+    }
+    
+    @IBAction func saveAndReturnWind(_ sender: UIStoryboardSegue) {
+        
+        print("돌아옴")
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func editAbleAction(_ sender: Any) {
         if scheduleTable.isEditing {
             self.editButton.title = "편집"
             //edit 모드에서 눌렸을때 취소로
-            scheduleTable.setEditing(false, animated: false)
+            scheduleTable.setEditing(false, animated: true)
         } else {
             self.editButton.title = "완료"
             //edit모드로
-            scheduleTable.setEditing(true, animated: false)
+            scheduleTable.setEditing(true, animated: true)
         }
-        //edit이후 데이터 리로드
-        scheduleTable.reloadData()
     }
     
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        //화면 사라졌을때 편집 모드이면 무조건 해제
+        scheduleTable.setEditing(false, animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        //프로필 test
         profileImageView.image = UIImage(named: "Add")
         profileNameLabel.text = "사규진"
         profileDetailLabel.text = "아마 곧 돼지"
@@ -61,7 +76,7 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         super.viewWillAppear(animated)
         
         //데이터 test
-        self.schedule = appDelegate.scheduleList
+//        self.schedule = appDelegate.scheduleList
         
         //탭바 N 뱃지 설정
         self.navigationController?.tabBarItem.badgeValue = "N"
@@ -94,9 +109,10 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         //내가 짠 스케줄 | 트레이너가 짜준 스케줄 따로
         switch section {
         case 0:
-            numberOfRows = schedule.count
+//            numberOfRows = schedule.count
+            numberOfRows = self.appDelegate.scheduleList.count
         case 1:
-            numberOfRows = schedule.count
+            numberOfRows = 1
         default:
             numberOfRows = 1
         }
@@ -116,8 +132,11 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
             
         case 0:
             //데이터 test
-            cell.textLabel?.text = self.schedule[indexPath.row].title
-            cell.detailTextLabel?.text = self.schedule[indexPath.row].exSummary!
+//            cell.textLabel?.text = self.schedule[indexPath.row].title
+//            cell.detailTextLabel?.text = self.schedule[indexPath.row].exSummary!
+            cell.textLabel?.text = self.appDelegate.scheduleList[indexPath.row].title
+            cell.detailTextLabel?.text = self.appDelegate.scheduleList[indexPath.row].exSummary
+
         case 1:
             //데이터 test
             cell.textLabel?.text = "하이"
@@ -153,14 +172,45 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         return headerTitle
     }
 
-    
+    //테이블 편집 모드 가능
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         
         return true
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //테이블 삭제 부분
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 0 {
+            appDelegate.scheduleList.remove(at: indexPath.row)
+            
+        } else {
+            print("여긴 트레이너 스케줄 삭제부분")
+        }
+        
+        //edit이후 데이터 리로드
+        scheduleTable.reloadData()
         
     }
+    
+    //테이블 선택시 작동 부분
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //선택된 인덱스
+        let selectedIndexPath = indexPath
+        
+        performSegue(withIdentifier: "startExSegue", sender: selectedIndexPath)
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "startExSegue" {
+            let startExVC = segue.destination as! StartExerciseVC
+            startExVC.scheduleNum = (sender as! IndexPath)
+        }
+    }
+    
     
 }
