@@ -16,6 +16,6 @@ struct Schedule {
     
     var title : String? //스케줄 타이틀
     
-    var exerciseList = [Exercise()] //루틴 안 운동들
+    var exerciseList = [Exercise]() //루틴 안 운동들
     
 }

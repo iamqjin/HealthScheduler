@@ -13,15 +13,16 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     //타이머 생성
     var timer: Timer!
     
+    //운동별 세트 수를 받음
+    var setNumList = [Int]()
+    
     //쉬는 시간 설정
     var breakTime = 60
     
     //선택된 테이블 indexPath받아옴
-    var scheduleNum : IndexPath?
+    var scheduleNum : IndexPath!
     
     //무게 단위 설정
-//    var weightUnitKg = "kg"
-//    var weightUnitPd = "lbs"
     //true kg / false lbs
     var weightUnit = true
     
@@ -45,12 +46,10 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     //데이터 test
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    
     @IBOutlet var startExView: UIView!
     @IBOutlet weak var exDetailLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var passButton: UIButton!
-    @IBOutlet weak var failButton: UIButton!
     @IBOutlet weak var setDetailPickerView: UIPickerView!
     
     //운동 성공 버튼 액션
@@ -59,27 +58,36 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTimerCode), userInfo: nil, repeats: true)
         
         passButton.isEnabled = false
-        failButton.isEnabled = false
+        
     }
     
-    //운동 실패 버튼 액션
-    @IBAction func failAction(_ sender: Any) {
-        
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTimerCode), userInfo: nil, repeats: true)
-        
-        failButton.isEnabled = false
-        passButton.isEnabled = false
-        
-    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        timeLabel.text = String(format: "%02d:%02d")
+        
+        //운동 리스트의 세트 수를 배열로 받는다.
+        for i in appDelegate.scheduleList[scheduleNum.row].exerciseList{
+            setNumList.append(i.exSetCount!)
+        }
+        
+        print("세트 리스트들",setNumList)
+        
         //더블 탭 test
         let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         tap.numberOfTapsRequired = 2
         startExView.addGestureRecognizer(tap)
+        
+        //스와이프 test
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swiped))
+        leftSwipe.direction = UISwipeGestureRecognizerDirection.left
+        startExView.addGestureRecognizer(rightSwipe)
+        startExView.addGestureRecognizer(leftSwipe)
+        
         
         
         //디폴트 운동 & 횟수 설정
@@ -88,16 +96,36 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
         
         //선택된 테이블 뷰 인덱스 값
         if let selectedScheduleNum = scheduleNum {
-            exDetailLabel.text = String(describing: selectedScheduleNum)
+            print("넘어온index", selectedScheduleNum)
+            
+            //처음 운동 첫세트 보여줌
+            if selectedScheduleNum.section == 0 {
+                exDetailLabel.text = appDelegate.scheduleList[selectedScheduleNum.row].exerciseList[0].name! + String(appDelegate.scheduleList[selectedScheduleNum.row].exerciseList[0].exSetList[0].setId!) + "세트"
+            }
         }
-        
-        timeLabel.text = String(format: "%02d:%02d")
-        
     }
     
-    //
+    //더블 탭 test
     func doubleTapped() {
         print("나 두번 클릭됨")
+    }
+    
+    //스와이프 test
+    func swiped(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+                //성공
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped right")
+        
+                
+                //실패 or 뒤로 가기
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+            default :
+                print("디폴트")
+            }
+        }
     }
     
     //pickerView 설정
@@ -182,7 +210,9 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
             self.present(alert, animated: true, completion: {
                 //버튼 다시 활성화
                 () in self.passButton.isEnabled = true
-                self.failButton.isEnabled = true
+                
+                //다음운동 세트명으로 변경
+                
             })
             
         }

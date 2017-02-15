@@ -20,33 +20,19 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //넘겨온 운동 리스트
     var selectedExList : [Exercise]!
-
-//    @IBAction func addEx02SaveAction(_ sender: Any) {
-//        
-//        if makeExSummary() == true {
-//            //스케줄 저장
-//            saveSchedule()
-//        } else {
-//            print("무슨일 있는겨")
-//        }
-//        
-//        
-//        print("버튼호출됨")
-//        print("델리게이트 속을보자",appDelegate.scheduleList)
-//    }
     
     @IBAction func addEx02SaveAction(_ sender: Any) {
-        if makeExSummary() == true {
+        if makeExSummary() == true && makeExsetList() == true{
             //스케줄 저장
             saveSchedule()
+            
+//            for i in 0..<selectedExList.count {
+//                print("\(i)번째",schedule?.exerciseList[i].exSetList)
+//            }
+
         } else {
             print("무슨일 있는겨")
         }
-        
-        
-        print("버튼호출됨")
-        print("델리게이트 속을보자",appDelegate.scheduleList)
-        
     }
     
     @IBOutlet weak var addEx02Button: UIBarButtonItem!
@@ -62,12 +48,15 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         self.scheduleTitleTextField.delegate = self
+        scheduleTitleTextField.becomeFirstResponder()
+        
         addEx02Button.isEnabled = saveOk //비활성화
         scheduleTitleTextField.placeholder = "스케줄 타이틀을 작성해주세요"
     }
     
     
-    //텍스트 필드 선언부 -------------------------
+    //MARK : 텍스트 필드
+    
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         
         return true
@@ -75,6 +64,7 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
+        textField.resignFirstResponder()
         textField.endEditing(true)
         
         return true
@@ -88,7 +78,6 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.textCount.text = String(newText.length)
         if newText.length != 0 {
             //제목을 입력했으면 저장가능
-//            print("버튼활성화여부",addEx02Button.isEnabled)
             saveOk = true
             //버튼 활성화
             addEx02Button.isEnabled = saveOk
@@ -162,11 +151,13 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         appDelegate.scheduleList.append(self.schedule!)
     }
     
+    //요약본 만들기
     func makeExSummary() -> Bool {
         
+        //실행자
         var excuted = false
         
-        for var i in 0..<selectedExList.count {
+        for i in 0..<selectedExList.count {
             if i == 0 {
                 exSummary += (selectedExList[i].name! + " x " + String(describing: selectedExList[i].exSetCount!))
             } else {
@@ -181,6 +172,27 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("요약 실행 ㄴㄴ")
         }
         
+        
+        return excuted
+    }
+    
+    //운동들 각각 세트리스트 생성 함수
+    func makeExsetList() -> Bool {
+        
+        //실행자
+        var excuted = false
+        
+        //i번 받아온 운동리스트를 받고
+        for i in selectedExList {
+            //각각의 운동에 있는 세트 수만큼 exSet을 대입시켜준다.
+            for j in 0..<i.exSetCount! {
+                //세트별 id 값 생성
+                let exSet = ExSet(setId: j)
+                i.exSetList.append(exSet)
+            }
+        }
+        
+        excuted = true
         
         return excuted
     }

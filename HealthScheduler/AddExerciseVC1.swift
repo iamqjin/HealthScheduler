@@ -41,13 +41,20 @@ class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelega
         addExerciseButton.isEnabled = false
         
         //더미 데이터
-        exTable = [
-            ExSection(name: "가슴", exercises: [Exercise.init(name: "벤치프레스"),Exercise.init(name: "디클라인 벤치프레스"),Exercise.init(name: "인클라인 벤치프레스")]),
-            ExSection(name: "등", exercises: [Exercise.init(name: "1_1"),Exercise.init(name: "1_2"),Exercise.init(name: "1_3")]),
-            ExSection(name: "다리", exercises: [Exercise.init(name: "2_1"),Exercise.init(name: "2_2"),Exercise.init(name: "2_3")])
+        exTable = [ExSection(name: "가슴", exercises: [Exercise.init(name:"벤치 프레스 - 머신"), Exercise.init(name:"벤치 프레스 - 바벨, 플랫"), Exercise.init(name:"벤치 프레스 - 덤벨, 플랫"), Exercise.init(name:"벤치 프레스 - 바벨, 인클라인"), Exercise.init(name:"벤치 프레스 - 덤벨, 인클라인"), Exercise.init(name:"플라이 - 덤벨, 인클라인"), Exercise.init(name:"벤치 프레스 - 바벨, 디클라인"), Exercise.init(name:"벤치 프레스 - 덤벨, 디클라인"), Exercise.init(name:"플라이 - 덤벨, 플랫"), Exercise.init(name:"풀오버 - 덤벨, 플랫"), Exercise.init(name:"플라이 - 펙 덱 머신"), Exercise.init(name:"딥스"), Exercise.init(name:"푸시업"), Exercise.init(name:"니 푸시업"), Exercise.init(name:"크로스 오버 - 케이블"), Exercise.init(name:"푸시업 사이드 점프")]),
+                   
+                   ExSection(name: "등", exercises: [Exercise.init(name:"랫 풀 다운 - 머신"), Exercise.init(name:"로우 - 바벨, 벤트 오버"), Exercise.init(name:"로우 - 덤벨, 벤트 오버"), Exercise.init(name:"로우 - 덤벨, 원 암"), Exercise.init(name:"로우 - 케이블, 시티드"), Exercise.init(name:"로우 - 티바"), Exercise.init(name:"풀업 - 어시스티드"), Exercise.init(name:"슈퍼맨 등 운동"), Exercise.init(name:"로우 - 밴드, 시티드")]),
+                   
+                   ExSection(name: "다리", exercises: [Exercise.init(name:"스쿼트 - 바벨"), Exercise.init(name:"스쿼트 - 덤벨"), Exercise.init(name:"스쿼트 - 스미스 머신"), Exercise.init(name:"레그 프레스"), Exercise.init(name:"런지 - 바벨"), Exercise.init(name:"레그 익스텐션"), Exercise.init(name:"스텝업 - 덤벨"), Exercise.init(name:"사이드 런지"), Exercise.init(name:"점프 스쿼트"), Exercise.init(name:"와이드 스쿼트"), Exercise.init(name:"런지"), Exercise.init(name:"레그 컬 - 스탠딩"), Exercise.init(name:"레그 컬 - 라잉"), Exercise.init(name:"데드리프트 - 바벨, 스티프 레그드"), Exercise.init(name:"멀티힙"), Exercise.init(name:"카프 레이즈 - 스탠딩"), Exercise.init(name:"카프 레이즈 - 시티드"), Exercise.init(name:"카프 레이즈 - 싱글 레그"), Exercise.init(name:"카프 프레스 - 머신")]),
+                   
+                   ExSection(name: "팔", exercises: [Exercise.init(name:"컬 프레스 - 덤벨"), Exercise.init(name:"컬 - 덤벨, 인클라인"), Exercise.init(name:"컬 - 바벨"), Exercise.init(name:"리버스 컬 - 바벨"), Exercise.init(name:"컬 - 덤벨"), Exercise.init(name:"해머 컬 - 덤벨"), Exercise.init(name:"프리쳐 컬 - 바벨"), Exercise.init(name:"콘센트레이션 컬 - 덤벨"), Exercise.init(name:"컬 - 케이블"), Exercise.init(name:"컬 - 이지바"), Exercise.init(name:"컬 - 밴드"), Exercise.init(name:"트라이셉스 익스텐션 - 바벨, 라잉"), Exercise.init(name:"트라이셉스 익스텐션 - 덤벨, 라잉"), Exercise.init(name:"트라이셉스 익스텐션 - 덤벨, 오버헤드"), Exercise.init(name:"트라이셉스 익스텐션 - 덤벨, 원 암"), Exercise.init(name:"트라이셉스 프레스 다운 - 케이블"), Exercise.init(name:"킥 백 - 덤벨"), Exercise.init(name:"벤치 프레스 - 바벨, 클로즈 그립"), Exercise.init(name:"딥스 - 벤치"), Exercise.init(name:"리스트 컬 - 바벨"), Exercise.init(name:"리스트 컬 - 덤벨"), Exercise.init(name:"리버스 리스트 컬 - 바벨"), Exercise.init(name:"리버스 리스트 컬 - 덤벨"), Exercise.init(name:"조트맨 컬 - 덤벨"), Exercise.init(name:"프로네이션 - 덤벨"), Exercise.init(name:"슈피네이션 - 덤벨")]),
+                   
+                   ExSection(name: "어깨", exercises: [Exercise.init(name:"숄더 프레스 - 머신"), Exercise.init(name:"비하인드 넥 프레스 - 스미스 머신"), Exercise.init(name:"숄더 프레스 - 바벨"), Exercise.init(name:"비하인드 넥 프레스 - 바벨"), Exercise.init(name:"숄더 프레스 - 덤벨"), Exercise.init(name:"아놀드 프레스"), Exercise.init(name:"프런트 레이즈 - 덤벨"), Exercise.init(name:"래터럴 레이즈 - 덤벨"), Exercise.init(name:"래터럴 레이즈 - 덤벨, 벤트 오버"), Exercise.init(name:"업라이트 로우 - 바벨"), Exercise.init(name:"쉬러그 - 덤벨"), Exercise.init(name:"이지 클린")]),
+                   
+                   ExSection(name: "허리", exercises: [Exercise.init(name:"데드리프트 - 바벨"), Exercise.init(name:"데드리프트 - 덤벨"), Exercise.init(name:"굿모닝 - 바벨"), Exercise.init(name:"백 익스텐션"), Exercise.init(name:"굿모닝"), Exercise.init(name:"굿모닝 - 덤벨")]),
+                   
+                   ExSection(name: "복부", exercises: [Exercise.init(name:"싯업"), Exercise.init(name:"크런치"), Exercise.init(name:"리버스 크런치"), Exercise.init(name:"크런치 - 케이블"), Exercise.init(name:"레그 레이즈"), Exercise.init(name:"레그 레이즈 - 서포티드"), Exercise.init(name:"레그 레이즈 - 행잉"), Exercise.init(name:"V업"), Exercise.init(name:"니업 - 시티드"), Exercise.init(name:"오블리크 크런치"), Exercise.init(name:"사이드 벤드 - 덤벨"), Exercise.init(name:"리버스 트렁크 트위스트"), Exercise.init(name:"크로스 크런치"), Exercise.init(name:"러시안 트위스트"), Exercise.init(name:"사이드 크런치"), Exercise.init(name:"사이드 벤드 - 밴드"), Exercise.init(name:"양손 다리 모으기"), Exercise.init(name:"엎드려 점프"), Exercise.init(name:"다리 교차 뛰기")])
         ]
-        
-
     }
     
 

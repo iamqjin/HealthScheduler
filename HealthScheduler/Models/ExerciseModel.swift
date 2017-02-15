@@ -15,8 +15,8 @@ class Exercise : Equatable {
     var name : String? //운동 이름
     var selected : Bool = false //테이블 선택자
     var exSetCount : Int? //운동 세트수
-    var exSetList = [ExSet()] //운동 안 세트들
-    
+    var exSetList = [ExSet]() //운동 안 세트들
+        
     
     init() {
         

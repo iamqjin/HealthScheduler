@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExSet {
+class ExSet {
     
     var setId : Int? //세트 id
     
@@ -17,4 +17,12 @@ struct ExSet {
     var count : Int? //횟수
     
     var passOrFail : Bool? //성공 여부
+    
+    init() {
+
+    }
+    
+    init(setId : Int?) {
+        self.setId = setId
+    }
 }
