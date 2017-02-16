@@ -8,16 +8,43 @@
 
 import UIKit
 
-class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSource {
+class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSource , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
     //데이터 test
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     
+    //운동 기록지
+    var exLog = [String]()
+    //이쁘게 변형될 기록지
+    var prettyExLog = String()
+    var today = String()
+    var startTime = String()
+    var endTime = String()
+    
+    //최종 히스토리
+    var finalHistory = [ExSet]()
+    
+    
+    
+    @IBOutlet weak var endExTableView: UITableView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     @IBOutlet weak var selectImageButton: UIButton!
     
+    //저장하기 버튼 액션
+    @IBAction func saveAction(_ sender: Any) {
+        
+        
+        print("저장하기 눌림")
+        for i in finalHistory {
+            print(i.setId!, i.weight! ,i.count!, i.passOrFail!)
+        }
+        
+        saveHistory()
+        
+        
+    }
     
     //삭제하기 버튼 액션
     @IBAction func deleteAction(_ sender: Any) {
@@ -43,15 +70,32 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         
         let cameraButton = UIAlertAction(title: "사진 찍기", style: .default, handler: { (action) -> Void in
             print("사진 찍기")
-            self.selectImageButton.setImage(#imageLiteral(resourceName: "Add"), for: .normal)
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            
+            self.present(imagePicker, animated: true, completion: nil)
+//            self.selectImageButton.setImage(#imageLiteral(resourceName: "Add"), for: .normal)
         })
         
         let libraryButton = UIAlertAction(title: "앨범에서 선택", style: .default , handler: { (action) -> Void in
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .photoLibrary
+            imagePicker.allowsEditing = false
+            
+            self.present(imagePicker, animated: true, completion: nil)
+            
             print("앨범에서 선택")
         })
         
         let imageDeleteButton = UIAlertAction(title: "이미지 삭제", style: .destructive , handler: { (action) -> Void in
             print("이미지 삭제")
+            
+            //다시 똑같은 이미지로 채워넣음
             self.selectImageButton.setImage(#imageLiteral(resourceName: "camera"), for: .normal)
         })
         
@@ -79,7 +123,21 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //기록지 프린트
+        for i in 0..<exLog.count {
+            if i == (exLog.count - 1){
+                prettyExLog += exLog[i]
+            } else {
+                prettyExLog += exLog[i] + "\n"
+            }
+        }
+        
+        print("전송된 마침 시간",endTime)
+        
+        //셀 크기 알아서 조절
+        endExTableView.rowHeight = UITableViewAutomaticDimension
+        endExTableView.estimatedRowHeight = 1000
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,6 +146,35 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     }
     
     
+    //MARK: ImagePickerView
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: false) { () in
+            
+            let alert = UIAlertController(title: "", message: "이미지 선택이 취소되었습니다.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        picker.dismiss(animated: true) { () in
+            
+            if let img = info[UIImagePickerControllerOriginalImage] as? UIImage{
+                self.selectImageButton.setImage(img, for: .normal)
+            }
+            
+        }
+    }
+    
+    
+    
+    //MARK: TableView
     //테이블 뷰 설정
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -102,16 +189,16 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
             if indexPath.row == 0 {
                 cell.textLabel?.text = "스케줄 이름"
             } else {
-                cell.textLabel?.text = "운동 마침 내역들"
+                cell.textLabel?.text = prettyExLog //운동 기록지
             }
         } else {
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = "17.02.15"
+                cell.textLabel?.text = today
             case 1:
-                cell.textLabel?.text = "시작 시간 PM 06:30"
+                cell.textLabel?.text = startTime
             case 2:
-                cell.textLabel?.text = "끝난 시간 PM 07:30"
+                cell.textLabel?.text = endTime
             case 3:
                 cell.textLabel?.text = "메모"
             default:
@@ -144,14 +231,13 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //히스토리 저장하기
+    func saveHistory() {
+        
+        //현재 버튼 이미지
+//        selectImageButton.image(for: .normal)
+        
+        print("히스토리저장 함수 호출됨")
     }
-    */
 
 }

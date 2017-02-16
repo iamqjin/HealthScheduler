@@ -112,7 +112,7 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
 //            numberOfRows = schedule.count
             numberOfRows = self.appDelegate.scheduleList.count
         case 1:
-            numberOfRows = 1
+            numberOfRows = 0
         default:
             numberOfRows = 1
         }
@@ -199,16 +199,21 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         //선택된 인덱스
         let selectedIndexPath = indexPath
         
-        performSegue(withIdentifier: "startExSegue", sender: selectedIndexPath)
+        performSegue(withIdentifier: "beforeStartExSegue", sender: selectedIndexPath)
         
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "startExSegue" {
-            let startExVC = segue.destination as! StartExerciseVC
-            startExVC.scheduleNum = (sender as! IndexPath)
+        
+        
+        if segue.identifier == "beforeStartExSegue" {
+            
+            var indexPath = sender as! IndexPath
+            let beforeStartExVC = segue.destination as! BeforeStartExerciseVC
+            beforeStartExVC.scheduleNum = indexPath
+            beforeStartExVC.scheduleDetail = self.appDelegate.scheduleList[indexPath.row].exSummary
         }
     }
     

@@ -27,6 +27,13 @@ class Exercise : Equatable {
         self.exSetCount = exSetCount
     }
     
+    //세트 자동 입력
+    func makeSetList(setCount : Int) {
+        for i in 0..<setCount {
+            self.exSetList.append(ExSet(exTitle: name, setId : i))
+        }
+    }
+    
 }
 
 func ==(lhs: Exercise, rhs: Exercise) -> Bool {

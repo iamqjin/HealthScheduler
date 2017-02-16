@@ -28,16 +28,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weightlifting" translatesAutoresizingMaskIntoConstraints="NO" id="st7-Dp-OLa">
-                                <rect key="frame" x="123" y="323" width="128" height="128"/>
+                                <rect key="frame" x="147" y="327" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Ip1-iQ-lYu"/>
-                                    <constraint firstAttribute="width" constant="128" id="sN5-NZ-JZg"/>
+                                    <constraint firstAttribute="height" constant="80" id="Ip1-iQ-lYu"/>
+                                    <constraint firstAttribute="width" constant="80" id="sN5-NZ-JZg"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.074706815179999997" green="0.51022106410000001" blue="0.98479980229999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="st7-Dp-OLa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="53.5" id="EjK-fl-Uta"/>
+                            <constraint firstItem="st7-Dp-OLa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="33.5" id="EjK-fl-Uta"/>
                             <constraint firstItem="st7-Dp-OLa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jxz-8w-60h"/>
                             <constraint firstItem="Ro1-vR-UbR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XhD-JL-i2r"/>
                             <constraint firstItem="Ro1-vR-UbR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-66.5" id="l4A-tF-i4w"/>

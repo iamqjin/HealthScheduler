@@ -185,11 +185,13 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         //i번 받아온 운동리스트를 받고
         for i in selectedExList {
             //각각의 운동에 있는 세트 수만큼 exSet을 대입시켜준다.
-            for j in 0..<i.exSetCount! {
-                //세트별 id 값 생성
-                let exSet = ExSet(setId: j)
-                i.exSetList.append(exSet)
-            }
+//            for j in 0..<i.exSetCount! {
+//                //세트별 id 값 생성
+//                let exSet = ExSet(setId: j)
+//                i.exSetList.append(exSet)
+//            }
+            i.makeSetList(setCount: i.exSetCount!)
+            
         }
         
         excuted = true

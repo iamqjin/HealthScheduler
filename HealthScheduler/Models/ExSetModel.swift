@@ -10,19 +10,30 @@ import Foundation
 
 class ExSet {
     
+    var exTitle : String? //운동 타이틀
+    
     var setId : Int? //세트 id
     
-    var weight : Int? //무게
+    var weight : String? //무게
     
-    var count : Int? //횟수
+    var count : String? //횟수
     
-    var passOrFail : Bool? //성공 여부
+    var passOrFail : String? //성공 여부
     
     init() {
 
     }
     
-    init(setId : Int?) {
+    init(exTitle : String? , setId : Int?) {
+        self.exTitle = exTitle
         self.setId = setId
     }
+    
+    
+    func setAllData(weight : String , count : String , passOrFail : String){
+        self.weight = weight
+        self.count = count
+        self.passOrFail = passOrFail
+    }
+    
 }

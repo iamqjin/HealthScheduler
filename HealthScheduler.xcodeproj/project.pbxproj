@@ -19,7 +19,10 @@
 		F324C25B1E4C7A27003D0AA7 /* AddEx01Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C25A1E4C7A27003D0AA7 /* AddEx01Header.swift */; };
 		F324C25E1E4C7A4B003D0AA7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C25D1E4C7A4B003D0AA7 /* Extensions.swift */; };
 		F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */; };
+		F3667F241E5570350045F03D /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3667F231E5570350045F03D /* DefaultModel.swift */; };
+		F3667F261E55B7E70045F03D /* TakeABreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3667F251E55B7E70045F03D /* TakeABreakVC.swift */; };
 		F374BF5B1E514CD4007A8154 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374BF5A1E514CD4007A8154 /* SettingVC.swift */; };
+		F38E0F201E556793003999CC /* BeforeStartExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E0F1F1E556793003999CC /* BeforeStartExerciseVC.swift */; };
 		F3ADB1521E52A122001130FB /* StartExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ADB1511E52A122001130FB /* StartExerciseVC.swift */; };
 		F3ADB1541E52F074001130FB /* EndExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ADB1531E52F074001130FB /* EndExerciseVC.swift */; };
 		F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */; };
@@ -51,7 +54,10 @@
 		F324C25A1E4C7A27003D0AA7 /* AddEx01Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEx01Header.swift; sourceTree = "<group>"; };
 		F324C25D1E4C7A4B003D0AA7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
+		F3667F231E5570350045F03D /* DefaultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
+		F3667F251E55B7E70045F03D /* TakeABreakVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeABreakVC.swift; sourceTree = "<group>"; };
 		F374BF5A1E514CD4007A8154 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		F38E0F1F1E556793003999CC /* BeforeStartExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeStartExerciseVC.swift; sourceTree = "<group>"; };
 		F3ADB1511E52A122001130FB /* StartExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartExerciseVC.swift; sourceTree = "<group>"; };
 		F3ADB1531E52F074001130FB /* EndExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndExerciseVC.swift; sourceTree = "<group>"; };
 		F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseVC2.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 				F31CC3141E4860CA00E24873 /* Products */,
 				0C694693CB5C94A248A16EF1 /* Pods */,
 				A1431C9EECB2A3F208FF4D54 /* Frameworks */,
+				F31CC31F1E4860CB00E24873 /* LaunchScreen.storyboard */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				F31CC3161E4860CB00E24873 /* AppDelegate.swift */,
-				F31CC31F1E4860CB00E24873 /* LaunchScreen.storyboard */,
 				F31CC31A1E4860CB00E24873 /* Main.storyboard */,
 				F374BF571E5147DC007A8154 /* SettingVC */,
 				F374BF561E5147D2007A8154 /* HistoryVC */,
@@ -200,8 +206,10 @@
 		F3ADB1501E52A0BE001130FB /* Start&EndExerciseVC */ = {
 			isa = PBXGroup;
 			children = (
+				F38E0F1F1E556793003999CC /* BeforeStartExerciseVC.swift */,
 				F3ADB1511E52A122001130FB /* StartExerciseVC.swift */,
 				F3ADB1531E52F074001130FB /* EndExerciseVC.swift */,
+				F3667F251E55B7E70045F03D /* TakeABreakVC.swift */,
 			);
 			name = "Start&EndExerciseVC";
 			sourceTree = "<group>";
@@ -215,6 +223,7 @@
 				F3DD32BA1E4B154C00FD4A70 /* ExerciseModel.swift */,
 				F3DD32BC1E4B161F00FD4A70 /* ExSetModel.swift */,
 				F3149EDF1E51DC8300F2ECA0 /* HistoryModel.swift */,
+				F3667F231E5570350045F03D /* DefaultModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -358,9 +367,11 @@
 			files = (
 				F3DD32B71E4B0F9C00FD4A70 /* ScheduleVC.swift in Sources */,
 				F3FD46851E53E6E100C22A3A /* HistoryVC.swift in Sources */,
+				F38E0F201E556793003999CC /* BeforeStartExerciseVC.swift in Sources */,
 				F3DD32BD1E4B161F00FD4A70 /* ExSetModel.swift in Sources */,
 				F3DD32C21E4B48BF00FD4A70 /* AddExerciseVC1.swift in Sources */,
 				F3DD32BB1E4B154C00FD4A70 /* ExerciseModel.swift in Sources */,
+				F3667F241E5570350045F03D /* DefaultModel.swift in Sources */,
 				F3C3515E1E4E060100A1B189 /* AddEx02Cell.swift in Sources */,
 				F324C25E1E4C7A4B003D0AA7 /* Extensions.swift in Sources */,
 				F3FD46871E53F01400C22A3A /* HistoryImageCell.swift in Sources */,
@@ -371,6 +382,7 @@
 				F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */,
 				F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */,
 				F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */,
+				F3667F261E55B7E70045F03D /* TakeABreakVC.swift in Sources */,
 				F3DD32C01E4B44F300FD4A70 /* HistoryCell.swift in Sources */,
 				F324C25B1E4C7A27003D0AA7 /* AddEx01Header.swift in Sources */,
 				F3149EE01E51DC8300F2ECA0 /* HistoryModel.swift in Sources */,
@@ -397,6 +409,7 @@
 				F31CC3201E4860CB00E24873 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = HealthScheduler;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
