@@ -20,10 +20,8 @@ class BeforeStartExerciseVC: UIViewController {
     @IBOutlet weak var scheduleInfoLabel: UILabel!
     
     //스케줄 시작 취소
-    @IBAction func scheduleStartCancelAction(_ sender: Any) {
-        
+    @IBAction func startExerciseCancelAction(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
-        
     }
     
     override func viewDidLoad() {

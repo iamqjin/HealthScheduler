@@ -49,7 +49,8 @@ class AddEx01Header: UITableViewHeaderFooterView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.backgroundColor = UIColor.blue
+        contentView.backgroundColor = UIColor.darkGray
+        
         
         titleLabel.textColor = UIColor.white
         arrowLabel.textColor = UIColor.white
@@ -91,8 +92,6 @@ class AddEx01Header: UITableViewHeaderFooterView {
         guard let cell = gestureRecognizer.view as? AddEx01Header else {
             return
         }
-        
-//        print("나눌렸어")
         delegate?.toggleSection(self, section: cell.section)
     }
     

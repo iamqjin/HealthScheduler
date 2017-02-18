@@ -32,16 +32,21 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     //히스토리 저장버튼 클릭시 삭제 후 스케줄화면으로 돌아감
     @IBAction func exerciseEndSaveSegue(_ sender: UIStoryboardSegue) {
         
+        for i in appDelegate.historyList{
+            print("\(i.totalTime), \(i.preogressTable), \(i.scheduleTitle)")
+        }
+        
         print("여긴 운동끝 세그리턴",sender)
     }
     
-    @IBAction func saveAndReturnWind(_ sender: UIStoryboardSegue) {
+    @IBAction func scheduleSaveSegue(_ sender: UIStoryboardSegue) {
         
         print("돌아옴")
 //        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func editAbleAction(_ sender: Any) {
+        
         if scheduleTable.isEditing {
             self.editButton.title = "편집"
             //edit 모드에서 눌렸을때 취소로
@@ -74,6 +79,8 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
         
         //데이터 test
 //        self.schedule = appDelegate.scheduleList
@@ -211,7 +218,8 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         if segue.identifier == "beforeStartExSegue" {
             
             var indexPath = sender as! IndexPath
-            let beforeStartExVC = segue.destination as! BeforeStartExerciseVC
+            let navVC = segue.destination as! UINavigationController
+            let beforeStartExVC = navVC.topViewController as! BeforeStartExerciseVC
             beforeStartExVC.scheduleNum = indexPath
             beforeStartExVC.scheduleDetail = self.appDelegate.scheduleList[indexPath.row].exSummary
         }

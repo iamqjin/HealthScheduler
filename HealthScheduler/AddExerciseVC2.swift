@@ -16,26 +16,12 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
     var saveOk = false
     var exSummary = ""
     
-    @IBOutlet weak var textCount: UILabel!
-    
     //넘겨온 운동 리스트
     var selectedExList : [Exercise]!
-    
-    @IBAction func addEx02SaveAction(_ sender: Any) {
-        if makeExSummary() == true && makeExsetList() == true{
-            //스케줄 저장
-            saveSchedule()
-            
-//            for i in 0..<selectedExList.count {
-//                print("\(i)번째",schedule?.exerciseList[i].exSetList)
-//            }
 
-        } else {
-            print("무슨일 있는겨")
-        }
-    }
     
-    @IBOutlet weak var addEx02Button: UIBarButtonItem!
+    @IBOutlet weak var textCount: UILabel!
+    @IBOutlet weak var scheduleSaveButton: UIBarButtonItem!
     
     //운동추가 2번 화면 테이블 객체
     @IBOutlet weak var addEx02TableView: UITableView!
@@ -43,14 +29,34 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
     //스케줄 이름 입력 텍스트 필드
     @IBOutlet weak var scheduleTitleTextField: UITextField!
     
+    //저장 완료 후 돌아가기
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let uiBarButtonItem = sender as? UIBarButtonItem else {
+            print("There is no UIBarButtonItem sender")
+            return
+        }
+        
+        if scheduleSaveButton == uiBarButtonItem {
+            print("저장하기 눌림")
+            if makeExSummary() == true && makeExsetList() == true{
+                //스케줄 저장
+                saveSchedule()
+                
+            } else {
+                print("무슨일 있는겨")
+            }
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         self.scheduleTitleTextField.delegate = self
-        scheduleTitleTextField.becomeFirstResponder()
         
-        addEx02Button.isEnabled = saveOk //비활성화
+        scheduleSaveButton.isEnabled = saveOk //비활성화
         scheduleTitleTextField.placeholder = "스케줄 타이틀을 작성해주세요"
     }
     
@@ -80,11 +86,11 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
             //제목을 입력했으면 저장가능
             saveOk = true
             //버튼 활성화
-            addEx02Button.isEnabled = saveOk
+            scheduleSaveButton.isEnabled = saveOk
         } else {
             saveOk = false
             //버튼 비활성화
-            addEx02Button.isEnabled = saveOk
+            scheduleSaveButton.isEnabled = saveOk
 
         }
         
@@ -109,9 +115,10 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //선택된 운동리스트들
         let seletedEx = selectedExList[indexPath.row]
-        
-        //운동 순서와 운동 이름 입력
-        cell.selectedExLabel.text = String(describing: seletedEx.id!) + "." +  seletedEx.name!
+        //운동 순서 입력
+        cell.exOrderLabel.text = String(describing: seletedEx.id!)
+        //운동 이름 입력
+        cell.selectedExLabel.text = seletedEx.name!
         //버튼들에 row를 태그로 입력
         cell.addEx02Button.tag = indexPath.row
         cell.minusEx02Button.tag = indexPath.row
@@ -185,11 +192,6 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         //i번 받아온 운동리스트를 받고
         for i in selectedExList {
             //각각의 운동에 있는 세트 수만큼 exSet을 대입시켜준다.
-//            for j in 0..<i.exSetCount! {
-//                //세트별 id 값 생성
-//                let exSet = ExSet(setId: j)
-//                i.exSetList.append(exSet)
-//            }
             i.makeSetList(setCount: i.exSetCount!)
             
         }

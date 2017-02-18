@@ -21,10 +21,12 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     var today = String()
     var startTime = String()
     var endTime = String()
+    var totalTimeMin = String()
+    
+    var scheduleTitle = String()
     
     //최종 히스토리
     var finalHistory = [ExSet]()
-    
     
     
     @IBOutlet weak var endExTableView: UITableView!
@@ -32,18 +34,17 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     @IBOutlet weak var selectImageButton: UIButton!
     
-    //저장하기 버튼 액션
-    @IBAction func saveAction(_ sender: Any) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        guard let uiBarButtonItem = sender as? UIBarButtonItem else { return }
         
-        print("저장하기 눌림")
-        for i in finalHistory {
-            print(i.setId!, i.weight! ,i.count!, i.passOrFail!)
+        if saveButton == uiBarButtonItem {
+            print("저장하기 눌림")
+            
+            saveHistory()
+        } else if deleteButton == uiBarButtonItem {
+            
         }
-        
-        saveHistory()
-        
-        
     }
     
     //삭제하기 버튼 액션
@@ -69,15 +70,13 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let cameraButton = UIAlertAction(title: "사진 찍기", style: .default, handler: { (action) -> Void in
-            print("사진 찍기")
             
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = false
+            imagePicker.allowsEditing = true
             
             self.present(imagePicker, animated: true, completion: nil)
-//            self.selectImageButton.setImage(#imageLiteral(resourceName: "Add"), for: .normal)
         })
         
         let libraryButton = UIAlertAction(title: "앨범에서 선택", style: .default , handler: { (action) -> Void in
@@ -85,15 +84,13 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
-            imagePicker.allowsEditing = false
+            imagePicker.allowsEditing = true
             
             self.present(imagePicker, animated: true, completion: nil)
             
-            print("앨범에서 선택")
         })
         
         let imageDeleteButton = UIAlertAction(title: "이미지 삭제", style: .destructive , handler: { (action) -> Void in
-            print("이미지 삭제")
             
             //다시 똑같은 이미지로 채워넣음
             self.selectImageButton.setImage(#imageLiteral(resourceName: "camera"), for: .normal)
@@ -123,6 +120,10 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = false
+
+        
         //기록지 프린트
         for i in 0..<exLog.count {
             if i == (exLog.count - 1){
@@ -139,12 +140,6 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         endExTableView.estimatedRowHeight = 1000
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     //MARK: ImagePickerView
     
@@ -165,7 +160,7 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         
         picker.dismiss(animated: true) { () in
             
-            if let img = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            if let img = info[UIImagePickerControllerEditedImage] as? UIImage{
                 self.selectImageButton.setImage(img, for: .normal)
             }
             
@@ -175,7 +170,7 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     
     
     //MARK: TableView
-    //테이블 뷰 설정
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -187,7 +182,7 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         //섹션별 데이터 설정
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell.textLabel?.text = "스케줄 이름"
+                cell.textLabel?.text = scheduleTitle //스케줄 타이틀
             } else {
                 cell.textLabel?.text = prettyExLog //운동 기록지
             }
@@ -196,10 +191,8 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
             case 0:
                 cell.textLabel?.text = today
             case 1:
-                cell.textLabel?.text = startTime
+                cell.textLabel?.text = startTime + " - " + endTime + " (\(totalTimeMin))"
             case 2:
-                cell.textLabel?.text = endTime
-            case 3:
                 cell.textLabel?.text = "메모"
             default:
                 print("아무것도안행")
@@ -217,7 +210,7 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         case 0:
             return 2
         case 1:
-            return 4
+            return 3
         default:
             return 1
         }
@@ -230,14 +223,26 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     }
     
     
+    //MARK: Save Func
 
     //히스토리 저장하기
     func saveHistory() {
         
-        //현재 버튼 이미지
-//        selectImageButton.image(for: .normal)
         
-        print("히스토리저장 함수 호출됨")
+        //appdelegate 속 historyList에 저장
+        if selectImageButton.image(for: .normal) == #imageLiteral(resourceName: "camera") {
+           //이미지 선택 안한 저장시
+            print("이미지 선택안한 세이브 호출")
+            print(self.prettyExLog)
+           appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, progressImage: #imageLiteral(resourceName: "camera") , startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog))
+        } else {
+            //이미지 선택 저장했을시
+            print("이미지 선택한 세이브 호출")
+            print(self.prettyExLog)
+            appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, progressImage: selectImageButton.image(for: .normal)! , startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog))
+
+        }
+        
     }
 
 }

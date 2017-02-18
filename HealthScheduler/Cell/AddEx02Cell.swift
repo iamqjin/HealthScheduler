@@ -20,7 +20,7 @@ class AddEx02Cell: UITableViewCell {
     @IBOutlet weak var setCountLabel: UILabel!
     @IBOutlet weak var addEx02Button: UIButton!
     @IBOutlet weak var minusEx02Button: UIButton!
-    
+    @IBOutlet weak var exOrderLabel: UILabel!
 
     var tagNum : Int?
     var defaultSetNum = 3

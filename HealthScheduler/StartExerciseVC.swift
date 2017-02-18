@@ -22,6 +22,8 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     var endTime = String()
     var today = String()
     
+    //스케줄 타이틀
+    var scheduleTitle = String()
     
     //운동별 세트 수를 받음
     var setNumList = [Int]()
@@ -35,8 +37,10 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     //운동기록
     var exLog = [String]()
     
-    //쉬는 시간 설정 초
-    var breakTime = 60.00
+    //운동 시작 토탈 시간
+    var totalTime = 0
+    //총 몇분인지
+    var totalTimeMin = String()
     
     //선택된 테이블 indexPath받아옴
     var scheduleNum : IndexPath!
@@ -68,24 +72,17 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     @IBOutlet var startExView: UIView!
     @IBOutlet weak var exDetailLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var passButton: UIButton!
     @IBOutlet weak var setDetailPickerView: UIPickerView!
     @IBOutlet weak var exEndButton: UIButton!
     
-    //운동 성공 버튼 액션
-    @IBAction func passAction(_ sender: Any) {
-        
-        
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(runTimerCode), userInfo: nil, repeats: true)
-        
-        passButton.isEnabled = false
-        
-    }
-    
-    
+    @IBOutlet weak var breakTimeSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //운동 시간 타이머 설정
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
+        
         
         
         //스케줄 운동 내역을 받아옴
@@ -115,12 +112,15 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
         exEndButton.isHidden = true
         exEndButton.isEnabled = false
         
-        timeLabel.text = String(format: "%02d:%02d.%02d")
+        timeLabel.text = String(format: "%02d : %02d")
         
         //운동 리스트의 세트 수를 배열로 받는다.
         for i in appDelegate.scheduleList[scheduleNum.row].exerciseList{
             setNumList.append(i.exSetCount!)
         }
+        
+        //스케줄 타이틀 설정
+        self.scheduleTitle = appDelegate.scheduleList[scheduleNum.row].title!
         
         print("세트 리스트들",setNumList)
         
@@ -155,6 +155,9 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.isNavigationBarHidden = true
+    
+        
         //시작 날짜 및 시간
         let startDate = Date()
         formatter.amSymbol = "오전"
@@ -165,6 +168,10 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
         today = formatterToday.string(from: startDate)
         
         print("시작",startTime,today)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
     
     
@@ -198,18 +205,29 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
                 exEndButton.isEnabled = true
                 setDetailPickerView.isExclusiveTouch = true
                 setDetailPickerView.isHidden = true
+                
+                //운동 로그 기록
                 for i in allExSetList {
-                    
-                    print("\(i.exTitle)의 \(i.setId) 세트의 무게 : \(i.weight) 횟수 : \(i.count) 성공여부 : \(i.passOrFail)")
-                    
                     exLog.append("\(i.setId! + 1). \(i.exTitle!) \(i.weight!) x \(i.count!) | \(i.passOrFail!)")
-                    
                 }
                 
                 //다시 터치되도 어떠한 작동이 안일어나게
-                setStartFlag = allExSetList.count + 1
+                setStartFlag = allExSetList.count + 10
+                
+                //타이머 종료
+                timer.invalidate()
             }
+            
+            
+            if breakTimeSwitch.isOn == true {
+                //휴식창 띄우기
+                self.performSegue(withIdentifier: "takeABreakSegue", sender: self)
+            }
+            
+            
         }
+        
+        
     }
     
     //스와이프 test
@@ -268,37 +286,18 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
         
     }
     
-    
-    //타이머 타켓 함수
-    func runTimerCode() {
-        breakTime -= 60
-        let min = Int(breakTime) / 60 % 60
-        let sec = Int(breakTime) % 60
-        let msec = (Int(breakTime) * 100) % 100
-        let timerFormat = String(format: "%02d:%02d.%02d",min , sec, msec)
+    //운동 타이머
+    func startTimer() {
         
-        //타이머 포맷 작성
+        self.totalTime += 1
+        let min = Int(self.totalTime) / 60 % 60
+        let sec = Int(self.totalTime) % 60
+        
+        let timerFormat = String(format: "%02d : %02d",min , sec)
         timeLabel.text = timerFormat
         
-        if breakTime == 0.00 {
-            timer.invalidate()
-            
-            let timeOver = UIAlertAction(title: "확인", style: .default, handler: nil)
-            let alert = UIAlertController(title: "", message: "쉬는 시간 끝 \n 다시 운동 시작", preferredStyle: .alert)
-            
-            alert.addAction(timeOver)
-            //breakTime 재설정
-            breakTime = 60.00
-            
-            self.present(alert, animated: true, completion: {
-                //버튼 다시 활성화
-                () in self.passButton.isEnabled = true
-                
-            })
-            
-        }
     }
-    
+        
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -309,13 +308,18 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
             endTime = formatter.string(from: endDate)
             print("끝",endTime)
 
+            //종료된 시간 측정
+            totalTimeMin = String(totalTime / 60) + "분"
+            
             let destinationVC = segue.destination as! EndExerciseVC
             
+            destinationVC.totalTimeMin = self.totalTimeMin
             destinationVC.today = self.today
             destinationVC.startTime = self.startTime
             destinationVC.endTime = self.endTime
             destinationVC.exLog = self.exLog
             destinationVC.finalHistory = self.allExSetList
+            destinationVC.scheduleTitle = self.scheduleTitle
         }
         
         

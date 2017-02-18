@@ -9,6 +9,10 @@
 import UIKit
 
 class HistoryCell: UITableViewCell {
+    
+    @IBOutlet weak var scheduleTitle: UILabel!
+    @IBOutlet weak var scheduleDate: UILabel!
+    @IBOutlet weak var exLog: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

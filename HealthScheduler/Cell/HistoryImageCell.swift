@@ -11,6 +11,9 @@ import UIKit
 class HistoryImageCell: UITableViewCell {
 
     
+    @IBOutlet weak var scheduleTitle: UILabel!
+    @IBOutlet weak var scheduleDate: UILabel!
+    @IBOutlet weak var exLog: UILabel!
     @IBOutlet weak var historyImageView : UIImageView!
     
     override func awakeFromNib() {

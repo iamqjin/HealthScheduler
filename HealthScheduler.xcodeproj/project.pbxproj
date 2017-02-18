@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D849BEDE6B6D233B85C37E9 /* Pods_HealthScheduler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC21023B473A60BC3DD26902 /* Pods_HealthScheduler.framework */; };
 		F3149EE01E51DC8300F2ECA0 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3149EDF1E51DC8300F2ECA0 /* HistoryModel.swift */; };
+		F31C51E91E57D9B8006C97FA /* BeforSendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31C51E81E57D9B8006C97FA /* BeforSendVC.swift */; };
+		F31C51EB1E57DA0F006C97FA /* SendInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31C51EA1E57DA0F006C97FA /* SendInfoVC.swift */; };
 		F31CC3171E4860CB00E24873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC3161E4860CB00E24873 /* AppDelegate.swift */; };
 		F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31CC3181E4860CB00E24873 /* LoginViewController.swift */; };
 		F31CC31C1E4860CB00E24873 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F31CC31A1E4860CB00E24873 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		E71A3F6A3AB6FFF31E37F4BD /* Pods-HealthScheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthScheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthScheduler/Pods-HealthScheduler.release.xcconfig"; sourceTree = "<group>"; };
 		F3032E751E48739D0021A0DD /* HealthScheduler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HealthScheduler-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F3149EDF1E51DC8300F2ECA0 /* HistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		F31C51E81E57D9B8006C97FA /* BeforSendVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforSendVC.swift; sourceTree = "<group>"; };
+		F31C51EA1E57DA0F006C97FA /* SendInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendInfoVC.swift; sourceTree = "<group>"; };
 		F31CC3131E4860CA00E24873 /* HealthScheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthScheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31CC3161E4860CB00E24873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F31CC3181E4860CB00E24873 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +108,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F31C51E71E57D987006C97FA /* MatchingTrainer */ = {
+			isa = PBXGroup;
+			children = (
+				F31C51E81E57D9B8006C97FA /* BeforSendVC.swift */,
+				F31C51EA1E57DA0F006C97FA /* SendInfoVC.swift */,
+			);
+			name = MatchingTrainer;
+			sourceTree = "<group>";
+		};
 		F31CC30A1E4860CA00E24873 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +139,7 @@
 		F31CC3151E4860CA00E24873 /* HealthScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				F31C51E71E57D987006C97FA /* MatchingTrainer */,
 				F31CC3161E4860CB00E24873 /* AppDelegate.swift */,
 				F31CC31A1E4860CB00E24873 /* Main.storyboard */,
 				F374BF571E5147DC007A8154 /* SettingVC */,
@@ -381,9 +395,11 @@
 				F3ADB1541E52F074001130FB /* EndExerciseVC.swift in Sources */,
 				F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */,
 				F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */,
+				F31C51EB1E57DA0F006C97FA /* SendInfoVC.swift in Sources */,
 				F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */,
 				F3667F261E55B7E70045F03D /* TakeABreakVC.swift in Sources */,
 				F3DD32C01E4B44F300FD4A70 /* HistoryCell.swift in Sources */,
+				F31C51E91E57D9B8006C97FA /* BeforSendVC.swift in Sources */,
 				F324C25B1E4C7A27003D0AA7 /* AddEx01Header.swift in Sources */,
 				F3149EE01E51DC8300F2ECA0 /* HistoryModel.swift in Sources */,
 				F374BF5B1E514CD4007A8154 /* SettingVC.swift in Sources */,
