@@ -13,6 +13,9 @@ class BeforeStartExerciseVC: UIViewController {
     //선택된 테이블 indexPath받아옴
     var scheduleNum : IndexPath!
     
+    //이쁜 운동 상세
+    var prettyExDetail = String()
+    
     //선택된 테이블 상세내역
     var scheduleDetail : String!
     
@@ -27,8 +30,19 @@ class BeforeStartExerciseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //버튼 둥글게
+        exerciseStartButton.layer.cornerRadius = 3.0
+        exerciseStartButton.layer.borderWidth = 1
+        exerciseStartButton.layer.borderColor = UIColor.clear.cgColor
+        
         //디테일 입력
-        scheduleInfoLabel.text = scheduleDetail
+        let fullExDetail = scheduleDetail.components(separatedBy: ", ")
+        
+        for ex in fullExDetail {
+            prettyExDetail += (ex + "\n")
+        }
+        
+        scheduleInfoLabel.text = prettyExDetail
         
     }
 

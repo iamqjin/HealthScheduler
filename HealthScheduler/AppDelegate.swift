@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
     var scheduleList = [Schedule]()
     //히스토리 모델
     var historyList = [History]()
+    //요구사항 모델
+    var requirementList = [Requirement]()
+    //트레이너 모델
+    var trainerList = [TrainerModel]()
+    
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

@@ -8,12 +8,21 @@
 
 import UIKit
 
-class BeforSendVC: UIViewController {
+class BeforSendVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    @IBOutlet weak var trainerTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //탭바 생기기
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +30,31 @@ class BeforSendVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func sendInfoSegue(_ sender: UIStoryboardSegue) {
+        print("정보보내기 세그")
+    }
 
+    //MARK: Table
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TrainerCell", for: indexPath) as! TrainerCell
+        
+        return cell
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "trainerSegue", sender: self)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

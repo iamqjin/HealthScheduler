@@ -23,6 +23,8 @@
 		F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */; };
 		F34E9EE81E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9EE71E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift */; };
 		F34E9EEA1E5AE68B00ECA5D7 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9EE91E5AE68B00ECA5D7 /* EmptyCell.swift */; };
+		F34E9EEC1E5B0ADE00ECA5D7 /* RequirementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9EEB1E5B0ADE00ECA5D7 /* RequirementModel.swift */; };
+		F34E9EEE1E5B103C00ECA5D7 /* TrainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9EED1E5B103B00ECA5D7 /* TrainerCell.swift */; };
 		F3539E6D1E58915F009734C6 /* TmonMonsori.otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3539E6C1E58915F009734C6 /* TmonMonsori.otf.otf */; };
 		F3539E721E58951A009734C6 /* NanumBarunGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3539E6E1E58951A009734C6 /* NanumBarunGothic.otf */; };
 		F3539E731E58951A009734C6 /* NanumBarunGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3539E6F1E58951A009734C6 /* NanumBarunGothicBold.otf */; };
@@ -67,6 +69,8 @@
 		F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
 		F34E9EE71E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleListForAnyCell.swift; sourceTree = "<group>"; };
 		F34E9EE91E5AE68B00ECA5D7 /* EmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		F34E9EEB1E5B0ADE00ECA5D7 /* RequirementModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequirementModel.swift; sourceTree = "<group>"; };
+		F34E9EED1E5B103B00ECA5D7 /* TrainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainerCell.swift; sourceTree = "<group>"; };
 		F3539E6C1E58915F009734C6 /* TmonMonsori.otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TmonMonsori.otf.otf; sourceTree = "<group>"; };
 		F3539E6E1E58951A009734C6 /* NanumBarunGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.otf; sourceTree = "<group>"; };
 		F3539E6F1E58951A009734C6 /* NanumBarunGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.otf; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				F3DD32BC1E4B161F00FD4A70 /* ExSetModel.swift */,
 				F3149EDF1E51DC8300F2ECA0 /* HistoryModel.swift */,
 				F3667F231E5570350045F03D /* DefaultModel.swift */,
+				F34E9EEB1E5B0ADE00ECA5D7 /* RequirementModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				F3C3515D1E4E060100A1B189 /* AddEx02Cell.swift */,
 				F34E9EE71E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift */,
 				F34E9EE91E5AE68B00ECA5D7 /* EmptyCell.swift */,
+				F34E9EED1E5B103B00ECA5D7 /* TrainerCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -426,10 +432,12 @@
 				F3ADB1521E52A122001130FB /* StartExerciseVC.swift in Sources */,
 				F324C2561E4C5BD3003D0AA7 /* ExerciseSections.swift in Sources */,
 				F3DD32B11E4B029500FD4A70 /* TrainerModel.swift in Sources */,
+				F34E9EEE1E5B103C00ECA5D7 /* TrainerCell.swift in Sources */,
 				F3ADB1541E52F074001130FB /* EndExerciseVC.swift in Sources */,
 				F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */,
 				F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */,
 				F34E9EE81E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift in Sources */,
+				F34E9EEC1E5B0ADE00ECA5D7 /* RequirementModel.swift in Sources */,
 				F34E9EEA1E5AE68B00ECA5D7 /* EmptyCell.swift in Sources */,
 				F31C51EB1E57DA0F006C97FA /* SendInfoVC.swift in Sources */,
 				F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */,
