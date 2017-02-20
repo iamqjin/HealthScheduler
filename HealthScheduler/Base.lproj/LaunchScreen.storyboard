@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumBarunGothicLight.otf">
+            <string>NanumBarunGothicOTFLight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -22,25 +27,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dumbbell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ro1-vR-UbR">
-                                <rect key="frame" x="68" y="231" width="239" height="72"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
+                                <rect key="frame" x="54" y="299" width="266" height="69"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="60"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weightlifting" translatesAutoresizingMaskIntoConstraints="NO" id="st7-Dp-OLa">
-                                <rect key="frame" x="147" y="327" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Ip1-iQ-lYu"/>
-                                    <constraint firstAttribute="width" constant="80" id="sN5-NZ-JZg"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.011764705882352941" green="0.47450980392156861" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="st7-Dp-OLa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="33.5" id="EjK-fl-Uta"/>
-                            <constraint firstItem="st7-Dp-OLa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jxz-8w-60h"/>
                             <constraint firstItem="Ro1-vR-UbR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XhD-JL-i2r"/>
-                            <constraint firstItem="Ro1-vR-UbR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-66.5" id="l4A-tF-i4w"/>
+                            <constraint firstItem="Ro1-vR-UbR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="l4A-tF-i4w"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -49,7 +45,4 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="weightlifting" width="128" height="128"/>
-    </resources>
 </document>

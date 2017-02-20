@@ -13,14 +13,12 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
     //데이터 test
     var schedule : Schedule?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var saveOk = false
+    
     var exSummary = ""
     
     //넘겨온 운동 리스트
     var selectedExList : [Exercise]!
 
-    
-    @IBOutlet weak var textCount: UILabel!
     @IBOutlet weak var scheduleSaveButton: UIBarButtonItem!
     
     //운동추가 2번 화면 테이블 객체
@@ -39,13 +37,14 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if scheduleSaveButton == uiBarButtonItem {
             print("저장하기 눌림")
+            
             if makeExSummary() == true && makeExsetList() == true{
                 //스케줄 저장
                 saveSchedule()
-                
             } else {
                 print("무슨일 있는겨")
             }
+
         }
     }
 
@@ -53,13 +52,17 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.scheduleSaveButton.isEnabled = false //비활성화
+        self.scheduleTitleTextField.attributedPlaceholder = NSAttributedString(string: "스케줄 제목을 입력하세요.",
+                                                                               attributes: [NSForegroundColorAttributeName: UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1.0)])
+        self.scheduleTitleTextField.underlined()
         self.scheduleTitleTextField.delegate = self
         
-        scheduleSaveButton.isEnabled = saveOk //비활성화
-        scheduleTitleTextField.placeholder = "스케줄 타이틀을 작성해주세요"
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     //MARK : 텍스트 필드
     
@@ -80,22 +83,29 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Figure out what the new text will be, if we return true
         var newText = textField.text! as NSString
         newText = newText.replacingCharacters(in: range, with: string) as NSString
+        var inputText = newText as String
         
-        self.textCount.text = String(newText.length)
-        if newText.length != 0 {
+        if inputText.characters.count != 0 {
             //제목을 입력했으면 저장가능
-            saveOk = true
             //버튼 활성화
-            scheduleSaveButton.isEnabled = saveOk
+            scheduleSaveButton.isEnabled = true
         } else {
-            saveOk = false
             //버튼 비활성화
-            scheduleSaveButton.isEnabled = saveOk
+            scheduleSaveButton.isEnabled = false
 
         }
         
         return true;
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.scheduleTitleTextField.text = ""
+        self.scheduleSaveButton.isEnabled = false
+    }
+    
+    
+    
+    
     
     //--------------------------------------------------
     

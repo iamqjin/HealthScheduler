@@ -12,53 +12,28 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     
     //데이터 test
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//    var schedule : [Schedule]!
     
-    @IBOutlet weak var profileImageView: UIImageView!
-    
-    @IBOutlet weak var profileNameLabel: UILabel!
-    
-    @IBOutlet weak var profileDetailLabel: UILabel!
-    
-    @IBAction func SignUpAction(_ sender: Any) {
-        print("회원가입 버튼 눌림")
-    }
-    
+   
     //스케줄 테이블 객체
     @IBOutlet var scheduleTable: UITableView!
-    //에디트 모드 버튼
-    @IBOutlet weak var editButton: UIBarButtonItem!
+
+    
+    @IBAction func SignUpAction(_ sender: Any) {
+        print("로그인 버튼 눌림")
+    }
     
     //히스토리 저장버튼 클릭시 삭제 후 스케줄화면으로 돌아감
     @IBAction func exerciseEndSaveSegue(_ sender: UIStoryboardSegue) {
-        
-        for i in appDelegate.historyList{
-            print("\(i.totalTime), \(i.preogressTable), \(i.scheduleTitle)")
-        }
-        
-        print("여긴 운동끝 세그리턴",sender)
+        print("운동끝윈드")
     }
     
     @IBAction func scheduleSaveSegue(_ sender: UIStoryboardSegue) {
-        
-        print("돌아옴")
-//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        print("스케줄 저장윈드")
     }
     
-    @IBAction func editAbleAction(_ sender: Any) {
-        
-        if scheduleTable.isEditing {
-            self.editButton.title = "편집"
-            //edit 모드에서 눌렸을때 취소로
-            scheduleTable.setEditing(false, animated: true)
-        } else {
-            self.editButton.title = "완료"
-            //edit모드로
-            scheduleTable.setEditing(true, animated: true)
-        }
+    @IBAction func exerciseEndNotSaveSegue(_ sender: UIStoryboardSegue) {
+        print("운동 끝 저장 안한 세그")
     }
-    
-    
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -70,110 +45,96 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //프로필 test
-        profileImageView.image = UIImage(named: "Add")
-        profileNameLabel.text = "사규진"
-        profileDetailLabel.text = "아마 곧 돼지"
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
-        
-        //데이터 test
-//        self.schedule = appDelegate.scheduleList
-        
+    
         //탭바 N 뱃지 설정
-        self.navigationController?.tabBarItem.badgeValue = "N"
+        self.navigationController?.tabBarItem.badgeValue = String(appDelegate.scheduleList.count)
         
+        //데이터 리로드
         self.scheduleTable.reloadData()
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-    
-    
     // MARK: - Table view data source
     
     //섹션 수
-    func numberOfSections(in tableView: UITableView) -> Int {
-
-        return 2
-        
-    }
+    func numberOfSections(in tableView: UITableView) -> Int { return 2 }
     
     //섹션 별 테이블 수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var numberOfRows : Int?
-        
         //내가 짠 스케줄 | 트레이너가 짜준 스케줄 따로
-        switch section {
-        case 0:
-//            numberOfRows = schedule.count
-            numberOfRows = self.appDelegate.scheduleList.count
-        case 1:
-            numberOfRows = 0
-        default:
-            numberOfRows = 1
+        if section == 0 {
+            return self.appDelegate.scheduleList.count
+        } else {
+            return 0
         }
-        
-        return numberOfRows!
     }
 
     
     //테이블 셀 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
-        
         
         //직접 짠 스케줄 데이터 셀
-        switch indexPath.section {
+        if indexPath.section == 0 {
             
-        case 0:
-            //데이터 test
-//            cell.textLabel?.text = self.schedule[indexPath.row].title
-//            cell.detailTextLabel?.text = self.schedule[indexPath.row].exSummary!
-            cell.textLabel?.text = self.appDelegate.scheduleList[indexPath.row].title
-            cell.detailTextLabel?.text = self.appDelegate.scheduleList[indexPath.row].exSummary
-
-        case 1:
+            let cellForAny = tableView.dequeueReusableCell(withIdentifier: "scheduleCellForAny", for: indexPath) as! ScheduleListForAnyCell
+            
+            cellForAny.scheduleTitleLabel.text = self.appDelegate.scheduleList[indexPath.row].title
+            cellForAny.exListLabel.text = self.appDelegate.scheduleList[indexPath.row].exSummary
+            
+            return cellForAny
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
             //데이터 test
             cell.textLabel?.text = "하이"
-            
-        default:
-            print("잘못된 접근입니다")
+            return cell
         }
 
-        return cell
     }
  
     //테이블 헤더 높이 설정
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerHeight : CGFloat = 63.0
-        
-        return headerHeight
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        let headerHeight : CGFloat = 40
+//        
+//        return headerHeight
+//    }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let header = UIView()
+//        header.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40)
+//        let sectionLabel = UILabel()
+//        sectionLabel.frame = CGRect(x: 16, y: 0, width: tableView.frame.size.width - 16, height: 38)
+//        sectionLabel.numberOfLines = 1
+//        sectionLabel.textColor = UIColor.black
+//        sectionLabel.font = UIFont(name: "NanumBarunGothicOTF", size: 14)
+//        header.backgroundColor = UIColor.darkGray
+//        
+//        if section == 0 {
+//            sectionLabel.text = "맘대로 짜는 스케줄"
+//        } else {
+//            sectionLabel.text = "트레이너가 짜면 다른 스케줄"
+//        }
+//        header.addSubview(sectionLabel)
+//        return header
+//    }
+    
+    
     
     //테이블 헤더 타이틀 설정
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         let headerTitle : String?
         
-        switch section {
-        case 0:
+        if section == 0 {
             headerTitle = "맘대로 짜는 스케줄"
-        case 1:
+        } else {
             headerTitle = "트레이너가 짜면 다른 스케줄"
-        default:
-            headerTitle = "잘못된 접근 스케줄"
         }
         
         return headerTitle
@@ -212,8 +173,6 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
         
         if segue.identifier == "beforeStartExSegue" {
             

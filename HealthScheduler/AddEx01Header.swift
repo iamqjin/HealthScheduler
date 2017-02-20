@@ -49,7 +49,7 @@ class AddEx01Header: UITableViewHeaderFooterView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.backgroundColor = UIColor.darkGray
+        contentView.backgroundColor = UIColor(red: 3/255.0, green: 121/255.0, blue: 251/255.0, alpha: 1.0)
         
         
         titleLabel.textColor = UIColor.white

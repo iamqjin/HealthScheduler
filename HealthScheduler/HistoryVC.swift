@@ -13,14 +13,28 @@ class HistoryVC: UITableViewController {
     
 //    var historyList : [History]!
     
+    
     //History생성
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
+    
     @IBOutlet var historyTableView: UITableView!
-        
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileNameLabel: UILabel!
+    @IBOutlet weak var profileKgLabel: UILabel!
+    @IBOutlet weak var profileKmLabel: UILabel!
+    @IBOutlet weak var profileHistoryCount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //프로필 test
+//        profileImageView.image = UIImage(named: "Add")
+        profileNameLabel.text = "사규진"
+        profileKgLabel.text = "10000"
+        profileKmLabel.text = "10000"
+        profileHistoryCount.text = "10000"
+        
+                
         //셀 크기 알아서 조절
         historyTableView.rowHeight = UITableViewAutomaticDimension
         historyTableView.estimatedRowHeight = 1000
@@ -30,7 +44,7 @@ class HistoryVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
         //히스토리 테이블 리프레시
         historyTableView.reloadData()
         
@@ -38,50 +52,47 @@ class HistoryVC: UITableViewController {
     
     // MARK: - Table
     
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        
-//        return appDelegate.historyList[section].date
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        
-//        return 44.0
-//        
-//    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //이미지가 있는 테이블과 이미지가 없는 테이블을 나누어야함(미완성)
-        
-        if appDelegate.historyList[indexPath.row].progressImage == #imageLiteral(resourceName: "camera") {
-            let nonImageCell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
-            nonImageCell.scheduleTitle.text = appDelegate.historyList[indexPath.row].scheduleTitle
-            nonImageCell.scheduleDate.text = appDelegate.historyList[indexPath.row].totalTime
-            nonImageCell.exLog.text = appDelegate.historyList[indexPath.row].preogressTable
-            return nonImageCell
-            
+        //이미지가 있는 테이블과 이미지가 없는 테이블을 나누어야함
+        if appDelegate.historyList.count == 0 {
+            let emptyCell = tableView.dequeueReusableCell(withIdentifier: "EmptyCell", for: indexPath) as! EmptyCell
+            return emptyCell
         } else {
-             let imageCell = tableView.dequeueReusableCell(withIdentifier: "HistoryImageCell") as! HistoryImageCell
-            imageCell.scheduleTitle.text = appDelegate.historyList[indexPath.row].scheduleTitle
-            imageCell.scheduleDate.text = appDelegate.historyList[indexPath.row].totalTime
-            imageCell.historyImageView.image = appDelegate.historyList[indexPath.row].progressImage
-            imageCell.exLog.text = appDelegate.historyList[indexPath.row].preogressTable
-            
-            return imageCell
+            if appDelegate.historyList[indexPath.row].progressImage == nil {
+                let nonImageCell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
+                nonImageCell.scheduleTitle.text = appDelegate.historyList[indexPath.row].scheduleTitle
+                nonImageCell.scheduleDate.text = appDelegate.historyList[indexPath.row].totalTime! + "(\(appDelegate.historyList[indexPath.row].totalTimeMinOrSec!))"
+                nonImageCell.exLog.text = appDelegate.historyList[indexPath.row].preogressTable
+                return nonImageCell
+                
+            } else {
+                let imageCell = tableView.dequeueReusableCell(withIdentifier: "HistoryImageCell") as! HistoryImageCell
+                imageCell.scheduleTitle.text = appDelegate.historyList[indexPath.row].scheduleTitle
+                imageCell.scheduleDate.text = appDelegate.historyList[indexPath.row].totalTime! + "(\(appDelegate.historyList[indexPath.row].totalTimeMinOrSec!))"
+                imageCell.historyImageView.image = appDelegate.historyList[indexPath.row].progressImage
+                imageCell.exLog.text = appDelegate.historyList[indexPath.row].preogressTable
+                
+                return imageCell
+            }
         }
+        
+        
     
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return appDelegate.historyList.count
-    
+        if appDelegate.historyList.count == 0 {
+            return 1
+        } else {
+            return appDelegate.historyList.count
+        }
     }
 
 }

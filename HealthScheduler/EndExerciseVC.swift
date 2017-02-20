@@ -21,14 +21,14 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     var today = String()
     var startTime = String()
     var endTime = String()
-    var totalTimeMin = String()
+    var totalTimeMinOrSec = String()
     
     var scheduleTitle = String()
     
     //최종 히스토리
     var finalHistory = [ExSet]()
     
-    
+    @IBOutlet weak var addProgressImageView: UIImageView!
     @IBOutlet weak var endExTableView: UITableView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIBarButtonItem!
@@ -40,7 +40,6 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         
         if saveButton == uiBarButtonItem {
             print("저장하기 눌림")
-            
             saveHistory()
         } else if deleteButton == uiBarButtonItem {
             
@@ -51,8 +50,11 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     @IBAction func deleteAction(_ sender: Any) {
         let alertController = UIAlertController(title: "히스토리 삭제", message: "저장된 기록이 사라질 수 있습니다", preferredStyle: .alert)
         
-        //확인 버튼시 삭제 후 스케줄화면으로 돌아감(미완성)
-        let deleteButton = UIAlertAction(title: "삭제하기", style: .destructive, handler: nil)
+        //확인 버튼시 삭제 후 스케줄화면으로 돌아감
+        let deleteButton = UIAlertAction(title: "삭제하기", style: .destructive, handler: {
+            (_) in
+            self.performSegue(withIdentifier: "exerciseEndNotSaveSegue", sender: self)
+        })
         
         //취소시 그냥 얼럿창만 제거
         let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: nil)
@@ -92,21 +94,23 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         
         let imageDeleteButton = UIAlertAction(title: "이미지 삭제", style: .destructive , handler: { (action) -> Void in
             
-            //다시 똑같은 이미지로 채워넣음
-            self.selectImageButton.setImage(#imageLiteral(resourceName: "camera"), for: .normal)
+            //이미지 비우고 타이틀 재설정
+            self.addProgressImageView.image = nil
+            self.selectImageButton.setTitle("Add Progress Photo >>", for: .normal)
+
         })
         
         let cancelButton = UIAlertAction(title: "취소", style: .cancel, handler: { (action) -> Void in
             print("취소 버튼 눌림")
         })
         
-        //버튼 속 이미지가 기존 이미지와 같을때
-        if sender.image(for: .normal) == #imageLiteral(resourceName: "camera") {
+        //버튼 속 이미지 비어있을 때
+        if self.addProgressImageView.image == nil {
             alertController.addAction(cameraButton)
             alertController.addAction(libraryButton)
             alertController.addAction(cancelButton)
         } else {
-            //기존 이미지와 다를때 == 새로운 이미지 선택됨
+            //새로운 이미지 선택됨
             alertController.addAction(cameraButton)
             alertController.addAction(libraryButton)
             alertController.addAction(imageDeleteButton)
@@ -122,7 +126,6 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         super.viewDidLoad()
         
         self.navigationController?.isNavigationBarHidden = false
-
         
         //기록지 프린트
         for i in 0..<exLog.count {
@@ -145,12 +148,12 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
-        picker.dismiss(animated: false) { () in
+        picker.dismiss(animated: true) { () in
             
-            let alert = UIAlertController(title: "", message: "이미지 선택이 취소되었습니다.", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+//            let alert = UIAlertController(title: "", message: "이미지 선택이 취소되었습니다.", preferredStyle: .alert)
+//            
+//            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
             
         }
         
@@ -161,7 +164,10 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         picker.dismiss(animated: true) { () in
             
             if let img = info[UIImagePickerControllerEditedImage] as? UIImage{
-                self.selectImageButton.setImage(img, for: .normal)
+                
+                //이미지 삽입, 버튼 타이틀 재설정
+                self.addProgressImageView.image = img
+                self.selectImageButton.setTitle("", for: .normal)
             }
             
         }
@@ -191,7 +197,7 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
             case 0:
                 cell.textLabel?.text = today
             case 1:
-                cell.textLabel?.text = startTime + " - " + endTime + " (\(totalTimeMin))"
+                cell.textLabel?.text = startTime + " - " + endTime + " (\(totalTimeMinOrSec))"
             case 2:
                 cell.textLabel?.text = "메모"
             default:
@@ -227,19 +233,17 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
 
     //히스토리 저장하기
     func saveHistory() {
-        
-        
         //appdelegate 속 historyList에 저장
-        if selectImageButton.image(for: .normal) == #imageLiteral(resourceName: "camera") {
+        if self.addProgressImageView.image == nil {
            //이미지 선택 안한 저장시
             print("이미지 선택안한 세이브 호출")
             print(self.prettyExLog)
-           appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, progressImage: #imageLiteral(resourceName: "camera") , startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog))
+            appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog, totalTimeMinOrSec : self.totalTimeMinOrSec))
         } else {
             //이미지 선택 저장했을시
             print("이미지 선택한 세이브 호출")
             print(self.prettyExLog)
-            appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, progressImage: selectImageButton.image(for: .normal)! , startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog))
+            appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, progressImage: self.addProgressImageView.image! , startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog, totalTimeMinOrSec: self.totalTimeMinOrSec))
 
         }
         

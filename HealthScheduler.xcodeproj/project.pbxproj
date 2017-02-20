@@ -21,6 +21,13 @@
 		F324C25B1E4C7A27003D0AA7 /* AddEx01Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C25A1E4C7A27003D0AA7 /* AddEx01Header.swift */; };
 		F324C25E1E4C7A4B003D0AA7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C25D1E4C7A4B003D0AA7 /* Extensions.swift */; };
 		F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */; };
+		F34E9EE81E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9EE71E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift */; };
+		F34E9EEA1E5AE68B00ECA5D7 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E9EE91E5AE68B00ECA5D7 /* EmptyCell.swift */; };
+		F3539E6D1E58915F009734C6 /* TmonMonsori.otf.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3539E6C1E58915F009734C6 /* TmonMonsori.otf.otf */; };
+		F3539E721E58951A009734C6 /* NanumBarunGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3539E6E1E58951A009734C6 /* NanumBarunGothic.otf */; };
+		F3539E731E58951A009734C6 /* NanumBarunGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3539E6F1E58951A009734C6 /* NanumBarunGothicBold.otf */; };
+		F3539E741E58951A009734C6 /* NanumBarunGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3539E701E58951A009734C6 /* NanumBarunGothicLight.otf */; };
+		F3539E751E58951A009734C6 /* NanumBarunGothicUltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3539E711E58951A009734C6 /* NanumBarunGothicUltraLight.otf */; };
 		F3667F241E5570350045F03D /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3667F231E5570350045F03D /* DefaultModel.swift */; };
 		F3667F261E55B7E70045F03D /* TakeABreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3667F251E55B7E70045F03D /* TakeABreakVC.swift */; };
 		F374BF5B1E514CD4007A8154 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374BF5A1E514CD4007A8154 /* SettingVC.swift */; };
@@ -58,6 +65,13 @@
 		F324C25A1E4C7A27003D0AA7 /* AddEx01Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEx01Header.swift; sourceTree = "<group>"; };
 		F324C25D1E4C7A4B003D0AA7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
+		F34E9EE71E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleListForAnyCell.swift; sourceTree = "<group>"; };
+		F34E9EE91E5AE68B00ECA5D7 /* EmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		F3539E6C1E58915F009734C6 /* TmonMonsori.otf.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TmonMonsori.otf.otf; sourceTree = "<group>"; };
+		F3539E6E1E58951A009734C6 /* NanumBarunGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothic.otf; sourceTree = "<group>"; };
+		F3539E6F1E58951A009734C6 /* NanumBarunGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicBold.otf; sourceTree = "<group>"; };
+		F3539E701E58951A009734C6 /* NanumBarunGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicLight.otf; sourceTree = "<group>"; };
+		F3539E711E58951A009734C6 /* NanumBarunGothicUltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.otf; sourceTree = "<group>"; };
 		F3667F231E5570350045F03D /* DefaultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
 		F3667F251E55B7E70045F03D /* TakeABreakVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeABreakVC.swift; sourceTree = "<group>"; };
 		F374BF5A1E514CD4007A8154 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
@@ -139,9 +153,9 @@
 		F31CC3151E4860CA00E24873 /* HealthScheduler */ = {
 			isa = PBXGroup;
 			children = (
-				F31C51E71E57D987006C97FA /* MatchingTrainer */,
 				F31CC3161E4860CB00E24873 /* AppDelegate.swift */,
 				F31CC31A1E4860CB00E24873 /* Main.storyboard */,
+				F31C51E71E57D987006C97FA /* MatchingTrainer */,
 				F374BF571E5147DC007A8154 /* SettingVC */,
 				F374BF561E5147D2007A8154 /* HistoryVC */,
 				F374BF551E5147BB007A8154 /* LoginVC */,
@@ -150,6 +164,7 @@
 				F324C2571E4C5C83003D0AA7 /* Header */,
 				F3DD32BE1E4B44B200FD4A70 /* Cell */,
 				F3DD32AD1E4B025700FD4A70 /* Models */,
+				F3539E621E588E17009734C6 /* SupportFiles */,
 				F31CC31D1E4860CB00E24873 /* Assets.xcassets */,
 				F31CC3221E4860CB00E24873 /* Info.plist */,
 				F31CC3281E4863F600E24873 /* GoogleService-Info.plist */,
@@ -181,6 +196,18 @@
 				F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */,
 			);
 			name = AddExerciseVC;
+			sourceTree = "<group>";
+		};
+		F3539E621E588E17009734C6 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F3539E6C1E58915F009734C6 /* TmonMonsori.otf.otf */,
+				F3539E6E1E58951A009734C6 /* NanumBarunGothic.otf */,
+				F3539E6F1E58951A009734C6 /* NanumBarunGothicBold.otf */,
+				F3539E701E58951A009734C6 /* NanumBarunGothicLight.otf */,
+				F3539E711E58951A009734C6 /* NanumBarunGothicUltraLight.otf */,
+			);
+			name = SupportFiles;
 			sourceTree = "<group>";
 		};
 		F374BF541E51478D007A8154 /* ScheduleVC */ = {
@@ -249,6 +276,8 @@
 				F3FD46861E53F01400C22A3A /* HistoryImageCell.swift */,
 				F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */,
 				F3C3515D1E4E060100A1B189 /* AddEx02Cell.swift */,
+				F34E9EE71E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift */,
+				F34E9EE91E5AE68B00ECA5D7 /* EmptyCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -319,8 +348,13 @@
 			files = (
 				F31CC3211E4860CB00E24873 /* LaunchScreen.storyboard in Resources */,
 				F31CC3291E4863F600E24873 /* GoogleService-Info.plist in Resources */,
+				F3539E731E58951A009734C6 /* NanumBarunGothicBold.otf in Resources */,
 				F31CC31E1E4860CB00E24873 /* Assets.xcassets in Resources */,
+				F3539E6D1E58915F009734C6 /* TmonMonsori.otf.otf in Resources */,
+				F3539E741E58951A009734C6 /* NanumBarunGothicLight.otf in Resources */,
+				F3539E721E58951A009734C6 /* NanumBarunGothic.otf in Resources */,
 				F31CC31C1E4860CB00E24873 /* Main.storyboard in Resources */,
+				F3539E751E58951A009734C6 /* NanumBarunGothicUltraLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +429,8 @@
 				F3ADB1541E52F074001130FB /* EndExerciseVC.swift in Sources */,
 				F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */,
 				F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */,
+				F34E9EE81E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift in Sources */,
+				F34E9EEA1E5AE68B00ECA5D7 /* EmptyCell.swift in Sources */,
 				F31C51EB1E57DA0F006C97FA /* SendInfoVC.swift in Sources */,
 				F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */,
 				F3667F261E55B7E70045F03D /* TakeABreakVC.swift in Sources */,

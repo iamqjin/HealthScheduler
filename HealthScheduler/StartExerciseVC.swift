@@ -38,7 +38,8 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     var exLog = [String]()
     
     //운동 시작 토탈 시간
-    var totalTime = 0
+    var totalTime = 0 //기준(0초)
+    
     //총 몇분인지
     var totalTimeMin = String()
     
@@ -77,8 +78,19 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     
     @IBOutlet weak var breakTimeSwitch: UISwitch!
     
+    //배터리 부분 안보이게 감추는 프로퍼티
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //버튼 둥그렇게
+        exEndButton.layer.cornerRadius = 3
+        exEndButton.layer.borderWidth = 1
+        exEndButton.layer.borderColor = UIColor(red: 3/255.0, green: 121/255.0, blue: 251/255.0, alpha: 1.0).cgColor
+        
         
         //운동 시간 타이머 설정
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
@@ -112,7 +124,7 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
         exEndButton.isHidden = true
         exEndButton.isEnabled = false
         
-        timeLabel.text = String(format: "%02d : %02d")
+        timeLabel.text = String(format: "%02d:%02d:%02d")
         
         //운동 리스트의 세트 수를 배열로 받는다.
         for i in appDelegate.scheduleList[scheduleNum.row].exerciseList{
@@ -155,6 +167,7 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //네비게이션바 안보이게
         self.navigationController?.isNavigationBarHidden = true
     
         
@@ -290,10 +303,16 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     func startTimer() {
         
         self.totalTime += 1
-        let min = Int(self.totalTime) / 60 % 60
-        let sec = Int(self.totalTime) % 60
         
-        let timerFormat = String(format: "%02d : %02d",min , sec)
+        //24시간 넘어가면 타이머 자동 정지
+        if self.totalTime == 86400 { timer.invalidate() }
+        
+        //totalTime 1초기준
+        let hour = self.totalTime / 3600 % 24 //24시간
+        let min = self.totalTime / 60 % 60
+        let sec = self.totalTime % 60
+        
+        let timerFormat = String(format: "%02d:%02d:%02d",hour, min, sec)
         timeLabel.text = timerFormat
         
     }
@@ -309,11 +328,17 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
             print("끝",endTime)
 
             //종료된 시간 측정
-            totalTimeMin = String(totalTime / 60) + "분"
+            //60초 미만일시 초 단위로 보냄 아니면 분단위
+            if self.totalTime < 60 {
+                totalTimeMin = String(totalTime) + "초"
+            } else {
+                totalTimeMin = String(totalTime / 60 % 60) + "분"
+            }
+            
             
             let destinationVC = segue.destination as! EndExerciseVC
             
-            destinationVC.totalTimeMin = self.totalTimeMin
+            destinationVC.totalTimeMinOrSec = self.totalTimeMin
             destinationVC.today = self.today
             destinationVC.startTime = self.startTime
             destinationVC.endTime = self.endTime
