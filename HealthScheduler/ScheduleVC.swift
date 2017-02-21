@@ -12,12 +12,9 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     
     //데이터 test
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
    
     //스케줄 테이블 객체
     @IBOutlet var scheduleTable: UITableView!
-
-    
     @IBAction func SignUpAction(_ sender: Any) {
         print("로그인 버튼 눌림")
     }
@@ -45,6 +42,10 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //셀 크기 알아서 조절
+        scheduleTable.rowHeight = UITableViewAutomaticDimension
+        scheduleTable.estimatedRowHeight = 1000
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +72,8 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         if section == 0 {
             return self.appDelegate.scheduleList.count
         } else {
-            return 0
+            //요구사항(트레이너가짜준 스케줄)이 1 이상이면 트레이너 셀 보여주기
+            return self.appDelegate.tScheduleList.count
         }
     }
 
@@ -90,10 +92,14 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
             
             return cellForAny
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath)
-            //데이터 test
-            cell.textLabel?.text = "하이"
-            return cell
+            //트레이너가 보내준 셀
+            let cellForClient = tableView.dequeueReusableCell(withIdentifier: "scheduleCellForClient", for: indexPath) as! ScheduleListForClientCell
+            
+            cellForClient.tScheduleTitleLabel.text = appDelegate.tScheduleList[indexPath.row].title
+            cellForClient.tScheduleDetailLabel.text = appDelegate.tScheduleList[indexPath.row].exSummary
+            
+            
+            return cellForClient
         }
 
     }
@@ -154,6 +160,7 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
             
         } else {
             print("여긴 트레이너 스케줄 삭제부분")
+            appDelegate.tScheduleList.remove(at: indexPath.row)
         }
         
         //edit이후 데이터 리로드
@@ -180,7 +187,12 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
             let navVC = segue.destination as! UINavigationController
             let beforeStartExVC = navVC.topViewController as! BeforeStartExerciseVC
             beforeStartExVC.scheduleNum = indexPath
-            beforeStartExVC.scheduleDetail = self.appDelegate.scheduleList[indexPath.row].exSummary
+            if indexPath.section == 0 {
+                beforeStartExVC.scheduleDetail = self.appDelegate.scheduleList[indexPath.row].exSummary
+            } else {
+                beforeStartExVC.scheduleDetail = self.appDelegate.tScheduleList[indexPath.row].exSummary
+            }
+            
         }
     }
     

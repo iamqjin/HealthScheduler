@@ -37,6 +37,23 @@ extension UIView {
     
 }
 
+//뷰애니메이션
+extension UIView {
+    func fadeIn(duration: TimeInterval = 0.3, delay: TimeInterval = 0, completion: @escaping ((Bool) -> Void) = {(finished: Bool) -> Void in}) {
+        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.alpha = 1.0
+        }, completion: completion)  }
+    
+    func fadeOut(duration: TimeInterval = 0.3, delay: TimeInterval = 0.3, completion: @escaping (Bool) -> Void = {(finished: Bool) -> Void in}) {
+        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.alpha = 0.0
+        }, completion: completion)
+    }
+    
+}
+
+
+
 //객체로 비교해서 삭제
 extension Array where Element: Equatable {
     
@@ -62,13 +79,13 @@ extension Array where Element: Equatable {
 
 //날짜 포맷 변경해서 받아오기
 //Date().toString() // convert date to string with userdefined format.
-extension Date {
-    func toString() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd yyyy"
-        return dateFormatter.string(from: self)
-    }
-}
+//extension Date {
+//    func toString() -> String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MMMM dd yyyy"
+//        return dateFormatter.string(from: self)
+//    }
+//}
 
 extension UITextField {
     func underlined(){

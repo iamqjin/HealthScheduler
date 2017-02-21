@@ -33,6 +33,10 @@
 		F3667F241E5570350045F03D /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3667F231E5570350045F03D /* DefaultModel.swift */; };
 		F3667F261E55B7E70045F03D /* TakeABreakVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3667F251E55B7E70045F03D /* TakeABreakVC.swift */; };
 		F374BF5B1E514CD4007A8154 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F374BF5A1E514CD4007A8154 /* SettingVC.swift */; };
+		F37577FC1E5C1F0A00FBF0EB /* ScheduleListForClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37577FB1E5C1F0A00FBF0EB /* ScheduleListForClientCell.swift */; };
+		F37577FE1E5C243C00FBF0EB /* T_ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37577FD1E5C243C00FBF0EB /* T_ScheduleModel.swift */; };
+		F37578001E5C255100FBF0EB /* T_ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37577FF1E5C255100FBF0EB /* T_ExerciseModel.swift */; };
+		F37578021E5C30A700FBF0EB /* T_StartExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37578011E5C30A700FBF0EB /* T_StartExerciseVC.swift */; };
 		F38E0F201E556793003999CC /* BeforeStartExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E0F1F1E556793003999CC /* BeforeStartExerciseVC.swift */; };
 		F3ADB1521E52A122001130FB /* StartExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ADB1511E52A122001130FB /* StartExerciseVC.swift */; };
 		F3ADB1541E52F074001130FB /* EndExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ADB1531E52F074001130FB /* EndExerciseVC.swift */; };
@@ -79,6 +83,10 @@
 		F3667F231E5570350045F03D /* DefaultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
 		F3667F251E55B7E70045F03D /* TakeABreakVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakeABreakVC.swift; sourceTree = "<group>"; };
 		F374BF5A1E514CD4007A8154 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		F37577FB1E5C1F0A00FBF0EB /* ScheduleListForClientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleListForClientCell.swift; sourceTree = "<group>"; };
+		F37577FD1E5C243C00FBF0EB /* T_ScheduleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T_ScheduleModel.swift; sourceTree = "<group>"; };
+		F37577FF1E5C255100FBF0EB /* T_ExerciseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T_ExerciseModel.swift; sourceTree = "<group>"; };
+		F37578011E5C30A700FBF0EB /* T_StartExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T_StartExerciseVC.swift; sourceTree = "<group>"; };
 		F38E0F1F1E556793003999CC /* BeforeStartExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeStartExerciseVC.swift; sourceTree = "<group>"; };
 		F3ADB1511E52A122001130FB /* StartExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartExerciseVC.swift; sourceTree = "<group>"; };
 		F3ADB1531E52F074001130FB /* EndExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndExerciseVC.swift; sourceTree = "<group>"; };
@@ -255,6 +263,7 @@
 				F3ADB1511E52A122001130FB /* StartExerciseVC.swift */,
 				F3ADB1531E52F074001130FB /* EndExerciseVC.swift */,
 				F3667F251E55B7E70045F03D /* TakeABreakVC.swift */,
+				F37578011E5C30A700FBF0EB /* T_StartExerciseVC.swift */,
 			);
 			name = "Start&EndExerciseVC";
 			sourceTree = "<group>";
@@ -270,6 +279,8 @@
 				F3149EDF1E51DC8300F2ECA0 /* HistoryModel.swift */,
 				F3667F231E5570350045F03D /* DefaultModel.swift */,
 				F34E9EEB1E5B0ADE00ECA5D7 /* RequirementModel.swift */,
+				F37577FD1E5C243C00FBF0EB /* T_ScheduleModel.swift */,
+				F37577FF1E5C255100FBF0EB /* T_ExerciseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +293,7 @@
 				F324C2601E4D977E003D0AA7 /* AddExerciseCell.swift */,
 				F3C3515D1E4E060100A1B189 /* AddEx02Cell.swift */,
 				F34E9EE71E5AD81600ECA5D7 /* ScheduleListForAnyCell.swift */,
+				F37577FB1E5C1F0A00FBF0EB /* ScheduleListForClientCell.swift */,
 				F34E9EE91E5AE68B00ECA5D7 /* EmptyCell.swift */,
 				F34E9EED1E5B103B00ECA5D7 /* TrainerCell.swift */,
 			);
@@ -420,11 +432,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3DD32B71E4B0F9C00FD4A70 /* ScheduleVC.swift in Sources */,
+				F37577FE1E5C243C00FBF0EB /* T_ScheduleModel.swift in Sources */,
 				F3FD46851E53E6E100C22A3A /* HistoryVC.swift in Sources */,
 				F38E0F201E556793003999CC /* BeforeStartExerciseVC.swift in Sources */,
 				F3DD32BD1E4B161F00FD4A70 /* ExSetModel.swift in Sources */,
 				F3DD32C21E4B48BF00FD4A70 /* AddExerciseVC1.swift in Sources */,
 				F3DD32BB1E4B154C00FD4A70 /* ExerciseModel.swift in Sources */,
+				F37578001E5C255100FBF0EB /* T_ExerciseModel.swift in Sources */,
 				F3667F241E5570350045F03D /* DefaultModel.swift in Sources */,
 				F3C3515E1E4E060100A1B189 /* AddEx02Cell.swift in Sources */,
 				F324C25E1E4C7A4B003D0AA7 /* Extensions.swift in Sources */,
@@ -433,6 +447,7 @@
 				F324C2561E4C5BD3003D0AA7 /* ExerciseSections.swift in Sources */,
 				F3DD32B11E4B029500FD4A70 /* TrainerModel.swift in Sources */,
 				F34E9EEE1E5B103C00ECA5D7 /* TrainerCell.swift in Sources */,
+				F37578021E5C30A700FBF0EB /* T_StartExerciseVC.swift in Sources */,
 				F3ADB1541E52F074001130FB /* EndExerciseVC.swift in Sources */,
 				F31CC3191E4860CB00E24873 /* LoginViewController.swift in Sources */,
 				F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */,
@@ -442,6 +457,7 @@
 				F31C51EB1E57DA0F006C97FA /* SendInfoVC.swift in Sources */,
 				F324C2611E4D977E003D0AA7 /* AddExerciseCell.swift in Sources */,
 				F3667F261E55B7E70045F03D /* TakeABreakVC.swift in Sources */,
+				F37577FC1E5C1F0A00FBF0EB /* ScheduleListForClientCell.swift in Sources */,
 				F3DD32C01E4B44F300FD4A70 /* HistoryCell.swift in Sources */,
 				F31C51E91E57D9B8006C97FA /* BeforSendVC.swift in Sources */,
 				F324C25B1E4C7A27003D0AA7 /* AddEx01Header.swift in Sources */,

@@ -22,6 +22,16 @@ class BeforeStartExerciseVC: UIViewController {
     @IBOutlet weak var exerciseStartButton: UIButton!
     @IBOutlet weak var scheduleInfoLabel: UILabel!
     
+    @IBAction func startExerciseStartAction(_ sender: Any) {
+        
+        if scheduleNum.section == 0 {
+            performSegue(withIdentifier: "startExSegue", sender: self)
+        } else {
+            performSegue(withIdentifier: "trainerStartSegue", sender: self)
+        }
+        
+        
+    }
     //스케줄 시작 취소
     @IBAction func startExerciseCancelAction(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -42,13 +52,9 @@ class BeforeStartExerciseVC: UIViewController {
             prettyExDetail += (ex + "\n")
         }
         
+        print(prettyExDetail)
         scheduleInfoLabel.text = prettyExDetail
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,6 +62,13 @@ class BeforeStartExerciseVC: UIViewController {
             
             let startExVC = segue.destination as! StartExerciseVC
             startExVC.scheduleNum = self.scheduleNum
+            
+            //트레이너 test
+        } else if segue.identifier == "trainerStartSegue" {
+            
+            let trainerStarExVC = segue.destination as! T_StartExerciseVC
+            trainerStarExVC.scheduleNum = self.scheduleNum
+            
         }
     }
     

@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
     
     //공유할 스케줄 모델
     var scheduleList = [Schedule]()
+    //트레이너가 짜준 스케줄 모델
+    var tScheduleList = [TSchedule]()
     //히스토리 모델
     var historyList = [History]()
     //요구사항 모델
@@ -67,6 +69,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        //test
+//        UINavigationBar.appearance().barStyle = .blackOpaque
         
         //로컬 알림 test 알림 받는 인증
 //        let setting = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)

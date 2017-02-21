@@ -19,6 +19,8 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
     @IBOutlet weak var sendInfoButton: UIBarButtonItem!
     @IBOutlet var sendInfoView: UIView!
     @IBOutlet weak var placeholderLabel: UILabel!
+    @IBOutlet weak var indicatorLabel: UILabel!
+    @IBOutlet weak var downArrow: UIButton!
     
     @IBAction func selectInbodyAction(_ sender: UIButton) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -48,6 +50,8 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
             
             //이미지 삭제
             self.inbodyPicView.image = nil
+            //버튼 타이틀 변경
+            self.selectInbodyButton.setTitle("Add Inbody Photo >>", for: .normal)
             
         })
         
@@ -85,10 +89,12 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
         //탭바 없애기
         self.tabBarController?.tabBar.isHidden = true
         
-        //키보드 없애기
+        //탭 키보드 없애기
         self.hideKeyboardWhenTappedAround()
         
-        
+        //인디케이터
+        self.indicatorLabel.text = "Hello to Your Body"
+        self.downArrow.isHidden = true
         
     }
     
@@ -130,6 +136,7 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
             
             if let img = info[UIImagePickerControllerEditedImage] as? UIImage{
                 self.inbodyPicView.image = img
+                self.selectInbodyButton.setTitle("", for: .normal)
             }
         }
     }
@@ -143,17 +150,24 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
     //MARK: - Keyboard
     func keyboardWillShow(_ notification:Notification) {
         
-        print("willshow",view.frame.origin.y)
-        print("keyboard",getKeyboardHeight(notification))
+//        print("willshow",view.frame.origin.y)
+//        print("keyboard",getKeyboardHeight(notification))
             view.frame.origin.y = 64 - getKeyboardHeight(notification)
-        print("willshowend",view.frame.origin.y)
+        //인디케이터
+        self.indicatorLabel.text = "키보드 내리기"
+        self.downArrow.isHidden = false
+        
+//        print("willshowend",view.frame.origin.y)
         
     }
     
     func keyboardWillHide(_ notification:Notification){
-        print("willHide",view.frame.origin.y)
+//        print("willHide",view.frame.origin.y)
         view.frame.origin.y = 64
-        print("willHideend",view.frame.origin.y)
+        //인디케이터
+        self.indicatorLabel.text = "Hello to Your Body"
+        self.downArrow.isHidden = true
+//        print("willHideend",view.frame.origin.y)
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
@@ -200,10 +214,28 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
             
             self.present(alert, animated: true, completion: nil)
             
+        } else if self.requirementTextView.text.isEmpty {
+            
+            let alert = UIAlertController(title: "요구사항", message: "요구사항을 적어주세요!!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alert.addAction(ok)
+            
+            self.present(alert, animated: true, completion: nil)
+            
         } else {
+            //요구사항 저장
             requirement = Requirement(requirementId: 0, trainerId: "트레이너아이디", requirementText: self.requirementTextView.text, inbodyImage: self.inbodyPicView.image!)
             
             appDelegate.requirementList.append(self.requirement!)
+            
+            //트레이너 test
+            let tExercise = TExercise()
+            appDelegate.tScheduleList.append(TSchedule(scheduleId: 0, exSummary: "바벨 숄더 프레스 x 3, 아놀드 프레스 x 3, 비하인드 넥 프레스 x 3, 레트럴 레이즈 x 3", title: "어깨 박살 스케줄", exerciseList: tExercise.makeSchedule()))
+            
+            for i in tExercise.makeSchedule() {
+                print("\(i.name) \(i.id! + 1)세트  \(i.weight) x \(i.count)")
+            }
+
 
         }
     }
