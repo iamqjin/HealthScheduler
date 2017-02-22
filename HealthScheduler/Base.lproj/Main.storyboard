@@ -327,7 +327,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요구사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtf-gP-vWc">
-                                <rect key="frame" x="21" y="295" width="61" height="20"/>
+                                <rect key="frame" x="21" y="295" width="59" height="20"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -864,8 +864,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madongsuk" translatesAutoresizingMaskIntoConstraints="NO" id="Inh-ic-GZN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="81" id="v0G-yb-iSj"/>
                                                         <constraint firstAttribute="width" constant="81" id="wer-8t-FzS"/>
                                                     </constraints>
                                                 </imageView>
@@ -887,10 +888,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Inh-ic-GZN" firstAttribute="leading" secondItem="5dE-Jj-SWE" secondAttribute="leading" id="39e-NN-esX"/>
+                                                <constraint firstAttribute="bottom" secondItem="Inh-ic-GZN" secondAttribute="bottom" id="8z5-kk-cbp"/>
                                                 <constraint firstItem="evT-8a-rSs" firstAttribute="top" secondItem="5dE-Jj-SWE" secondAttribute="top" constant="8" id="dYy-xh-9Cw"/>
                                                 <constraint firstItem="evT-8a-rSs" firstAttribute="leading" secondItem="Inh-ic-GZN" secondAttribute="trailing" constant="8" id="k7z-m4-KUY"/>
                                                 <constraint firstItem="Inh-ic-GZN" firstAttribute="top" secondItem="5dE-Jj-SWE" secondAttribute="top" id="lXB-8V-47t"/>
-                                                <constraint firstAttribute="bottom" secondItem="Inh-ic-GZN" secondAttribute="bottom" id="lvt-ih-1r3"/>
                                                 <constraint firstItem="Mgb-uy-whd" firstAttribute="top" secondItem="evT-8a-rSs" secondAttribute="bottom" constant="5" id="ta6-VO-Bel"/>
                                                 <constraint firstItem="Mgb-uy-whd" firstAttribute="leading" secondItem="evT-8a-rSs" secondAttribute="leading" id="wLB-WH-FP1"/>
                                             </constraints>
@@ -919,7 +920,7 @@
                                                     <rect key="frame" x="0.0" y="368" width="320" height="94"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스케줄을 만들어보세요 &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGc-8y-e2N">
-                                                            <rect key="frame" x="98.5" y="40" width="123.5" height="14"/>
+                                                            <rect key="frame" x="99" y="40" width="123.5" height="14"/>
                                                             <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1342,7 +1343,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="히스토리 없음" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM6-eA-bCN">
-                                            <rect key="frame" x="118" y="108" width="84" height="16"/>
+                                            <rect key="frame" x="119" y="108" width="82.5" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="25q-i0-x71"/>
                                             </constraints>
@@ -1361,7 +1362,7 @@
                                             <rect key="frame" x="0.0" y="171" width="320" height="60"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스케줄을 만들고 히스토리를 만들어 보세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjG-0o-Nvv">
-                                                    <rect key="frame" x="58" y="8" width="204" height="14"/>
+                                                    <rect key="frame" x="60" y="8" width="200.5" height="14"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
