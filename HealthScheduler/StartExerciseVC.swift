@@ -21,28 +21,18 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     var startTime = String()
     var endTime = String()
     var today = String()
-    
     //스케줄 타이틀
     var scheduleTitle = String()
-    
     //운동별 세트 수를 받음
     var setNumList = [Int]()
-    
     var setStartFlag = 0
     var setEndFlag = Int()
-    
-    var exStartFlag = Int()
-    var exEndFlag = Int()
-    
     //운동기록
     var exLog = [String]()
-    
     //운동 시작 토탈 시간
     var totalTime = 0 //기준(0초)
-    
     //총 몇분인지
     var totalTimeMin = String()
-    
     //선택된 테이블 indexPath받아옴
     var scheduleNum : IndexPath!
     
@@ -70,6 +60,7 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     //모든 운동 세트 리스트
     var allExSetList = [ExSet]()
     
+
     @IBOutlet var startExView: UIView!
     @IBOutlet weak var exDetailLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -77,6 +68,21 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     @IBOutlet weak var exEndButton: UIButton!
     
     @IBOutlet weak var breakTimeSwitch: UISwitch!
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        let stop = UIAlertAction(title: "정지", style: .destructive){(_) in self.cancelEx()}
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "STOP", message: "운동을 정지하시겠습니까?", preferredStyle: .alert)
+        
+        alert.addAction(stop)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func cancelEx() {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
     //배터리 부분 안보이게 감추는 프로퍼티
     override var prefersStatusBarHidden: Bool {
@@ -192,52 +198,55 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     func doubleTapped() {
         print("나 두번 클릭됨")
         
-        if setStartFlag < allExSetList.count {
-            exDetailLabel.text = allExSetList[setStartFlag].exTitle! + " " +  String(allExSetList[setStartFlag].setId! + 1) + " 세트"
-            allExSetList[setStartFlag].passOrFail = "OK"
-            
-            
-            print("피커선택된 무게인덱스", setDetailPickerView.selectedRow(inComponent: 0))
-            print("피커선택된 횟수인덱스", setDetailPickerView.selectedRow(inComponent: 1))
+        //배열보다 크면 리턴시킴
+        guard setStartFlag < allExSetList.count else {
+            return
+        }
+        //현재 저장
+        //성공 표시
+        allExSetList[setStartFlag].passOrFail = "OK"
+        //단위 별 저장 값다르게
+        if weightUnit {
+            allExSetList[setStartFlag].weight = weightKg[setDetailPickerView.selectedRow(inComponent: 0)]
+        } else {
+            allExSetList[setStartFlag].weight = weightLbs[setDetailPickerView.selectedRow(inComponent: 0)]
+        }
+        //선택되있는 횟수 저장
+        allExSetList[setStartFlag].count = count[setDetailPickerView.selectedRow(inComponent: 1)]
+        //숫자를 넘김
+        setStartFlag += 1
 
-            //단위 별 저장 값다르게
-            if weightUnit {
-                allExSetList[setStartFlag].weight = weightKg[setDetailPickerView.selectedRow(inComponent: 0)]
-            } else {
-                allExSetList[setStartFlag].weight = weightLbs[setDetailPickerView.selectedRow(inComponent: 0)]
-            }
-            //선택되있는 횟수 저장
-            allExSetList[setStartFlag].count = count[setDetailPickerView.selectedRow(inComponent: 1)]
+        //다음꺼를 표시
+        if setStartFlag != allExSetList.count {
+            exDetailLabel.text = allExSetList[setStartFlag].exTitle! + " " +  String(allExSetList[setStartFlag].setId! + 1) + " 세트"
+        }
+        
+        
+
+        if setStartFlag == allExSetList.count {
+            print("운동 완료")
+            exDetailLabel.text = "Well Done"
+            exEndButton.isHidden = false
+            exEndButton.isEnabled = true
+            setDetailPickerView.isExclusiveTouch = true
+            setDetailPickerView.isHidden = true
             
-           setStartFlag += 1
-            
-            if setStartFlag == allExSetList.count {
-                print("운동 완료")
-                
-                exEndButton.isHidden = false
-                exEndButton.isEnabled = true
-                setDetailPickerView.isExclusiveTouch = true
-                setDetailPickerView.isHidden = true
-                
-                //운동 로그 기록
-                for i in allExSetList {
-                    exLog.append("\(i.setId! + 1). \(i.exTitle!) \(i.weight!) x \(i.count!) | \(i.passOrFail!)")
-                }
-                
-                //다시 터치되도 어떠한 작동이 안일어나게
-                setStartFlag = allExSetList.count + 10
-                
-                //타이머 종료
-                timer.invalidate()
+            //운동 로그 기록
+            for i in allExSetList {
+                exLog.append("\(i.setId! + 1). \(i.exTitle!) \(i.weight!) x \(i.count!) | \(i.passOrFail!)")
             }
             
+            //다시 터치되도 어떠한 작동이 안일어나게
+            setStartFlag = allExSetList.count + 10
             
-            if breakTimeSwitch.isOn == true {
-                //휴식창 띄우기
-                self.performSegue(withIdentifier: "takeABreakSegue", sender: self)
-            }
-            
-            
+            //타이머 종료
+            timer.invalidate()
+        }
+        
+        
+        if breakTimeSwitch.isOn == true {
+            //휴식창 띄우기
+            self.performSegue(withIdentifier: "takeABreakSegue", sender: self)
         }
         
         

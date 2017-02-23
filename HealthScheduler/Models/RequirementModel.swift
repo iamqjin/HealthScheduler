@@ -16,7 +16,9 @@ class Requirement {
     
     var requirementText : String?
     
+//    DT
     var inbodyImage : UIImage?
+//    var inbodyImage : String?
     
     init() {
         
@@ -28,5 +30,13 @@ class Requirement {
         self.requirementText = requirementText
         self.inbodyImage = inbodyImage
     }
+    
+    //DT
+//    init(requirementId : Int, trainerId : String , requirementText : String , inbodyImage : String) {
+//        self.requirementId = requirementId
+//        self.trainerId = trainerId
+//        self.requirementText = requirementText
+//        self.inbodyImage = inbodyImage
+//    }
     
 }

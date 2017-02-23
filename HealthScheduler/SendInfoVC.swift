@@ -12,6 +12,7 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
 
     var requirement : Requirement?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var timer : Timer!
     
     @IBOutlet weak var selectInbodyButton: UIButton!
     @IBOutlet weak var requirementTextView: UITextView!
@@ -96,8 +97,21 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
         self.indicatorLabel.text = "Hello to Your Body"
         self.downArrow.isHidden = true
         
+        //블링킹
+        timer = Timer.scheduledTimer(timeInterval: 1.4, target: self, selector: #selector(blinking), userInfo: nil, repeats: true)
     }
     
+    func blinking() {
+        UIButton.animate(withDuration: 0.7, delay : 0.0,
+                         options: .allowUserInteraction ,
+                         animations: {self.downArrow.alpha = CGFloat.init(0)},
+                         completion:
+            {(finished) in
+                UIButton.animate(withDuration: 0.7, delay : 0.0,
+                                 options: .allowUserInteraction ,
+                                 animations: {self.downArrow.alpha = CGFloat.init(1.0)})
+        })
+    }
     
 
     override func viewWillAppear(_ animated: Bool) {
@@ -137,6 +151,8 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
             if let img = info[UIImagePickerControllerEditedImage] as? UIImage{
                 self.inbodyPicView.image = img
                 self.selectInbodyButton.setTitle("", for: .normal)
+                //백그라운드 색 변경
+//                self.backgroundView.backgroundColor = UIColor.black
             }
         }
     }
@@ -221,22 +237,24 @@ class SendInfoVC: UIViewController ,UITextViewDelegate, UIImagePickerControllerD
             alert.addAction(ok)
             
             self.present(alert, animated: true, completion: nil)
-            
+        
         } else {
             //요구사항 저장
+            
+            //Firebase Test
+//            DataController.sharedInstance().addRequirement(reqId: 0, traId: "트레이너아이디", reqText: self.requirementTextView.text, inImage: "hello")
+            
             requirement = Requirement(requirementId: 0, trainerId: "트레이너아이디", requirementText: self.requirementTextView.text, inbodyImage: self.inbodyPicView.image!)
             
             appDelegate.requirementList.append(self.requirement!)
             
             //트레이너 test
             let tExercise = TExercise()
-            appDelegate.tScheduleList.append(TSchedule(scheduleId: 0, exSummary: "바벨 숄더 프레스 x 3, 아놀드 프레스 x 3, 비하인드 넥 프레스 x 3, 레트럴 레이즈 x 3", title: "어깨 박살 스케줄", exerciseList: tExercise.makeSchedule()))
+            appDelegate.tScheduleList.append(TSchedule(exSummary: "바벨 숄더 프레스 x 3, 아놀드 프레스 x 3, 비하인드 넥 프레스 x 3, 레트럴 레이즈 x 3", title: "마동석이 보내준 어깨박살 루틴", exerciseList: tExercise.makeSchedule()))
             
             for i in tExercise.makeSchedule() {
                 print("\(i.name) \(i.id! + 1)세트  \(i.weight) x \(i.count)")
             }
-
-
         }
     }
     

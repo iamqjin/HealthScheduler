@@ -49,11 +49,13 @@ class AddEx01Header: UITableViewHeaderFooterView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.backgroundColor = UIColor(red: 3/255.0, green: 121/255.0, blue: 251/255.0, alpha: 1.0)
+//        contentView.backgroundColor = UIColor(red: 3/255.0, green: 121/255.0, blue: 251/255.0, alpha: 1.0)
         
+        contentView.backgroundColor = UIColor(red: 238/255.0, green: 238/255.0, blue: 238/255.0, alpha: 1.0)
         
-        titleLabel.textColor = UIColor.white
-        arrowLabel.textColor = UIColor.white
+        titleLabel.textColor = UIColor.black
+        arrowLabel.textColor = UIColor.black
+        titleLabel.font = UIFont(name: "TmonMonsori.otf.otf", size: 15)
         
         //
         // Autolayout the lables

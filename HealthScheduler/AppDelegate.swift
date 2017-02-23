@@ -14,17 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
 
     var window: UIWindow?
     
+//    var ref: FIRDatabaseReference!
+    
     //공유할 스케줄 모델
     var scheduleList = [Schedule]()
     //트레이너가 짜준 스케줄 모델
     var tScheduleList = [TSchedule]()
     //히스토리 모델
     var historyList = [History]()
-    //요구사항 모델
-    var requirementList = [Requirement]()
     //트레이너 모델
     var trainerList = [TrainerModel]()
-    
+    //요구사항 모델
+    var requirementList = [Requirement]()
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -43,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
         let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!, accessToken: (authentication?.accessToken)!)
         
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-            // ...
+            
             if let user = user {
                 print("firebase인증", user)
             }
@@ -58,8 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
+        //I'll sign out later maybe
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -69,6 +69,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate , GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+//        if let user = FIRAuth.auth()?.currentUser {
+//            self.ref = FIRDatabase.database().reference()
+//            let userId = user.uid
+//            let userEmail = user.email
+//            let userName = user.displayName
+//            
+//            let userRef = ref.child("Users")
+//            let userInfo = ["userId" : userId, "userEmail" : userEmail! , "name" : userName!, "totalWeight" : 0, "totalKm": 0] as [String : Any]
+//            userRef.setValue(userInfo)
+//        } else {
+//            print("로그인 안됨")
+//        }
         
         //test
 //        UINavigationBar.appearance().barStyle = .blackOpaque

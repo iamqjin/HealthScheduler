@@ -7,28 +7,25 @@
 //
 
 import UIKit
-
+import Firebase
 
 class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate  //공유되는 정보 델리게이트
     
-    //운동 추가 1 테이블뷰
-    @IBOutlet weak var addExTV1: UITableView!
-    
     //부위별 섹션
     //가슴, 등, 다리, 팔, 어깨, 코어, 기타
     var exTable = [ExSection]()
-    
     //운동 리스트 디폴트 모델
     var defaultModel = DefaultModel()
-    
     //선택된 운동 리스트
     var selectedEx = [Exercise]()
     //선택된 운동 수
     var selectingCount = 0
     
-    
+    //운동 추가 1 테이블뷰
+    @IBOutlet weak var addExTV1: UITableView!
+
     @IBOutlet weak var addExerciseButton: UIButton!
     
     //취소버튼시 되돌아가기
@@ -52,8 +49,7 @@ class AddExerciseVC1: UIViewController, UITableViewDataSource, UITableViewDelega
     //체크마크 설정
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
-        
+
         if let cell = tableView.cellForRow(at: indexPath) as? AddExerciseCell {
             
             //클릭시 선택자 설정 및 체크마크 설정

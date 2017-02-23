@@ -27,16 +27,12 @@ class LoginViewController: UIViewController , UITextFieldDelegate, GIDSignInUIDe
         //텍스트필드들의 FirstResponder를 해제
         self.emailTextField.resignFirstResponder()
         self.pwdTextField.resignFirstResponder()
-        
-        print("------------로그인버튼------------")
     }
     
     //로그인 취소 액션
     @IBAction func loginCancel(_ sender: Any) {
         //로그인 뷰 취소
-        
         self.presentingViewController?.dismiss(animated: true, completion: nil)
-        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -76,12 +72,6 @@ class LoginViewController: UIViewController , UITextFieldDelegate, GIDSignInUIDe
         // TODO(developer) Configure the sign-in button look/feel
         // ...
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

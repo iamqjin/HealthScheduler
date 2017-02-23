@@ -104,13 +104,6 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    
-    
-    
-    //--------------------------------------------------
-    
-    
-    
     //섹션별 row 수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -163,8 +156,11 @@ class AddExerciseVC2: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //스케줄 저장 
     func saveSchedule() {
-        //델리게이트 안에 있는 스케줄의 수로 id값을 생성
-        schedule = Schedule(scheduleId : appDelegate.scheduleList.count ,exSummary : exSummary , title: scheduleTitleTextField.text, exerciseList: selectedExList)
+        //Firebase Test
+//        DataController.sharedInstance().addSchedule(exSummary: exSummary, title: scheduleTitleTextField.text!, exerciseList: selectedExList)
+        
+        //스케줄 객체 생성 후 저장
+        schedule = Schedule(exSummary : exSummary , title: scheduleTitleTextField.text, exerciseList: selectedExList)
         appDelegate.scheduleList.append(self.schedule!)
     }
     

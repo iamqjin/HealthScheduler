@@ -7,12 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HistoryVC: UITableViewController {
-    
-    
-//    var historyList : [History]!
-    
     
     //History생성
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -23,6 +20,19 @@ class HistoryVC: UITableViewController {
     @IBOutlet weak var profileKgLabel: UILabel!
     @IBOutlet weak var profileKmLabel: UILabel!
     @IBOutlet weak var profileHistoryCount: UILabel!
+    
+    @IBAction func logOut(_ sender: Any) {
+        
+        //Firebase test
+//        let test = DataController.sharedInstance().testFirebase()
+        
+        
+        if FIRAuth.auth()?.currentUser != nil {
+            try! FIRAuth.auth()!.signOut()
+        } else {
+            // No user is signed in.
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +50,9 @@ class HistoryVC: UITableViewController {
         historyTableView.estimatedRowHeight = 1000
 
         
+        
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

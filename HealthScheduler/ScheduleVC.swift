@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource {
     
@@ -63,84 +65,74 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
     // MARK: - Table view data source
     
     //섹션 수
-    func numberOfSections(in tableView: UITableView) -> Int { return 2 }
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        if appDelegate.scheduleList.count == 0 && appDelegate.tScheduleList.count == 0 {
+            return 1
+        } else {
+            return 2
+        }
+        
+    }
     //섹션 별 테이블 수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //내가 짠 스케줄 | 트레이너가 짜준 스케줄 따로
-        if section == 0 {
-            return self.appDelegate.scheduleList.count
+        if appDelegate.scheduleList.count == 0 && appDelegate.tScheduleList.count == 0 {
+            return 1
         } else {
-            //요구사항(트레이너가짜준 스케줄)이 1 이상이면 트레이너 셀 보여주기
-            return self.appDelegate.tScheduleList.count
+            //내가 짠 스케줄 | 트레이너가 짜준 스케줄 따로
+            if section == 0 {
+                return self.appDelegate.scheduleList.count
+            } else {
+                //요구사항(트레이너가짜준 스케줄)이 1 이상이면 트레이너 셀 보여주기
+                return self.appDelegate.tScheduleList.count
+            }
+            
         }
     }
 
     
     //테이블 셀 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        
-        //직접 짠 스케줄 데이터 셀
-        if indexPath.section == 0 {
-            
-            let cellForAny = tableView.dequeueReusableCell(withIdentifier: "scheduleCellForAny", for: indexPath) as! ScheduleListForAnyCell
-            
-            cellForAny.scheduleTitleLabel.text = self.appDelegate.scheduleList[indexPath.row].title
-            cellForAny.exListLabel.text = self.appDelegate.scheduleList[indexPath.row].exSummary
-            
-            return cellForAny
+        if appDelegate.scheduleList.count == 0 && appDelegate.tScheduleList.count == 0 {
+            let emptyCell = tableView.dequeueReusableCell(withIdentifier: "ScheduleEmptyCell", for: indexPath) as! ScheduleEmptyCell
+            return emptyCell
         } else {
-            //트레이너가 보내준 셀
-            let cellForClient = tableView.dequeueReusableCell(withIdentifier: "scheduleCellForClient", for: indexPath) as! ScheduleListForClientCell
-            
-            cellForClient.tScheduleTitleLabel.text = appDelegate.tScheduleList[indexPath.row].title
-            cellForClient.tScheduleDetailLabel.text = appDelegate.tScheduleList[indexPath.row].exSummary
-            
-            
-            return cellForClient
+            //직접 짠 스케줄 데이터 셀
+            if indexPath.section == 0 {
+                
+                let cellForAny = tableView.dequeueReusableCell(withIdentifier: "scheduleCellForAny", for: indexPath) as! ScheduleListForAnyCell
+                
+                cellForAny.scheduleTitleLabel.text = self.appDelegate.scheduleList[indexPath.row].title
+                cellForAny.exListLabel.text = self.appDelegate.scheduleList[indexPath.row].exSummary
+                
+                return cellForAny
+            } else {
+                //트레이너가 보내준 셀
+                let cellForClient = tableView.dequeueReusableCell(withIdentifier: "scheduleCellForClient", for: indexPath) as! ScheduleListForClientCell
+                
+                cellForClient.tScheduleTitleLabel.text = appDelegate.tScheduleList[indexPath.row].title
+                cellForClient.tScheduleDetailLabel.text = appDelegate.tScheduleList[indexPath.row].exSummary
+                
+                
+                return cellForClient
+            }
         }
-
     }
- 
-    //테이블 헤더 높이 설정
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        let headerHeight : CGFloat = 40
-//        
-//        return headerHeight
-//    }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = UIView()
-//        header.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40)
-//        let sectionLabel = UILabel()
-//        sectionLabel.frame = CGRect(x: 16, y: 0, width: tableView.frame.size.width - 16, height: 38)
-//        sectionLabel.numberOfLines = 1
-//        sectionLabel.textColor = UIColor.black
-//        sectionLabel.font = UIFont(name: "NanumBarunGothicOTF", size: 14)
-//        header.backgroundColor = UIColor.darkGray
-//        
-//        if section == 0 {
-//            sectionLabel.text = "맘대로 짜는 스케줄"
-//        } else {
-//            sectionLabel.text = "트레이너가 짜면 다른 스케줄"
-//        }
-//        header.addSubview(sectionLabel)
-//        return header
-//    }
-    
-    
     
     //테이블 헤더 타이틀 설정
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         let headerTitle : String?
         
-        if section == 0 {
-            headerTitle = "맘대로 짜는 스케줄"
+        if appDelegate.scheduleList.count == 0 && appDelegate.tScheduleList.count == 0 {
+            return nil
         } else {
-            headerTitle = "트레이너가 짜면 다른 스케줄"
+            if section == 0 {
+                headerTitle = "맘대로 짜는 스케줄"
+            } else {
+                headerTitle = "트레이너가 짜면 다른 스케줄"
+            }
         }
         
         return headerTitle
@@ -195,6 +187,4 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
             
         }
     }
-    
-    
 }

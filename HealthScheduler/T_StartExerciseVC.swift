@@ -58,6 +58,7 @@ class T_StartExerciseVC: UIViewController {
     var exList = [TExercise]()
     
     
+    
     @IBOutlet weak var successView: UIView!
     @IBOutlet weak var passOrFailImageView: UIImageView!
     @IBOutlet var startExView: UIView!
@@ -66,6 +67,24 @@ class T_StartExerciseVC: UIViewController {
     @IBOutlet weak var exEndButton: UIButton!
     @IBOutlet weak var breakTimeSwitch: UISwitch!
     @IBOutlet weak var passOrFailInfoLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
+    
+    
+    @IBAction func cancelAction(_ sender: Any) {
+        let stop = UIAlertAction(title: "정지", style: .destructive){(_) in self.cancelEx()}
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "STOP", message: "운동을 정지하시겠습니까?", preferredStyle: .alert)
+        
+        alert.addAction(stop)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func cancelEx(){
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     
     //배터리 부분 안보이게 감추는 프로퍼티
     override var prefersStatusBarHidden: Bool {
@@ -123,6 +142,7 @@ class T_StartExerciseVC: UIViewController {
             //처음 운동 첫세트 보여줌
             if selectedScheduleNum.section == 1 {
                 exDetailLabel.text = exList[setStartFlag].name! + " " +  String(exList[setStartFlag].id! + 1) + " 세트"
+                countLabel.text = exList[setStartFlag].count!
             }
         }
     }
@@ -161,6 +181,7 @@ class T_StartExerciseVC: UIViewController {
         if setStartFlag < exList.count {
             
             exDetailLabel.text = exList[setStartFlag].name! + " " +  String(exList[setStartFlag].id! + 1) + " 세트"
+            countLabel.text = exList[setStartFlag].count!
             
             //성공이미지 및 코멘트
             passOrFailInfoLabel.text = "성공!"
@@ -177,7 +198,8 @@ class T_StartExerciseVC: UIViewController {
             }
         } else {
             print("운동 완료")
-            
+            exDetailLabel.text = "Well Done"
+            countLabel.text = ""
             exEndButton.isHidden = false
             exEndButton.isEnabled = true
             
@@ -207,10 +229,11 @@ class T_StartExerciseVC: UIViewController {
                 if setStartFlag < exList.count {
                     
                     exDetailLabel.text = exList[setStartFlag].name! + " " +  String(exList[setStartFlag].id! + 1) + " 세트"
+                    countLabel.text = exList[setStartFlag].count!
                     
                     //실패이미지 띄움
                     passOrFailInfoLabel.text = "괜찮아요!"
-                    passOrFailImageView.image = #imageLiteral(resourceName: "thatok")
+                    passOrFailImageView.image = #imageLiteral(resourceName: "thatokBlack")
                     
                     successView.fadeIn(completion: {
                         (finished: Bool) -> Void in
@@ -224,7 +247,8 @@ class T_StartExerciseVC: UIViewController {
                     }
                 } else {
                     print("운동 완료")
-                    
+                    exDetailLabel.text = "Well Done"
+                    countLabel.text = ""
                     exEndButton.isHidden = false
                     exEndButton.isEnabled = true
                     

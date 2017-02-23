@@ -10,8 +10,6 @@ import Foundation
 
 struct Schedule {
     
-    var scheduleId : Int? //스케줄 id값
-    
     var exSummary : String? //운동 세트 요약
     
     var title : String? //스케줄 타이틀
