@@ -25,6 +25,18 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     
     var scheduleTitle = String()
     
+    
+    //test
+    var setNumList = [Int]()
+    var exCount = [Int]()
+    var exKg = [Int]()
+    var exPassOrFail = [String]()
+    
+    var totalWeight = Int()
+    var okChecker = Int()
+    var percent = Int()
+    
+    
     //최종 히스토리
     var finalHistory = [ExSet]()
     
@@ -126,6 +138,10 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         super.viewDidLoad()
         
         self.navigationController?.isNavigationBarHidden = false
+        print("세트수 리스트",setNumList)
+        
+        //test
+        
         
         //기록지 프린트
         for i in 0..<exLog.count {
@@ -134,7 +150,14 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
             } else {
                 prettyExLog += exLog[i] + "\n"
             }
-        }
+            
+            totalWeight += (exKg[i] * exCount[i])
+            if exPassOrFail[i] == "성공" {
+                okChecker += 1
+            }
+         }
+        
+        percent = Int((okChecker * 100 ) / exLog.count)
         
         print("전송된 마침 시간",endTime)
         
@@ -149,11 +172,6 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
         picker.dismiss(animated: true) { () in
-            
-//            let alert = UIAlertController(title: "", message: "이미지 선택이 취소되었습니다.", preferredStyle: .alert)
-//            
-//            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-//            self.present(alert, animated: true, completion: nil)
             
         }
         
@@ -183,30 +201,38 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
     
     //테이블 속 셀 데이터 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellBold = tableView.dequeueReusableCell(withIdentifier: "ExerciseSaveBoldCell", for: indexPath)
+        let cellLight = tableView.dequeueReusableCell(withIdentifier: "ExerciseSaveLightCell", for: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExerciseSaveCell", for: indexPath)
+        let totalCell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
     
         //섹션별 데이터 설정
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell.textLabel?.text = scheduleTitle //스케줄 타이틀
-            } else {
+                cellBold.textLabel?.text = scheduleTitle //스케줄 타이틀
+                return cellBold
+            } else if indexPath.row == 1{
                 cell.textLabel?.text = prettyExLog //운동 기록지
+                return cell
+            } else {
+                totalCell.totalWeightLabel.text = String(totalWeight) + "kg"
+                totalCell.percentLabel.text = String(percent) + "%"
+                return totalCell
             }
         } else {
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = today
+                cellLight.textLabel?.text = today
+                return cellLight
             case 1:
-                cell.textLabel?.text = startTime + " - " + endTime + " (\(totalTimeMinOrSec))"
-            case 2:
-                cell.textLabel?.text = "메모"
+                cellLight.textLabel?.text = startTime + " - " + endTime + " (\(totalTimeMinOrSec))"
+                return cellLight
             default:
                 print("아무것도안행")
+                return cellLight
             }
             
         }
-        
-        return cell
     }
     
     
@@ -214,9 +240,9 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
         
         switch section {
         case 0:
-            return 2
-        case 1:
             return 3
+        case 1:
+            return 2
         default:
             return 1
         }
@@ -238,12 +264,12 @@ class EndExerciseVC: UIViewController, UITableViewDelegate , UITableViewDataSour
            //이미지 선택 안한 저장시
             print("이미지 선택안한 세이브 호출")
             print(self.prettyExLog)
-            appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog, totalTimeMinOrSec : self.totalTimeMinOrSec))
+            appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog, totalTimeMinOrSec : self.totalTimeMinOrSec,totalWeight: self.totalWeight,percent : String(self.percent) + "%" ))
         } else {
             //이미지 선택 저장했을시
             print("이미지 선택한 세이브 호출")
             print(self.prettyExLog)
-            appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, progressImage: self.addProgressImageView.image! , startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog, totalTimeMinOrSec: self.totalTimeMinOrSec))
+            appDelegate.historyList.append(History(scheduleTitle: self.scheduleTitle, progressImage: self.addProgressImageView.image! , startTime: self.startTime, endTime: self.endTime, date: self.today, progressTable: self.prettyExLog, totalTimeMinOrSec: self.totalTimeMinOrSec, totalWeight :self.totalWeight,percent : String(self.percent) + "%" ))
 
         }
         

@@ -16,6 +16,8 @@ class HistoryImageCell: UITableViewCell {
     @IBOutlet weak var scheduleDate: UILabel!
     @IBOutlet weak var exLog: UILabel!
     @IBOutlet weak var historyImageView : UIImageView!
+    @IBOutlet weak var totalWeightLabel : UILabel!
+    @IBOutlet weak var percentLabel : UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

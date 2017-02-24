@@ -28,12 +28,16 @@ struct History {
     
     var preogressTable : String? //운동 진행 상황
     
+    var totalWeight : Int?
+    
+    var percent : String?
+    
     init(){
         
     }
     
     //이미지 없는 초기화
-    init(scheduleTitle : String, startTime : String, endTime : String, date : String, progressTable : String, totalTimeMinOrSec : String) {
+    init(scheduleTitle : String, startTime : String, endTime : String, date : String, progressTable : String, totalTimeMinOrSec : String, totalWeight : Int, percent : String) {
         self.scheduleTitle = scheduleTitle
         self.startTime = startTime
         self.endTime = endTime
@@ -41,10 +45,12 @@ struct History {
         self.date = date
         self.preogressTable = progressTable
         self.totalTimeMinOrSec = totalTimeMinOrSec
+        self.totalWeight = totalWeight
+        self.percent = percent
     }
     
     //이미지 있는 초기화
-    init(scheduleTitle : String, progressImage : UIImage, startTime : String, endTime : String, date : String, progressTable : String, totalTimeMinOrSec : String) {
+    init(scheduleTitle : String, progressImage : UIImage, startTime : String, endTime : String, date : String, progressTable : String, totalTimeMinOrSec : String,totalWeight : Int, percent : String) {
         self.scheduleTitle = scheduleTitle
         self.progressImage = progressImage
         self.startTime = startTime
@@ -53,6 +59,8 @@ struct History {
         self.date = date
         self.preogressTable = progressTable
         self.totalTimeMinOrSec = totalTimeMinOrSec
+        self.totalWeight = totalWeight
+        self.percent = percent
     }
 
 }

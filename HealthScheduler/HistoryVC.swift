@@ -7,12 +7,14 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class HistoryVC: UITableViewController {
     
     //History생성
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    //총무게
+    var totalWeight = Int()
     
     @IBOutlet var historyTableView: UITableView!
     @IBOutlet weak var profileImageView: UIImageView!
@@ -21,18 +23,6 @@ class HistoryVC: UITableViewController {
     @IBOutlet weak var profileKmLabel: UILabel!
     @IBOutlet weak var profileHistoryCount: UILabel!
     
-    @IBAction func logOut(_ sender: Any) {
-        
-        //Firebase test
-//        let test = DataController.sharedInstance().testFirebase()
-        
-        
-        if FIRAuth.auth()?.currentUser != nil {
-            try! FIRAuth.auth()!.signOut()
-        } else {
-            // No user is signed in.
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +30,13 @@ class HistoryVC: UITableViewController {
         //프로필 test
 //        profileImageView.image = UIImage(named: "Add")
         profileNameLabel.text = "사규진"
-        profileKgLabel.text = "10000"
-        profileKmLabel.text = "10000"
-        profileHistoryCount.text = "10000"
+        profileKmLabel.text = "0"
+        profileHistoryCount.text = String(appDelegate.historyList.count)
         
                 
         //셀 크기 알아서 조절
         historyTableView.rowHeight = UITableViewAutomaticDimension
         historyTableView.estimatedRowHeight = 1000
-
-        
         
     }
     
@@ -57,6 +44,13 @@ class HistoryVC: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
+        for i in appDelegate.historyList{
+            totalWeight += i.totalWeight!
+        }
+        
+        profileKgLabel.text = "\(self.totalWeight)"
+        profileHistoryCount.text = String(appDelegate.historyList.count)
+        
         //히스토리 테이블 리프레시
         historyTableView.reloadData()
         
@@ -80,6 +74,8 @@ class HistoryVC: UITableViewController {
                 nonImageCell.scheduleTitle.text = appDelegate.historyList[indexPath.row].scheduleTitle
                 nonImageCell.scheduleDate.text = appDelegate.historyList[indexPath.row].totalTime! + "(\(appDelegate.historyList[indexPath.row].totalTimeMinOrSec!))"
                 nonImageCell.exLog.text = appDelegate.historyList[indexPath.row].preogressTable
+                nonImageCell.totalWeightLabel.text = String(describing: appDelegate.historyList[indexPath.row].totalWeight!) + "kg"
+                nonImageCell.percentLabel.text = appDelegate.historyList[indexPath.row].percent
                 return nonImageCell
                 
             } else {
@@ -88,6 +84,8 @@ class HistoryVC: UITableViewController {
                 imageCell.scheduleDate.text = appDelegate.historyList[indexPath.row].totalTime! + "(\(appDelegate.historyList[indexPath.row].totalTimeMinOrSec!))"
                 imageCell.historyImageView.image = appDelegate.historyList[indexPath.row].progressImage
                 imageCell.exLog.text = appDelegate.historyList[indexPath.row].preogressTable
+                imageCell.totalWeightLabel.text = String(describing: appDelegate.historyList[indexPath.row].totalWeight!) + "kg"
+                imageCell.percentLabel.text = appDelegate.historyList[indexPath.row].percent
                 
                 return imageCell
             }

@@ -51,6 +51,11 @@ class T_StartExerciseVC: UIViewController {
     var totalWeight = String()
     var totalCount = String()
     
+    //test
+    var exCount = [Int]()
+    var exKg = [Int]()
+    var exPassOrFail = [String]()
+    
     
     //데이터 test
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -204,10 +209,26 @@ class T_StartExerciseVC: UIViewController {
             exEndButton.isEnabled = true
             
             //운동 로그 기록
+//            for i in exList {
+//                exLog.append("\(i.id! + 1). \(i.name!) \(i.weight!) x \(i.count!) | \(i.passOrFail!)")
+//            }
+            
+            //운동 로그 기록
             for i in exList {
-                exLog.append("\(i.id! + 1). \(i.name!) \(i.weight!) x \(i.count!) | \(i.passOrFail!)")
+                exKg.append(Int((i.weight?.components(separatedBy: "kg")[0])!)!)
+                exCount.append(Int((i.count?.components(separatedBy: "회")[0])!)!)
+                exPassOrFail.append(i.passOrFail!)
             }
             
+            //이쁜 스트링 테스트
+            for i in 0..<exList.count {
+                if i == 0 { exLog.append(exList[i].name! + "\n\n" + "\(exList[i].id! + 1). \(exList[i].weight!) x \(exList[i].count!)    \t\t\t\t\t\t \(exList[i].passOrFail!)") }
+                else if exList[i-1].name != exList[i].name {
+                    exLog.append("\n" + exList[i].name! + "\n\n" + "\(exList[i].id! + 1). \(exList[i].weight!) x \(exList[i].count!)    \t\t\t\t\t\t \(exList[i].passOrFail!)")
+                } else {
+                    exLog.append("\(exList[i].id! + 1). \(exList[i].weight!) x \(exList[i].count!)    \t\t\t\t\t\t \(exList[i].passOrFail!)")
+                }
+            }
             //다시 터치되도 어떠한 작동이 안일어나게
             setStartFlag = exList.count + 10
             
@@ -254,7 +275,19 @@ class T_StartExerciseVC: UIViewController {
                     
                     //운동 로그 기록
                     for i in exList {
-                        exLog.append("\(i.id! + 1). \(i.name!) \(i.weight!) x \(i.count!) | \(i.passOrFail!)")
+                        exKg.append(Int((i.weight?.components(separatedBy: "kg")[0])!)!)
+                        exCount.append(Int((i.count?.components(separatedBy: "회")[0])!)!)
+                        exPassOrFail.append(i.passOrFail!)
+                    }
+                    
+                    //이쁜 스트링 테스트
+                    for i in 0..<exList.count {
+                        if i == 0 { exLog.append(exList[i].name! + "\n\n" + "\(exList[i].id! + 1). \(exList[i].weight!) x \(exList[i].count!)    \t\t\t\t\t\t \(exList[i].passOrFail!)") }
+                        else if exList[i-1].name != exList[i].name {
+                            exLog.append("\n" + exList[i].name! + "\n\n" + "\(exList[i].id! + 1). \(exList[i].weight!) x \(exList[i].count!)    \t\t\t\t\t\t \(exList[i].passOrFail!)")
+                        } else {
+                            exLog.append("\(exList[i].id! + 1). \(exList[i].weight!) x \(exList[i].count!)    \t\t\t\t\t\t \(exList[i].passOrFail!)")
+                        }
                     }
                     
                     //다시 터치되도 어떠한 작동이 안일어나게
@@ -314,6 +347,10 @@ class T_StartExerciseVC: UIViewController {
             destinationVC.endTime = self.endTime
             destinationVC.exLog = self.exLog
             destinationVC.scheduleTitle = self.scheduleTitle
+            //test
+            destinationVC.exCount = self.exCount
+            destinationVC.exKg = self.exKg
+            destinationVC.exPassOrFail = self.exPassOrFail
         }
         
         

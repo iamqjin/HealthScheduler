@@ -484,7 +484,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zn1-wN-Yvn">
-                                <rect key="frame" x="15.5" y="176" width="288" height="179"/>
+                                <rect key="frame" x="16" y="176" width="288" height="179"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="179" id="AKD-lb-9lD"/>
                                 </constraints>
@@ -585,7 +585,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="cLO-7n-TSZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오버헤드 덤벨 트라이셉스 익스텐션 10세트" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="cLO-7n-TSZ">
                                 <rect key="frame" x="16" y="176" width="288" height="161"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="161" id="Zre-uv-2oA"/>
@@ -595,7 +595,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ag-tH-fAc">
-                                <rect key="frame" x="50" y="360.5" width="220" height="84"/>
+                                <rect key="frame" x="50" y="361" width="220" height="84"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -608,7 +608,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JO-fa-Ryo">
-                                <rect key="frame" x="50" y="371.5" width="220" height="63"/>
+                                <rect key="frame" x="50" y="372" width="220" height="63"/>
                                 <color key="backgroundColor" red="0.011764705882352941" green="0.47450980392156861" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="qos-TT-fnF"/>
@@ -762,12 +762,94 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AtB-9U-1fS">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="59"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExerciseSaveBoldCell" textLabel="otB-y4-x1k" rowHeight="60" style="IBUITableViewCellStyleDefault" id="IPr-cD-ThA">
+                                        <rect key="frame" x="0.0" y="408" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IPr-cD-ThA" id="PfL-Cd-mzq">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="otB-y4-x1k">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ExerciseSaveLightCell" textLabel="R8a-h6-png" rowHeight="60" style="IBUITableViewCellStyleDefault" id="UIq-nR-Pj0">
+                                        <rect key="frame" x="0.0" y="468" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UIq-nR-Pj0" id="4Nk-hd-xaQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R8a-h6-png">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TotalCell" rowHeight="60" id="pEj-Wi-hfs" customClass="TotalCell" customModule="HealthScheduler" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="528" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pEj-Wi-hfs" id="iil-d3-HYA">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 든 무게 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoT-dr-Ayh">
+                                                    <rect key="frame" x="117" y="23" width="59" height="15"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBD-bS-72n">
+                                                    <rect key="frame" x="179" y="23" width="45" height="15"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyF-bb-rEx">
+                                                    <rect key="frame" x="277" y="23" width="35" height="15"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성공률 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xL0-9L-ho4">
+                                                    <rect key="frame" x="232" y="23" width="42" height="15"/>
+                                                    <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QyF-bb-rEx" firstAttribute="leading" secondItem="xL0-9L-ho4" secondAttribute="trailing" constant="3" id="8OF-NO-UHQ"/>
+                                                <constraint firstItem="xL0-9L-ho4" firstAttribute="baseline" secondItem="QyF-bb-rEx" secondAttribute="baseline" id="H59-iF-iH3"/>
+                                                <constraint firstItem="QyF-bb-rEx" firstAttribute="centerY" secondItem="iil-d3-HYA" secondAttribute="centerY" id="Jrj-jk-bY1"/>
+                                                <constraint firstItem="AoT-dr-Ayh" firstAttribute="baseline" secondItem="QyF-bb-rEx" secondAttribute="baseline" id="Jzl-ZV-Q4C"/>
+                                                <constraint firstItem="oBD-bS-72n" firstAttribute="baseline" secondItem="QyF-bb-rEx" secondAttribute="baseline" id="Moo-g9-fEQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="QyF-bb-rEx" secondAttribute="trailing" constant="8" id="SoX-QE-5IK"/>
+                                                <constraint firstItem="oBD-bS-72n" firstAttribute="leading" secondItem="AoT-dr-Ayh" secondAttribute="trailing" constant="3" id="V4t-tz-ymf"/>
+                                                <constraint firstItem="xL0-9L-ho4" firstAttribute="leading" secondItem="oBD-bS-72n" secondAttribute="trailing" constant="8" id="alW-iW-mAF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="percentLabel" destination="QyF-bb-rEx" id="AUh-cu-fkX"/>
+                                            <outlet property="totalWeightLabel" destination="oBD-bS-72n" id="j2d-eW-vTZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -890,7 +972,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어깨 뿌시기 스케줄입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evT-8a-rSs">
-                                                    <rect key="frame" x="89" y="8" width="158.5" height="18"/>
+                                                    <rect key="frame" x="89" y="8" width="159" height="18"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1098,21 +1180,6 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1u-Gm-F6s">
-                                    <rect key="frame" x="240" y="29" width="72" height="37"/>
-                                    <color key="backgroundColor" red="0.01176470588" green="0.47450980390000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="72" id="Ka7-JV-N33"/>
-                                        <constraint firstAttribute="height" constant="37" id="QHL-qZ-eO1"/>
-                                    </constraints>
-                                    <state key="normal" title="로그인">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="SignUpAction:" destination="QHC-lT-eOL" eventType="touchUpInside" id="ia8-Zk-b25"/>
-                                        <segue destination="BYZ-38-t0r" kind="presentation" id="2Db-aq-LpX"/>
-                                    </connections>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GT4-J0-IIn">
                                     <rect key="frame" x="149" y="192" width="25" height="26"/>
                                     <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="13"/>
@@ -1186,18 +1253,6 @@
                                         <constraint firstAttribute="height" constant="45.5" id="ZDu-pr-WZu"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhS-1l-anQ">
-                                    <rect key="frame" x="252" y="85" width="60" height="30"/>
-                                    <color key="backgroundColor" red="1" green="0.41359720239999997" blue="0.37846898880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="FBL-Do-HAr"/>
-                                        <constraint firstAttribute="width" constant="60" id="ZGO-lw-EfH"/>
-                                    </constraints>
-                                    <state key="normal" title="Button"/>
-                                    <connections>
-                                        <action selector="logOut:" destination="zhL-mQ-PtQ" eventType="touchUpInside" id="DD7-8q-4TN"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -1207,12 +1262,10 @@
                                 <constraint firstItem="U8V-7S-gL6" firstAttribute="top" secondItem="lp1-tt-WQo" secondAttribute="top" id="2XF-Pw-7n2"/>
                                 <constraint firstItem="5XE-FG-5xp" firstAttribute="leading" secondItem="cfc-zy-qc3" secondAttribute="trailing" constant="43.5" id="4Cm-9I-GQ9"/>
                                 <constraint firstItem="cfc-zy-qc3" firstAttribute="centerX" secondItem="U8V-7S-gL6" secondAttribute="centerX" id="4an-p3-b0a"/>
-                                <constraint firstAttribute="trailing" secondItem="T1u-Gm-F6s" secondAttribute="trailing" constant="8" id="4tf-sw-y7l"/>
                                 <constraint firstItem="TxZ-KL-YeY" firstAttribute="top" secondItem="RNb-hs-fsA" secondAttribute="bottom" constant="8" id="7CK-Ne-nNu"/>
                                 <constraint firstItem="Q0m-El-Rrp" firstAttribute="width" secondItem="lp1-tt-WQo" secondAttribute="width" id="7m2-I8-IMo"/>
                                 <constraint firstAttribute="trailing" secondItem="9QR-tV-PeE" secondAttribute="trailing" id="8Io-fF-WXr"/>
                                 <constraint firstItem="lp1-tt-WQo" firstAttribute="top" secondItem="9QR-tV-PeE" secondAttribute="bottom" constant="15" id="986-yW-Jfe"/>
-                                <constraint firstItem="RhS-1l-anQ" firstAttribute="trailing" secondItem="T1u-Gm-F6s" secondAttribute="trailing" id="AR2-bT-WYG"/>
                                 <constraint firstItem="9QR-tV-PeE" firstAttribute="top" secondItem="TxZ-KL-YeY" secondAttribute="bottom" constant="20" id="BbK-Ig-meH"/>
                                 <constraint firstItem="Q0m-El-Rrp" firstAttribute="top" secondItem="lp1-tt-WQo" secondAttribute="top" id="Dhc-kb-psm"/>
                                 <constraint firstItem="U8V-7S-gL6" firstAttribute="width" secondItem="lp1-tt-WQo" secondAttribute="width" id="DvQ-BV-H88"/>
@@ -1222,7 +1275,6 @@
                                 <constraint firstItem="U8V-7S-gL6" firstAttribute="height" secondItem="lp1-tt-WQo" secondAttribute="height" id="K4u-zb-0c4"/>
                                 <constraint firstItem="tK9-Dd-ISt" firstAttribute="leading" secondItem="1XL-CO-CjS" secondAttribute="trailing" constant="45" id="KKO-6D-2YU"/>
                                 <constraint firstAttribute="trailing" secondItem="7Sx-H0-zpc" secondAttribute="trailing" id="KWF-wz-4Nn"/>
-                                <constraint firstItem="RhS-1l-anQ" firstAttribute="top" secondItem="T1u-Gm-F6s" secondAttribute="bottom" constant="19" id="RNE-5i-Vp3"/>
                                 <constraint firstItem="tK9-Dd-ISt" firstAttribute="width" secondItem="cfc-zy-qc3" secondAttribute="width" id="YFT-YW-3Xw"/>
                                 <constraint firstItem="TxZ-KL-YeY" firstAttribute="centerX" secondItem="RNb-hs-fsA" secondAttribute="centerX" id="cWq-My-DzP"/>
                                 <constraint firstItem="5XE-FG-5xp" firstAttribute="top" secondItem="lp1-tt-WQo" secondAttribute="top" id="dNd-Kh-Yml"/>
@@ -1234,7 +1286,6 @@
                                 <constraint firstItem="1XL-CO-CjS" firstAttribute="leading" secondItem="GT4-J0-IIn" secondAttribute="trailing" constant="45" id="m0u-fw-4d7"/>
                                 <constraint firstItem="RNb-hs-fsA" firstAttribute="centerX" secondItem="FEQ-Lq-6Bd" secondAttribute="centerX" id="pTL-HK-r4r"/>
                                 <constraint firstItem="tK9-Dd-ISt" firstAttribute="top" secondItem="GT4-J0-IIn" secondAttribute="top" id="rVG-jX-WSa"/>
-                                <constraint firstItem="T1u-Gm-F6s" firstAttribute="top" secondItem="FEQ-Lq-6Bd" secondAttribute="top" constant="29" id="re8-ab-pB6"/>
                                 <constraint firstItem="tK9-Dd-ISt" firstAttribute="height" secondItem="cfc-zy-qc3" secondAttribute="height" id="srf-su-Zhz"/>
                                 <constraint firstItem="GT4-J0-IIn" firstAttribute="top" secondItem="lp1-tt-WQo" secondAttribute="bottom" constant="1.5" id="vXp-0M-i22"/>
                                 <constraint firstItem="cfc-zy-qc3" firstAttribute="top" secondItem="GT4-J0-IIn" secondAttribute="top" id="vw2-ja-PiQ"/>
@@ -1242,20 +1293,20 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="RIi-d0-q1L">
-                            <rect key="frame" x="0.0" y="1112" width="320" height="50"/>
+                            <rect key="frame" x="0.0" y="1166" width="320" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="108" id="JOy-9i-7iX" customClass="HistoryCell" customModule="HealthScheduler" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="257" width="320" height="108"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="162" id="JOy-9i-7iX" customClass="HistoryCell" customModule="HealthScheduler" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="257" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JOy-9i-7iX" id="3tc-y7-5Yw">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL5-Mk-ppC">
-                                            <rect key="frame" x="8" y="8" width="304" height="92"/>
+                                            <rect key="frame" x="8" y="8" width="304" height="146"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHk-1f-Nr4">
                                             <rect key="frame" x="16" y="42" width="255" height="21"/>
@@ -1277,6 +1328,40 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ny0-ui-zYj">
+                                            <rect key="frame" x="171" y="131" width="45" height="15"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성공률 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1Z-GI-f7h">
+                                            <rect key="frame" x="224" y="131" width="42" height="15"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvj-2R-xeA" userLabel="delimiter">
+                                            <rect key="frame" x="8" y="120" width="304" height="1"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="vJo-so-hzC"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 든 무게 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmG-2V-Frb">
+                                            <rect key="frame" x="109" y="131" width="59" height="15"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alo-aF-P9N">
+                                            <rect key="frame" x="269" y="129" width="35" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17.5" id="dEe-Zx-G9a"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8A-xj-0ux" userLabel="delimiter">
                                             <rect key="frame" x="8" y="71" width="304" height="1"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -1285,11 +1370,11 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6w-fx-hAf">
-                                            <rect key="frame" x="16" y="80" width="295" height="14"/>
+                                            <rect key="frame" x="16" y="80" width="295" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="295" id="1Vj-Sl-yP8"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1297,29 +1382,42 @@
                                     <constraints>
                                         <constraint firstItem="2xt-fV-YI8" firstAttribute="top" secondItem="3tc-y7-5Yw" secondAttribute="top" constant="16" id="5PI-Ez-JlM"/>
                                         <constraint firstItem="J6w-fx-hAf" firstAttribute="top" secondItem="X8A-xj-0ux" secondAttribute="bottom" constant="8" id="6oO-Jv-icN"/>
+                                        <constraint firstItem="qvj-2R-xeA" firstAttribute="leading" secondItem="X8A-xj-0ux" secondAttribute="leading" id="7Gj-fe-fID"/>
                                         <constraint firstItem="rL5-Mk-ppC" firstAttribute="leading" secondItem="3tc-y7-5Yw" secondAttribute="leading" constant="8" id="FyY-Tc-m5F"/>
                                         <constraint firstItem="X8A-xj-0ux" firstAttribute="top" secondItem="tHk-1f-Nr4" secondAttribute="bottom" constant="8" id="IfV-AA-0aD"/>
+                                        <constraint firstItem="alo-aF-P9N" firstAttribute="top" secondItem="qvj-2R-xeA" secondAttribute="bottom" constant="8" id="Iva-3R-4ke"/>
+                                        <constraint firstItem="SmG-2V-Frb" firstAttribute="baseline" secondItem="alo-aF-P9N" secondAttribute="baseline" id="KyX-Hj-TQR"/>
+                                        <constraint firstItem="qvj-2R-xeA" firstAttribute="trailing" secondItem="X8A-xj-0ux" secondAttribute="trailing" id="Obn-GY-z78"/>
                                         <constraint firstItem="rL5-Mk-ppC" firstAttribute="top" secondItem="3tc-y7-5Yw" secondAttribute="top" constant="8" id="PWw-tN-U4R"/>
+                                        <constraint firstAttribute="trailing" secondItem="alo-aF-P9N" secondAttribute="trailing" constant="16" id="QmQ-w8-7z2"/>
                                         <constraint firstItem="J6w-fx-hAf" firstAttribute="leading" secondItem="2xt-fV-YI8" secondAttribute="leading" id="SOk-US-E76"/>
-                                        <constraint firstAttribute="bottom" secondItem="J6w-fx-hAf" secondAttribute="bottom" constant="14" id="YXA-pc-UKV"/>
+                                        <constraint firstItem="Ny0-ui-zYj" firstAttribute="baseline" secondItem="alo-aF-P9N" secondAttribute="baseline" id="Uqh-oo-fWO"/>
+                                        <constraint firstItem="g1Z-GI-f7h" firstAttribute="leading" secondItem="Ny0-ui-zYj" secondAttribute="trailing" constant="8" id="VhZ-rx-Gjr"/>
+                                        <constraint firstItem="qvj-2R-xeA" firstAttribute="top" secondItem="J6w-fx-hAf" secondAttribute="bottom" constant="16" id="Z1A-xu-qnZ"/>
                                         <constraint firstAttribute="trailing" secondItem="rL5-Mk-ppC" secondAttribute="trailing" constant="8" id="Zct-xq-IwY"/>
+                                        <constraint firstAttribute="bottom" secondItem="alo-aF-P9N" secondAttribute="bottom" constant="16" id="cxS-4m-Nka"/>
                                         <constraint firstItem="X8A-xj-0ux" firstAttribute="leading" secondItem="3tc-y7-5Yw" secondAttribute="leading" constant="8" id="ect-EX-pMo"/>
                                         <constraint firstAttribute="bottom" secondItem="rL5-Mk-ppC" secondAttribute="bottom" constant="8" id="mT3-jl-sQU"/>
                                         <constraint firstAttribute="trailing" secondItem="X8A-xj-0ux" secondAttribute="trailing" constant="8" id="ml7-bk-uWc"/>
+                                        <constraint firstItem="Ny0-ui-zYj" firstAttribute="leading" secondItem="SmG-2V-Frb" secondAttribute="trailing" constant="3" id="nua-Wo-Iky"/>
                                         <constraint firstItem="tHk-1f-Nr4" firstAttribute="top" secondItem="2xt-fV-YI8" secondAttribute="bottom" constant="5" id="pL1-7a-zNO"/>
                                         <constraint firstItem="tHk-1f-Nr4" firstAttribute="leading" secondItem="2xt-fV-YI8" secondAttribute="leading" id="rJp-Ul-dpF"/>
                                         <constraint firstItem="2xt-fV-YI8" firstAttribute="leading" secondItem="3tc-y7-5Yw" secondAttribute="leading" constant="16" id="uEF-WC-pxX"/>
+                                        <constraint firstItem="g1Z-GI-f7h" firstAttribute="baseline" secondItem="alo-aF-P9N" secondAttribute="baseline" id="wNd-lI-PRK"/>
+                                        <constraint firstItem="alo-aF-P9N" firstAttribute="leading" secondItem="g1Z-GI-f7h" secondAttribute="trailing" constant="3" id="zZ1-0B-RHo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backgroundCardView" destination="rL5-Mk-ppC" id="iH0-0k-Ohp"/>
                                     <outlet property="exLog" destination="J6w-fx-hAf" id="eko-GV-VgT"/>
+                                    <outlet property="percentLabel" destination="alo-aF-P9N" id="4nO-8U-LeK"/>
                                     <outlet property="scheduleDate" destination="tHk-1f-Nr4" id="IGu-fO-vjg"/>
                                     <outlet property="scheduleTitle" destination="2xt-fV-YI8" id="KfM-H4-Wx3"/>
+                                    <outlet property="totalWeightLabel" destination="Ny0-ui-zYj" id="o2T-GB-ZVN"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HistoryImageCell" rowHeight="516" id="BvZ-Si-Yit" customClass="HistoryImageCell" customModule="HealthScheduler" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="365" width="320" height="516"/>
+                                <rect key="frame" x="0.0" y="419" width="320" height="516"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BvZ-Si-Yit" id="Fn2-mF-KAf">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="516"/>
@@ -1363,51 +1461,101 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfV-as-SQu">
-                                            <rect key="frame" x="16" y="383" width="295" height="119"/>
+                                            <rect key="frame" x="16" y="383" width="295" height="83"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="295" id="Nwv-7Z-pTa"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTP-pc-X5Q">
+                                            <rect key="frame" x="269" y="483" width="35" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17.5" id="XDd-se-ttq"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성공률 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTd-Tb-4vI">
+                                            <rect key="frame" x="224" y="483" width="42" height="17"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 든 무게 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeD-Ij-cTP">
+                                            <rect key="frame" x="109" y="483" width="59" height="17"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFv-jo-R0E">
+                                            <rect key="frame" x="171" y="483" width="45" height="17"/>
+                                            <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVg-o4-A7L" userLabel="delimiter">
+                                            <rect key="frame" x="8" y="474" width="304" height="1"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="Io8-m4-YOx"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="HCR-Au-cfS" firstAttribute="leading" secondItem="zFB-ou-UNS" secondAttribute="leading" id="0x2-VT-EUs"/>
+                                        <constraint firstItem="tVg-o4-A7L" firstAttribute="trailing" secondItem="pqv-KF-mUv" secondAttribute="trailing" id="1CX-9M-nYy"/>
+                                        <constraint firstItem="AFv-jo-R0E" firstAttribute="baseline" secondItem="KTP-pc-X5Q" secondAttribute="baseline" id="2MK-0M-UO4"/>
+                                        <constraint firstItem="IeD-Ij-cTP" firstAttribute="baseline" secondItem="KTP-pc-X5Q" secondAttribute="baseline" id="4XY-kp-OeH"/>
                                         <constraint firstItem="qVm-1C-vxa" firstAttribute="top" secondItem="zFB-ou-UNS" secondAttribute="bottom" constant="8" id="5FG-dM-o6K"/>
+                                        <constraint firstAttribute="bottom" secondItem="KTP-pc-X5Q" secondAttribute="bottom" constant="16" id="6Hh-Wx-qLi"/>
+                                        <constraint firstItem="IeD-Ij-cTP" firstAttribute="height" secondItem="KTP-pc-X5Q" secondAttribute="height" id="8Gk-Gr-wu9"/>
+                                        <constraint firstItem="KTP-pc-X5Q" firstAttribute="leading" secondItem="GTd-Tb-4vI" secondAttribute="trailing" constant="3" id="AFj-9U-2G0"/>
+                                        <constraint firstItem="KTP-pc-X5Q" firstAttribute="top" secondItem="tVg-o4-A7L" secondAttribute="bottom" constant="8" id="Bsl-HJ-DhO"/>
                                         <constraint firstItem="2WE-J8-ttY" firstAttribute="top" secondItem="Fn2-mF-KAf" secondAttribute="top" constant="8" id="D8Z-tg-imK"/>
                                         <constraint firstItem="OfV-as-SQu" firstAttribute="top" secondItem="HCR-Au-cfS" secondAttribute="bottom" constant="17" id="DD8-gs-KyQ"/>
                                         <constraint firstAttribute="trailing" secondItem="pqv-KF-mUv" secondAttribute="trailing" constant="8" id="DJV-nv-YwQ"/>
                                         <constraint firstItem="zFB-ou-UNS" firstAttribute="leading" secondItem="Fn2-mF-KAf" secondAttribute="leading" constant="16" id="H5g-UL-nPS"/>
                                         <constraint firstItem="qVm-1C-vxa" firstAttribute="leading" secondItem="zFB-ou-UNS" secondAttribute="leading" id="HmW-aL-k8U"/>
                                         <constraint firstItem="2WE-J8-ttY" firstAttribute="leading" secondItem="Fn2-mF-KAf" secondAttribute="leading" constant="8" id="Inf-bP-5C0"/>
-                                        <constraint firstAttribute="bottom" secondItem="OfV-as-SQu" secondAttribute="bottom" constant="14" id="Noi-GL-zG4"/>
+                                        <constraint firstItem="tVg-o4-A7L" firstAttribute="top" secondItem="OfV-as-SQu" secondAttribute="bottom" constant="8" id="Tg9-Bc-Tma"/>
                                         <constraint firstItem="HCR-Au-cfS" firstAttribute="top" secondItem="qVm-1C-vxa" secondAttribute="bottom" constant="14" id="Unf-Na-yei"/>
+                                        <constraint firstItem="AFv-jo-R0E" firstAttribute="leading" secondItem="IeD-Ij-cTP" secondAttribute="trailing" constant="3" id="XqK-yx-49Y"/>
                                         <constraint firstAttribute="trailing" secondItem="2WE-J8-ttY" secondAttribute="trailing" constant="8" id="Y2m-yr-ySu"/>
                                         <constraint firstItem="pqv-KF-mUv" firstAttribute="leading" secondItem="Fn2-mF-KAf" secondAttribute="leading" constant="8" id="YHV-Xl-hC7"/>
                                         <constraint firstItem="OfV-as-SQu" firstAttribute="leading" secondItem="zFB-ou-UNS" secondAttribute="leading" id="bup-X3-aFa"/>
                                         <constraint firstItem="OfV-as-SQu" firstAttribute="top" secondItem="pqv-KF-mUv" secondAttribute="bottom" constant="8" id="dfE-2a-ap5"/>
+                                        <constraint firstItem="GTd-Tb-4vI" firstAttribute="leading" secondItem="AFv-jo-R0E" secondAttribute="trailing" constant="8" id="gYB-5d-thp"/>
                                         <constraint firstItem="zFB-ou-UNS" firstAttribute="top" secondItem="Fn2-mF-KAf" secondAttribute="top" constant="16" id="kCJ-2X-IiK"/>
+                                        <constraint firstAttribute="trailing" secondItem="KTP-pc-X5Q" secondAttribute="trailing" constant="16" id="kxA-NA-59j"/>
+                                        <constraint firstItem="GTd-Tb-4vI" firstAttribute="baseline" secondItem="KTP-pc-X5Q" secondAttribute="baseline" id="rE5-84-ObQ"/>
+                                        <constraint firstItem="AFv-jo-R0E" firstAttribute="height" secondItem="KTP-pc-X5Q" secondAttribute="height" id="u5O-pg-VHX"/>
                                         <constraint firstAttribute="bottom" secondItem="2WE-J8-ttY" secondAttribute="bottom" constant="8" id="vCQ-Hd-xeZ"/>
+                                        <constraint firstItem="GTd-Tb-4vI" firstAttribute="height" secondItem="KTP-pc-X5Q" secondAttribute="height" id="yKU-1i-kx3"/>
+                                        <constraint firstItem="tVg-o4-A7L" firstAttribute="leading" secondItem="pqv-KF-mUv" secondAttribute="leading" id="zCT-rN-Hfm"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backgroundCardView" destination="2WE-J8-ttY" id="oav-sM-hY4"/>
                                     <outlet property="exLog" destination="OfV-as-SQu" id="zXM-tZ-sCL"/>
                                     <outlet property="historyImageView" destination="HCR-Au-cfS" id="d9I-un-oPf"/>
+                                    <outlet property="percentLabel" destination="KTP-pc-X5Q" id="ZFD-dm-0V3"/>
                                     <outlet property="scheduleDate" destination="qVm-1C-vxa" id="pNQ-K8-xYJ"/>
                                     <outlet property="scheduleTitle" destination="zFB-ou-UNS" id="8n3-N4-lGa"/>
+                                    <outlet property="totalWeightLabel" destination="AFv-jo-R0E" id="L3R-aW-aUT"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmptyCell" rowHeight="231" id="zb7-aL-Xv3" customClass="EmptyCell" customModule="HealthScheduler" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="881" width="320" height="231"/>
+                                <rect key="frame" x="0.0" y="935" width="320" height="231"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zb7-aL-Xv3" id="XDh-BK-dhd">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="231"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="히스토리 없음" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM6-eA-bCN">
-                                            <rect key="frame" x="118.5" y="108" width="84" height="16"/>
+                                            <rect key="frame" x="119" y="108" width="84" height="16"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="25q-i0-x71"/>
                                             </constraints>
@@ -1416,7 +1564,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-1" translatesAutoresizingMaskIntoConstraints="NO" id="qx8-Au-a2G">
-                                            <rect key="frame" x="132.5" y="45" width="55" height="55"/>
+                                            <rect key="frame" x="133" y="45" width="55" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="CEf-eg-NVw"/>
                                                 <constraint firstAttribute="width" constant="55" id="Qdt-WA-ePG"/>
@@ -1561,7 +1709,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VR-gH-Esa">
-                                                    <rect key="frame" x="16" y="23" width="32" height="15"/>
+                                                    <rect key="frame" x="16" y="22" width="32" height="15"/>
                                                     <fontDescription key="fontDescription" name="NanumBarunGothicOTF" family="NanumBarunGothicOTF" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2054,7 +2202,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="uXx-Pg-vjc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="uXx-Pg-vjc">
                                 <rect key="frame" x="16" y="156" width="288" height="161"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="161" id="Ark-Tk-i3W"/>
@@ -2092,7 +2240,7 @@
                                 <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5QO-nG-kVM">
-                                <rect key="frame" x="143" y="28" width="34" height="17.5"/>
+                                <rect key="frame" x="143" y="28" width="34" height="18"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2152,7 +2300,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzW-dc-p60">
-                                <rect key="frame" x="117" y="302" width="86.5" height="40.5"/>
+                                <rect key="frame" x="117" y="302" width="87" height="41"/>
                                 <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2223,7 +2371,7 @@
         <image name="x" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bAR-5p-aqw"/>
         <segue reference="ea6-qD-kbd"/>
+        <segue reference="bAR-5p-aqw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -40,6 +40,7 @@
 		F37578041E5D375900FBF0EB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37578031E5D375900FBF0EB /* DataController.swift */; };
 		F38E0F201E556793003999CC /* BeforeStartExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E0F1F1E556793003999CC /* BeforeStartExerciseVC.swift */; };
 		F3AD8F331E5EED9500456619 /* ScheduleEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD8F321E5EED9500456619 /* ScheduleEmptyCell.swift */; };
+		F3AD8F351E5F386700456619 /* TotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD8F341E5F386700456619 /* TotalCell.swift */; };
 		F3ADB1521E52A122001130FB /* StartExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ADB1511E52A122001130FB /* StartExerciseVC.swift */; };
 		F3ADB1541E52F074001130FB /* EndExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ADB1531E52F074001130FB /* EndExerciseVC.swift */; };
 		F3AF752B1E4C2248007668F7 /* AddExerciseVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */; };
@@ -92,6 +93,7 @@
 		F37578031E5D375900FBF0EB /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		F38E0F1F1E556793003999CC /* BeforeStartExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeStartExerciseVC.swift; sourceTree = "<group>"; };
 		F3AD8F321E5EED9500456619 /* ScheduleEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleEmptyCell.swift; sourceTree = "<group>"; };
+		F3AD8F341E5F386700456619 /* TotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalCell.swift; sourceTree = "<group>"; };
 		F3ADB1511E52A122001130FB /* StartExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartExerciseVC.swift; sourceTree = "<group>"; };
 		F3ADB1531E52F074001130FB /* EndExerciseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndExerciseVC.swift; sourceTree = "<group>"; };
 		F3AF752A1E4C2248007668F7 /* AddExerciseVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExerciseVC2.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				F34E9EE91E5AE68B00ECA5D7 /* EmptyCell.swift */,
 				F34E9EED1E5B103B00ECA5D7 /* TrainerCell.swift */,
 				F3AD8F321E5EED9500456619 /* ScheduleEmptyCell.swift */,
+				F3AD8F341E5F386700456619 /* TotalCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				F3DD32C21E4B48BF00FD4A70 /* AddExerciseVC1.swift in Sources */,
 				F3DD32BB1E4B154C00FD4A70 /* ExerciseModel.swift in Sources */,
 				F37578001E5C255100FBF0EB /* T_ExerciseModel.swift in Sources */,
+				F3AD8F351E5F386700456619 /* TotalCell.swift in Sources */,
 				F3667F241E5570350045F03D /* DefaultModel.swift in Sources */,
 				F3C3515E1E4E060100A1B189 /* AddEx02Cell.swift in Sources */,
 				F324C25E1E4C7A4B003D0AA7 /* Extensions.swift in Sources */,

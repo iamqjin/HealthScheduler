@@ -14,7 +14,8 @@ class HistoryCell: UITableViewCell {
     @IBOutlet weak var scheduleTitle: UILabel!
     @IBOutlet weak var scheduleDate: UILabel!
     @IBOutlet weak var exLog: UILabel!
-
+    @IBOutlet weak var totalWeightLabel: UILabel!
+    @IBOutlet weak var percentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -54,7 +54,7 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         super.viewWillAppear(animated)
     
         //탭바 N 뱃지 설정
-        self.navigationController?.tabBarItem.badgeValue = String(appDelegate.scheduleList.count)
+//        self.navigationController?.tabBarItem.badgeValue = String(appDelegate.scheduleList.count + appDelegate.tScheduleList.count)
         
         //데이터 리로드
         self.scheduleTable.reloadData()
@@ -166,9 +166,9 @@ class ScheduleVC : UIViewController , UITableViewDelegate, UITableViewDataSource
         //선택된 인덱스
         let selectedIndexPath = indexPath
         
-        performSegue(withIdentifier: "beforeStartExSegue", sender: selectedIndexPath)
-        
-        
+        if appDelegate.scheduleList.count != 0 || appDelegate.tScheduleList.count != 0 {
+            performSegue(withIdentifier: "beforeStartExSegue", sender: selectedIndexPath)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

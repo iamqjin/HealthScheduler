@@ -29,6 +29,12 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
     var setEndFlag = Int()
     //운동기록
     var exLog = [String]()
+    
+    //test
+    var exCount = [Int]()
+    var exKg = [Int]()
+    var exPassOrFail = [String]()
+    
     //운동 시작 토탈 시간
     var totalTime = 0 //기준(0초)
     //총 몇분인지
@@ -204,15 +210,15 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
         }
         //현재 저장
         //성공 표시
-        allExSetList[setStartFlag].passOrFail = "OK"
+        allExSetList[setStartFlag].passOrFail = "성공"
         //단위 별 저장 값다르게
         if weightUnit {
-            allExSetList[setStartFlag].weight = weightKg[setDetailPickerView.selectedRow(inComponent: 0)]
+            allExSetList[setStartFlag].weight = weightKg[setDetailPickerView.selectedRow(inComponent: 0)].components(separatedBy: "kg")[0]
         } else {
-            allExSetList[setStartFlag].weight = weightLbs[setDetailPickerView.selectedRow(inComponent: 0)]
+            allExSetList[setStartFlag].weight = weightLbs[setDetailPickerView.selectedRow(inComponent: 0)].components(separatedBy: "lbs")[0]
         }
         //선택되있는 횟수 저장
-        allExSetList[setStartFlag].count = count[setDetailPickerView.selectedRow(inComponent: 1)]
+        allExSetList[setStartFlag].count = count[setDetailPickerView.selectedRow(inComponent: 1)].components(separatedBy: "회")[0]
         //숫자를 넘김
         setStartFlag += 1
 
@@ -233,8 +239,23 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
             
             //운동 로그 기록
             for i in allExSetList {
-                exLog.append("\(i.setId! + 1). \(i.exTitle!) \(i.weight!) x \(i.count!) | \(i.passOrFail!)")
+                exKg.append(Int(i.weight!)!)
+                exCount.append(Int((i.count?.components(separatedBy: "회")[0])!)!)
+                exPassOrFail.append(i.passOrFail!)
             }
+            
+            //이쁜 스트링 테스트
+            for i in 0..<allExSetList.count {
+                
+                if i == 0 { exLog.append(allExSetList[i].exTitle! + "\n\n" + "\(allExSetList[i].setId! + 1). \(allExSetList[i].weight!)kg x \(allExSetList[i].count!)회    \t\t\t\t\t\t \(allExSetList[i].passOrFail!)") }
+                else if allExSetList[i-1].exTitle != allExSetList[i].exTitle {
+                    exLog.append("\n" + allExSetList[i].exTitle! + "\n\n" + "\(allExSetList[i].setId! + 1). \(allExSetList[i].weight!)kg x \(allExSetList[i].count!)회    \t\t\t\t\t\t \(allExSetList[i].passOrFail!)")
+                } else {
+                    exLog.append("\(allExSetList[i].setId! + 1). \(allExSetList[i].weight!)kg x \(allExSetList[i].count!)회    \t\t\t\t\t\t \(allExSetList[i].passOrFail!)")
+                }
+            }
+            
+            
             
             //다시 터치되도 어떠한 작동이 안일어나게
             setStartFlag = allExSetList.count + 10
@@ -354,6 +375,12 @@ class StartExerciseVC: UIViewController ,UIPickerViewDelegate, UIPickerViewDataS
             destinationVC.exLog = self.exLog
             destinationVC.finalHistory = self.allExSetList
             destinationVC.scheduleTitle = self.scheduleTitle
+            
+            //test
+            destinationVC.exCount = self.exCount
+            destinationVC.exKg = self.exKg
+            destinationVC.exPassOrFail = self.exPassOrFail
+            
         }
         
         
