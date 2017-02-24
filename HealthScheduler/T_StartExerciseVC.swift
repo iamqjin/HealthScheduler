@@ -209,14 +209,13 @@ class T_StartExerciseVC: UIViewController {
             exEndButton.isEnabled = true
             
             //운동 로그 기록
-//            for i in exList {
-//                exLog.append("\(i.id! + 1). \(i.name!) \(i.weight!) x \(i.count!) | \(i.passOrFail!)")
-//            }
-            
-            //운동 로그 기록
             for i in exList {
+                if i.passOrFail == "성공" {
+                    exCount.append(Int((i.count?.components(separatedBy: "회")[0])!)!)
+                } else {
+                    exCount.append(0)
+                }
                 exKg.append(Int((i.weight?.components(separatedBy: "kg")[0])!)!)
-                exCount.append(Int((i.count?.components(separatedBy: "회")[0])!)!)
                 exPassOrFail.append(i.passOrFail!)
             }
             
@@ -275,8 +274,12 @@ class T_StartExerciseVC: UIViewController {
                     
                     //운동 로그 기록
                     for i in exList {
+                        if i.passOrFail == "성공" {
+                            exCount.append(Int((i.count?.components(separatedBy: "회")[0])!)!)
+                        } else {
+                            exCount.append(0)
+                        }
                         exKg.append(Int((i.weight?.components(separatedBy: "kg")[0])!)!)
-                        exCount.append(Int((i.count?.components(separatedBy: "회")[0])!)!)
                         exPassOrFail.append(i.passOrFail!)
                     }
                     

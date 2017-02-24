@@ -28,7 +28,6 @@ class HistoryVC: UITableViewController {
         super.viewDidLoad()
         
         //프로필 test
-//        profileImageView.image = UIImage(named: "Add")
         profileNameLabel.text = "사규진"
         profileKmLabel.text = "0"
         profileHistoryCount.text = String(appDelegate.historyList.count)
@@ -54,6 +53,12 @@ class HistoryVC: UITableViewController {
         //히스토리 테이블 리프레시
         historyTableView.reloadData()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        totalWeight = 0
     }
     
     // MARK: - Table
