@@ -147,7 +147,7 @@ class T_StartExerciseVC: UIViewController {
             //처음 운동 첫세트 보여줌
             if selectedScheduleNum.section == 1 {
                 exDetailLabel.text = exList[setStartFlag].name! + " " +  String(exList[setStartFlag].id! + 1) + " 세트"
-                countLabel.text = exList[setStartFlag].count!
+                countLabel.text =  "\(exList[setStartFlag].weight!) x \(exList[setStartFlag].count!)"
             }
         }
     }
@@ -186,7 +186,7 @@ class T_StartExerciseVC: UIViewController {
         if setStartFlag < exList.count {
             
             exDetailLabel.text = exList[setStartFlag].name! + " " +  String(exList[setStartFlag].id! + 1) + " 세트"
-            countLabel.text = exList[setStartFlag].count!
+            countLabel.text = "\(exList[setStartFlag].weight!) x \(exList[setStartFlag].count!)"
             
             //성공이미지 및 코멘트
             passOrFailInfoLabel.text = "성공!"
@@ -249,8 +249,7 @@ class T_StartExerciseVC: UIViewController {
                 if setStartFlag < exList.count {
                     
                     exDetailLabel.text = exList[setStartFlag].name! + " " +  String(exList[setStartFlag].id! + 1) + " 세트"
-                    countLabel.text = exList[setStartFlag].count!
-                    
+                    countLabel.text = "\(exList[setStartFlag].weight!) x \(exList[setStartFlag].count!)"
                     //실패이미지 띄움
                     passOrFailInfoLabel.text = "괜찮아요!"
                     passOrFailImageView.image = #imageLiteral(resourceName: "thatokBlack")

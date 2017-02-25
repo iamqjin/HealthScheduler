@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NanumBarunGothicLight.otf">
-            <string>NanumBarunGothicOTFLight</string>
+        <array key="NanumBarunGothicBold.otf">
+            <string>NanumBarunGothicOTFBold</string>
         </array>
     </customFonts>
     <scenes>
@@ -26,17 +26,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dumbbell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ro1-vR-UbR">
-                                <rect key="frame" x="54" y="299" width="266" height="69"/>
-                                <fontDescription key="fontDescription" name="NanumBarunGothicOTFLight" family="NanumBarunGothicOTF" pointSize="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dumbbell" translatesAutoresizingMaskIntoConstraints="NO" id="nwF-fa-xn8">
+                                <rect key="frame" x="62" y="208" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Wn2-Uu-pBa"/>
+                                    <constraint firstAttribute="height" constant="250" id="lh3-GF-g3B"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dumbbell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9V-41-qzn">
+                                <rect key="frame" x="120.5" y="388" width="133" height="34.5"/>
+                                <fontDescription key="fontDescription" name="NanumBarunGothicOTFBold" family="NanumBarunGothicOTF" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.011764705882352941" green="0.47450980392156861" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ro1-vR-UbR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XhD-JL-i2r"/>
-                            <constraint firstItem="Ro1-vR-UbR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="l4A-tF-i4w"/>
+                            <constraint firstItem="nwF-fa-xn8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JtL-C6-Z4r"/>
+                            <constraint firstItem="Y9V-41-qzn" firstAttribute="centerX" secondItem="nwF-fa-xn8" secondAttribute="centerX" id="Lm8-VJ-Oto"/>
+                            <constraint firstItem="Y9V-41-qzn" firstAttribute="top" secondItem="nwF-fa-xn8" secondAttribute="bottom" constant="-70" id="txg-Jk-MFc"/>
+                            <constraint firstItem="nwF-fa-xn8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yvQ-ph-4ER"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,4 +54,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dumbbell" width="512" height="512"/>
+    </resources>
 </document>

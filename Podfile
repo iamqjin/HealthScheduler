@@ -10,5 +10,5 @@ pod 'Firebase/Database'
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'GoogleSignIn'
-
+pod 'COSTouchVisualizer'
 end
